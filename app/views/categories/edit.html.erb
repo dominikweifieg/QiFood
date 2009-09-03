@@ -1,0 +1,21 @@
+<%title t('categories.edit.title', :category => @category.name)%>
+
+<%= error_messages_for :category %>
+
+<% form_for @category do |f| -%>
+  <div class="column wide">
+  	<%= f.label :name, t('categories.name') %>
+	<%= f.text_field :name, {:disabled => (not current_user_in_role? User::ADMIN)} %>
+  </div>
+  <div class="column wide">
+  	<%= f.label :description, t('categories.description') %>
+	<%= f.text_area :description %>
+  </div>
+	<div class="column wide">
+		<fieldset class="buttons">
+			<%= f.submit t('common.update') %>
+		</fieldset>
+	</div>
+<% end -%>
+
+<%= link_to t('common.back'), categories_path %>

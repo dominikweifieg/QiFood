@@ -1,0 +1,15 @@
+<div class="column wide"><%= f.error_messages %></div>
+<div class="column">
+	<%= f.label :title %>
+	<%= f.text_field :title %>
+</div>
+<div class="column right">
+	<%= f.label :permalink %>
+	<%= f.text_field :permalink %>
+</div>
+<div class="column wide">
+	<%= f.label :body %> <%= link_to_function t('pages.edit.textile'),
+													     "window.open('http://hobix.com/textile/quick.html', '#{t('pages.edit.textile')}', 'height=700,width=510,status=yes,menubar=no,location=no,toolbar=no,scrollbars=yes')" %><br/>
+	<%= f.text_area :body %>
+</div>
+

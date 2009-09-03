@@ -1,0 +1,37 @@
+<% title t('effects.index.title') %>
+
+<div class="column wide">
+	<%= t('effects.index.text') %>
+</div>
+
+<div class="column wide">
+	<table cellspacing="0">
+		<tr>
+			<% 3.times do %>
+			<th><%= t('effects.index.effect') %></th>
+			<% if current_user_in_role? User::EDITOR %>
+			<th></th>
+			<th></th>
+			<% end %>
+			<% end %>
+		</tr>
+
+  	<tr class="even">		
+	<% @effects.each_with_index do |effect, index| %>
+			<td><%= link_to h(effect.description), effect_path(effect) %></td>
+			<% if current_user_in_role? User::EDITOR %>
+    	<td><%= link_to 'Edit', edit_effect_path(effect) %></td>
+    	<td><%= link_to 'Destroy', effect, :confirm => 'Are you sure?', :method => :delete %></td>
+			<% end %>
+  	<% if index % 3 == 2 %>
+			</tr>
+			<tr class="<% if index % 2 == 1 %>even<% else %>odd<% end %>">
+		<% end %>
+	<% end %>
+		</tr>
+	</table>
+</div>
+
+<br />
+
+<%= link_to t('effects.index.new'), new_effect_path %>

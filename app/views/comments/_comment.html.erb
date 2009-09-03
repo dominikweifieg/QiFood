@@ -1,0 +1,19 @@
+<% div_for comment do %>
+	<b><%= link_to_function(h(comment.title), nil, :id => "more_#{comment.id}") do | page | 
+		#page.select('div.comment.content').each do |value|
+				#value.blind_up()
+		#end
+		page.visual_effect(:toggle_blind, "content_for_comment_#{comment.id}")
+	end	%></b>
+	<span class="date"><%= comment.created_at.to_formatted_s(:long) %></span>
+		<% div_for(comment, :content_for, :class => :content, :style => "display: none") do %>
+			<%= render :partial => 'users/profile', :locals => {:user => comment.user} %>
+			<div>
+				<%= simple_format comment.content %>
+			</div>
+			<% div_for(comment, :flag, :class => :flag) do %>
+				<%= t('comment.flag')%>
+				<%= render :partial => 'shared/flag', :locals => {:flag => comment} %>
+			<% end %>
+		<% end %>	
+<% end %>

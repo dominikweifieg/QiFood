@@ -1,0 +1,17 @@
+<%title t('book.new.title')%>
+
+<% form_for(@book) do |f| %>
+  <%= f.error_messages %>
+
+	<%= render :partial => 'editor', :locals => { :f => f } %>
+  
+  <div class="column wide">
+    <fieldset class="buttons">
+			<%= f.submit t('common.create') %>    	
+    </fieldset>
+  </div>
+<% end %>
+
+<div class="column wide">
+	<%= link_to t('common.back'), books_path %>
+</div>

@@ -1,0 +1,12 @@
+<%= link_to_function('&or;', nil, :class => "paging") do |page|
+	page[:sort_by].value = value
+	page[:sort_dir].value = 'ASC'
+	page[:finder].submit
+end %><%= link_to_function('&and;', nil, :class => "paging") do |page|
+	page[:sort_by].value = value
+	page[:sort_dir].value = 'DESC'
+	page[:finder].submit
+end %>
+
+
+

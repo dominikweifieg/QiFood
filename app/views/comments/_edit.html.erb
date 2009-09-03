@@ -1,0 +1,15 @@
+<% remote_form_for([@aliment, @comment]) do |f| %> 
+<%= f.error_messages %>
+	<h2>New comment</h2>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+	<fieldset class="buttons">
+	<%= f.submit 'Create' %>
+	<%= button_to_function 'Cancel' do |page|
+		page.replace_html('add_comment', link_to_remote("Kommentar einf&uuml;gen", :url => new_aliment_comment_path(@aliment), :method => :get))
+	end
+	%>
+	</fieldset>
+<% end %>														

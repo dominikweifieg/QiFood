@@ -1,0 +1,42 @@
+<%title t('user.show.title', :user_name => @user.login) %>
+<div class="column">
+	<h3><%= t('user.login') %></h3>
+	<%= h(@user.login)%>
+	<h3><%= t('user.first_name') %></h3>
+	<%= h(@user.first_name)%>
+	<h3><%= t('user.name') %></h3>
+	<%= h(@user.name) %>
+	<% unless @user.profile.quote.blank? %>
+	<h3><%= t('profile.quote') %></h3>
+	<%= h(@user.profile.quote)%>
+	<% end %>
+	<% unless @user.profile.birthday.blank? %>
+	<h3><%= t('profile.birthday') %></h3>
+	<%= @user.profile.birthday %>
+	<% end %>
+</div>
+<div class="column right">
+	<% if @user.user_photo %>
+	<%= image_tag @user.user_photo.public_filename %>
+	<% end 	%>
+	<h3><%= t('user.favorite_aliments') %></h3>
+	<%= render :partial => 'favorite_aliment', :collection => @user.favorite_aliments %>
+	<%= link_to t('favorite.find'), aliments_path %>
+	<h3><%= t('user.friends') %></h3>
+	<%= render :partial => 'friendship', :collection => @user.friendships %>
+	<%= link_to t('friendship.add_friends'), users_path %>
+	<h3><%= t('user.show.blog')%></h3>
+	<%= render :partial => 'posts/post_preview', :collection => @user.posts.find(:all, :limit => 5)%>
+	<%= link_to t('user.show.blog_link'), user_posts_path(@user)%>
+</div>
+<div class="column wide">
+	<% unless @user.profile.about.blank? %>
+	<h3><%= t('profile.about') %></h3>
+	<%= simple_format(sanitize(@user.profile.about)) %>
+	<% end %>
+</div>
+<% if @user == current_user %>
+<div class="column wide">
+	<%= link_to t('common.edit'), edit_user_path(@user) %>
+</div>
+<% end %>

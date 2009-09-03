@@ -1,0 +1,2 @@
+page.visual_effect(:fade, 'add_comment')
+page.insert_html( :top, 'comments_list', render(:partial => @comment))

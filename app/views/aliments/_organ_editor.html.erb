@@ -1,0 +1,5 @@
+<% Organ.find(:all).each do |organ|
+	select = aliment.organs.detect{ |o| o == organ} 
+%>
+<%= check_box_tag 'organs[]', organ.id, select, :id => dom_id(organ), :class => 'organ' %><%= label_tag dom_id(organ), organ.name, :class => 'organ' %>
+<% end %>

@@ -1,0 +1,16 @@
+<tr class="<% if table_counter % 2 == 0 %>even<% else %>odd<% end %>">
+	<td><%= link_to(h(aliment.name), aliment) %></td>
+	<td><%=h aliment.latin_name %></td>
+	<td><%=h aliment.pinyin %></td>
+	<td><%=h aliment.chinese %></td>
+	<td><%=savor_for(aliment) %></td>
+  <td><%=temperature_for(aliment) %></td>
+  <td><%=aliment.category.name %>
+  <% if current_user_in_role? User::EDITOR %>
+    <td><%= link_to t('common.edit'), edit_aliment_path(aliment) %></td>
+  <% end %>
+  <% if current_user_in_role? User::ADMIN %>
+    <td><%= link_to t('common.destroy'), aliment, :confirm => 'Are you sure?', :method => :delete %></td>
+  <% end %>
+</tr>
+

@@ -1,0 +1,3 @@
+id = dom_id(@flaggable, 'flag')
+page.replace_html id, flash[:notice]
+page.visual_effect(:highlight, id)

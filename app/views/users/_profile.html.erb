@@ -1,0 +1,5 @@
+<% div_for user, :class => 'profile' do %>
+	<div><%= t('user.profile.title') %></div>
+	<div><%= link_to "#{h(user.first_name)} #{h(user.name)} (#{h(user.login)})", user %></div>
+	<% div_for user.user_photo do %><%= image_tag user.user_photo.public_filename %><% end %>
+<% end %>

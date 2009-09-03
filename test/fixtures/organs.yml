@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: 
+  type: 
+  element_id: 1
+
+two:
+  name: 
+  type: 
+  element_id: 1

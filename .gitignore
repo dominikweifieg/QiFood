@@ -1,0 +1,9 @@
+log/*.log
+tmp/**/*
+doc/api
+doc/app
+public/aliment_photos/**/*
+public/user_photos/**/*
+vendor/gems/**/*
+vendor/rails/**/*
+

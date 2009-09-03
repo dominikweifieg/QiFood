@@ -1,0 +1,29 @@
+<div class="column wide"><%= f.error_messages %></div>
+<div class="column">
+    <%= f.label :title, t('books.title') %>
+    <%= f.text_field :title %>
+	  <%= f.label :authors, t('books.authors') %>
+		<%= f.text_field :authors	%>
+		<%= f.label :isbn, t('books.isbn') %>
+	  <%= f.text_field :isbn %>
+	  <%= f.label :language, t('books.language') %>
+	  <%= f.text_field :language %>		
+	</div>
+  <div class="column right">
+    <%= f.label :description, t('books.description') %>
+    <%= f.text_area :description %>
+  </div>
+	<div class="column">
+		<%= label_tag 'linked_authors', t('books.linked_authors') %>
+		<%= text_field_tag :linked_authors 	%>
+		<%= observe_field :linked_authors, :url=>users_path + "?per_page=100", :with=>'name', :method=>:get, :frequency => 0.5%>
+		
+		<div id="suggestions">
+		</div>
+	</div>	
+	<div class="column right">
+		<%= label_tag 'linked_authors_selected', t('books.edit.linked_authors_selected')%>
+		<div id="selected">
+			<%= @book.linked_authors.map {|author| link_to(author.first_name + " " + author.name, author)}.join(", ") %>
+		</div>
+	</div>

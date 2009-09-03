@@ -1,0 +1,34 @@
+<%title t('categories.show.title', :category => @category.name)%>
+
+<div class="column wide">
+<table cellspacing="0">
+	<thead>
+	<tr>
+		<th><%=  Aliment.human_attribute_name 'name' %></th> 
+		<th><%= Aliment.human_attribute_name 'latin_name'%></th>
+		<th><%= Aliment.human_attribute_name 'pinyin'%></th>
+		<th><%= Aliment.human_attribute_name 'chinese'%></th>
+		<th><%= t('aliment.savor') %></th>
+		<th><%= t('aliment.temperature') %></th>
+		<th><%= t('aliment.category') %></th>
+	<% if current_user_in_role? User::EDITOR %>
+		<th></th>
+	<% end %>
+	<% if current_user_in_role? User::ADMIN %>
+		<th></th>
+	<% end %>
+  </tr>
+	</thead>
+	<tbody>
+		<%= render :partial => "aliments/table", :collection => @aliments, :as => :aliment %>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="9">
+				<%= will_paginate @aliments , :params => params %>
+			</td>
+		</tr>
+	</tfoot>
+</table>
+</div>
+<%= link_to t('categories.show.back'), categories_path %>

@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%= h(yield(:title) || "Wuxing") %></title>
+	<%= stylesheet_link_tag 'scaffold', 'wuxing' %>
+	<%= javascript_include_tag :defaults %>
+	<% sifr_replace('.font', :dejavusanscondensedbold) %>
+	<%= sifr_head_generator %>
+</head>
+<body>
+	<div id="header">
+		<%= image_tag("hirse.png", :alt => "WuXing", :id => "title_image") %>
+		<h1 class="font">Chinesische Ern&auml;hrungslehre im Netz&nbsp;&nbsp;</h1>
+		<% if logged_in? %>
+			<%= t('user.logged_in_as', :user_name => current_user.login) %> <%= link_to t('user.logout'), logout_path %>
+		<% else %>
+			<%= link_to t('user.login'), login_path %> <%= link_to t('user.sign_up'), signup_path %>
+		<% end %>
+	</div>
+	<div id="container">
+		<div id="content" class="column">
+		<% if flash[:notice] %><p style="color: green"><%= flash[:notice] %></p><% end %>
+		<% if flash[:error] %><p style="color: red"><%= flash[:error] %></p><% end %>
+			<%= yield  %>
+		</div>
+		<div id="navigation" class="column">
+			<h3><%= link_to_unless_current(t('navigation.aliments'), aliments_path) %></h3>
+		</div>
+	</div>
+	<div id="advertisments">
+		<%= image_tag("example_add.png") %> 	
+	</div>
+	<div id="footer">
+		&copy; Copyright 2009 <%= link_to "www.ars-subtilior.com", "http://www.ars-subtilior.com", :popup => true %> Dominik Wei-Fieg
+		<%= link_to_unless_current(t('navigation.about'), static_path('about')) %>
+		<%= link_to_unless_current(t('navigation.contact'), static_path('contact')) %>
+	</div>
+	<%= sifr_body_generator %>
+</body>
+</html>

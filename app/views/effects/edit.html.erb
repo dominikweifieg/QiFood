@@ -1,0 +1,16 @@
+<% title t('effects.edit.title', :title => @effect.description)%>
+
+<% form_for(@effect) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @effect %> |
+<%= link_to 'Back', effects_path %>

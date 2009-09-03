@@ -1,0 +1,6 @@
+<tr class="<% if post_counter % 2 == 0 %>even<% else %>odd<% end %>">
+	<td><% if @user %><%= link_to h( post.title ), user_post_path(@user, post) %><% else %><%= link_to h( post.title ), post_path(post) %><% end %></td>
+	<td><%= truncate(h(post.body))%></td>
+	<td><%= l(post.created_at)%></td>
+	<% unless @user%><td><%= post.user.login %></td><% end %>
+</tr>

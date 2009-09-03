@@ -1,0 +1,15 @@
+<% title t('aliment.edit.title', :aliment_name => @aliment.name)%>
+
+<% form_for(@aliment, :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+  
+		<%= render :partial => 'editor', :locals => { :f => f } %> 
+<div class="column wide">
+	<fieldset class="buttons">
+		<%= f.submit t('common.update')%>
+	</fieldset>
+</div>
+<% end %>
+
+<%= link_to t('common.show'), @aliment %> |
+<%= link_to t('common.back'), aliments_path %>

@@ -1,0 +1,16 @@
+<% if logged_in? and current_user.flagged?(flag) %>
+  <p><%= t('flag.controller.already_flagged')%></p>
+<% elsif logged_in? %>
+  <% remote_form_for current_user.flags.build do |form| %>
+    <%= form.hidden_field :flaggable_type, :value => flag.class.name %>
+    <%= form.hidden_field :flaggable_id,   :value => flag.id %>
+    <select name="flag[reason]">
+    <% flag.reasons.each do |reason| -%>
+      <option name="<%=h reason.to_s %>"><%=h reason.to_s %></option>
+    <% end -%>
+    </select>
+    <input type="submit" value="<%= t('flag.create.do_flag')%>" />
+  <% end %>
+<% else %>
+  <%= t('flag.create.not_logged_in') %>
+<% end %>

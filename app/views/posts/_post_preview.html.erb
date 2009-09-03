@@ -1,0 +1,3 @@
+<%div_for post_preview do %>
+	<%= link_to h(post_preview.title), user_post_path(@user, post_preview) %>, <%= l(post_preview.created_at, :format => :short)%>
+<%end%>

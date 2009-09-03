@@ -1,0 +1,38 @@
+<%title t('user.users')%>
+	<% form_tag users_path, :method => :get do |f| %>
+	<div class="column">
+		<%= label_tag :name, t('user.name') %>
+		<%= text_field_tag :name, params[:name] %>
+	</div>
+	<div class="column right">
+		<%= label_tag :first_name, t('user.first_name')%>
+		<%= text_field_tag :first_name, params[:first_name] %>
+	</div>
+	<div class="column wide">
+		<fieldset class="buttons">
+			<%= submit_tag t('common.find')%>
+		</fieldset>
+	</div>
+	<% end %>
+	<div class="column wide">
+		<table cellspacing="0">
+			<thead>
+			<tr>
+				<th><%= t('user.name')%></th>
+				<th><%= t('user.first_name')%></th>
+				<th><%= t('profile.quote')%></th>
+				<% colspan = 3 %>
+				<% if current_user %><th></th><% colspan = 4 end %>
+				<% if current_user_in_role? User::ADMIN %><th></th><% colspan = 5 end %>
+			</tr>
+			</thead>
+			<tbody>
+				<%= render :partial => 'user', :collection => @users %>
+			</tbody>
+			<tfoot>
+				<tr>
+					<td colspan=<%= colspan %>><%= will_paginate @users, :params => params %></td>
+				</tr>
+			</tfoot>
+		</table>
+	</div>

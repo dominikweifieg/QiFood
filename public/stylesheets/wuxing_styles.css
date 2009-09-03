@@ -1,0 +1,56 @@
+.amazon
+{
+	float: right;
+	margin-right: 12px;
+}
+
+#preview
+{
+	border: 1px solid #BED95C;
+	padding: 12px;	
+}
+
+#errorExplanation
+{
+	border: 1px solid #BA013F;
+	padding: 12px;
+	color: #BA013F;
+}
+
+#errorExplanation h2
+{
+	font-size: 118%;
+}
+
+div.flash
+{
+	font-size: 118%;
+	line-height: 1.5em;
+}
+
+div.flash.notice
+{
+	color: #54B32F;
+}
+
+span.flash.error
+{
+	color: #BA013F;
+}
+
+div.user.profile
+{
+	float: right;
+	border: 1px solid #BED95C;
+	padding: 1em;
+}
+
+div.user_photo
+{
+	padding-top: 12px;	
+}
+
+div.flag
+{
+	font-size: 80%;
+}

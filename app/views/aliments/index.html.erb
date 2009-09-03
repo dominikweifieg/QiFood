@@ -1,0 +1,77 @@
+<% title t('aliment.title')%>
+<div class="column wide">
+<% ('A'..'Z').each do |c| %> 
+	<%= link_to_function(c, nil, :class => 'plain') do |page|
+		page[:name].value = c
+		page[:finder].submit	
+	end %>
+<% end %>
+<%= link_to(t('all', :scope => 'aliment'), aliments_path, :class => 'plain') %>
+</div>
+<div><h3><%= link_to_function t('aliment.index.search_options'), nil, :id => 'options_link', :class => 'plain' do |page|
+	page.visual_effect(:toggle_blind, 'aliment_search')
+end %></h3></div>
+<div id="aliment_search" style="display: none;">
+	<div class="search">
+		<% form_tag(aliments_path, :method => "get", :id => "finder") do %>
+		<%= hidden_field_tag :sort_by, params[:sort_by] || 'name' %>
+		<%= hidden_field_tag :sort_dir, params[:sort_dir] || 'ASC' %>
+		<div class="column">
+			<%= label_tag :name, Aliment.human_attribute_name('name') %>
+			<%= text_field_tag(:name, params[:name]) %>
+		</div>
+		<div class="column right">
+			<%= label_tag :savor, Aliment.human_attribute_name('savor') %>
+			<%= savor_select(true) %>&nbsp;
+		</div>
+		<div class="column">
+			<%= label_tag :description, Aliment.human_attribute_name('description') %>
+			<%= text_field_tag(:description, params[:description]) %>
+		</div>
+		<div class="column right">
+			<%= label_tag :temperature, Aliment.human_attribute_name('temperature') %>
+			<%= temperature_select(true) %>&nbsp;
+		</div>
+		<div class="column">
+			<%= label_tag :effect, Aliment.human_attribute_name('effect') %>
+			<%= text_field_tag(:effect, params[:effect]) %>
+		</div>
+		<div class="column right">
+			<%= label_tag :category_id, t('aliment.category') %>
+			<%= select_tag('category_id[]', options_for_select(Category.find(:all).collect {|c|
+						[c.name, c.id] }), {:multiple => true, :size => 5}) %>&nbsp;
+		</div>
+		<div class="column">
+			<%= label_tag :chinese, Aliment.human_attribute_name('chinese') %>
+			<%= text_field_tag(:chinese, params[:chinese]) %>
+		</div>
+		<div class="column right">
+			<%= label_tag :pinyin, Aliment.human_attribute_name('pinyin') %>
+			<%= text_field_tag(:pinyin, params[:pinyin]) %>
+		</div>
+		<div class="column wide">	
+			<%= label_tag :latin_name, Aliment.human_attribute_name('latin_name') %>
+			<%= text_field_tag(:latin_name, params[:latin_name]) %>
+		</div>
+		<div class="column wide">
+			<fieldset class="buttons">
+				<%= submit_tag( t('common.find')) %>
+			</fieldset>
+		</div>
+	<% end %>
+	</div><br /> 
+</div>
+<div><h3><%= link_to_remote t('aliment.index.search_effects'), {:update => "effects_search", :url => effects_path(), :method => :get, 
+ 	:complete => "Effect.toggle('effects_search', 'blind', {})"}, {:class => 'plain'} %></h3></div> 
+<div id="effects_search" style="display: none;"> 
+</div>
+<br />
+<%= render :partial => 'list' %>
+
+
+<% if current_user_in_role? User::EDITOR %>
+<div class="column wide">
+<%= link_to t('aliment.index.new'), new_aliment_path %>
+</div>
+<% end %>
+

@@ -1,0 +1,285 @@
+de:
+  activerecord:
+    models:
+      aliment: Lebensmittel
+      user: Benutzer
+      post: Blog-Eintrag
+    attributes: 
+      aliment:
+        name: Name
+        latin_name: bot.
+        pinyin: Pinyin
+        chinese: Chinesisch
+        description: Beschreibung
+        effect: Wirkung
+        savor: Geschmack
+        savor_tendence: Geschmackstendenz
+        temperature: Temperatur
+        temperature_tendence: Temperaturetendenz
+      user:
+        name: "Nachname:"
+        first_name: "Vorname:"
+        email: "Email:"
+        password: "Passwort:"
+        password_confirmation: "Passwort Wiederholung:"
+      post:
+        title: Titel
+        body: Inhalt
+    errors:
+      template:
+        header: 
+          one:    "Ein Fehler verhinderte das Abspeichern dieses {{model}}s"
+          other:  "{{count}} Fehler verhinderten das Abspeichern dieses {{model}}s"
+          # The variable :count is also available
+        body: "Es gab Probleme in folgenden Feldern:"
+      models: 
+        user:
+          attributes:
+            email: 
+              taken: Die angegebene Email-Adresse wird schon von einem anderen Benutzer verwendet. 
+            password:
+              blank: Es wurde kein Passwort angegeben
+              too_short: Das angegebene Passwort ist zu kurz
+              confirmation: "Die zweite Angabe des Passwortes stimmt nicht mit der ersten überein"
+            password_confirmation: 
+              blank: Das Password wurde nicht zweimal angegeben
+        post:
+          attributes:
+            title:
+              blank: Es wurde kein Titel angegeben
+            body:
+              blank: Es wurde kein Inhalt eingetragen
+            permalink:
+              taken: "Es konnte kein Link f&uuml;r Ihren Blog-Eintrag erzeugt werden, bitte &auml;ndern Sie den Titel"
+  main_title: QiFood.de
+  aliment:
+    title: Lebensmittel
+    savor: Sapor
+    temperature: Temperaturverhalten
+    category: Kategorie
+    sauer: Sauer
+    bitter: Bitter
+    suess: Süß
+    scharf: Scharf
+    salzig: Salzig
+    wood: Holz
+    fire: Feuer
+    earth: Erde
+    metal: Metal
+    water: Wasser
+    hot: Heiss
+    warm: Warm
+    neutral: Neutral
+    cool: Erfrischend
+    cold: Kalt
+    wikipedia: "{{aliment}} auf Wikipedia"
+    links: Links
+    all: Alle
+    effects: Wirkung
+    organs: Zielorgane
+    photo: Photo
+    new:
+      title: Neues Lebensmittel
+      create: Anlegen
+      back: Zur&uuml;ck
+    index:
+      new: "Neues Lebensmittel einf&uuml;gen"
+      search_options: Suchoptionen
+      hide_search_options: Weniger
+      search_effects: Suche nach Wirkungen
+      effects: Wirkungen
+      match_all: Und-Suche (Alle Lebensmittel mit allen der gesuchten Wirkungen)
+      match_any: Oder-Suche (Alle Lebensmittel mit min. einer der gesuchten Wirkungen)
+      effect_filter: "Wirkungen nach Namen filtern"
+      effect_filter_clear: "Filter l&ouml;schen"
+    edit:
+      title: "{{aliment_name}} editieren"
+  categories:
+    name: Name
+    description: Beschreibung
+    index:
+      title: Lebensmittelkategorien
+      description: Lebensmittel sind verschiedenen Kategorien wie Getreide, Obst, etc. zugeordnet, einerseits um das Finden von Lebensmitteln einfacher zu machen, andererseits weil sich alle Lebensmittel 
+        einer Kategorie bestimmte Grundeigenschaften und Wirkungen teilen.
+    edit:
+      title: "{{category}} editieren"
+    update:
+      success: Kategorie erfolgreich gespeichert
+      failure: Kategorie konnte nicht gespeichert werden
+    show:
+      title: "Lebensmittel der Kategorie {{category}}"
+      back: "Zur&uuml;ck zur &Uuml;bersicht"
+  effects:
+    index:
+      title: Wirkungen der Lebensmittel
+      text: Im folgenden sind die Wirkungen von Lebensmitteln aufgelistet. Mit einem Klick auf eine der Wirkungen kommen sie zu den Lebensmitteln, die diese Wirkung haben.
+      effect: Wirkung
+      new: Neue Wirkung anlegen
+    show:
+      title: "Lebensmittel mit der Wirkung '{{effect}}'"
+    edit: 
+      title: "Wirkung editieren: '{{title}}'"
+    new: 
+      title: Neue Wirkung 
+  books:
+    title: Titel
+    author: Autor(en)
+    description: Beschreibung
+    buy: kaufen
+    isbn: ISBN
+    language: Sprache
+    linked_authors: Autoren (Benutzer)
+    authors: Autoren (keine Benutzer)
+    index:
+      title: "Bücher über die Chinesische Ernährungslehre"
+      text: Diese Website kann nicht umfassende Auskunft &uuml;ber alle Aspekte der chinesischen Ern&auml;hrungslehre geben sonder m&ouml;chte eine Hilfestellung zum
+        Auffinden von geeingneten Nahrungsmitteln sein. Daher hier eine Liste von B&uuml;chern zu dem Thema der Chinesischen Ern&auml;hrungslehre, die sowohl Grundlagen vermitteln
+        als auch tief in spezielle Aspekte vordringen. Falls ein Buch, welches in dieser Liste aufgef&uuml;hrt sein sollte, nicht aufgef&uuml;hrt ist, lassen Sie es mich bitte wissen, 
+        ich werde es dann aufnehmen. Wenn Sie B&uuml;cher von dieser Liste &uuml;ber die &quot;kaufen&quot;-Links bei Amazon bestellen, unterst&uuml;tzen Sie damit den Betrieb und die
+        Weiterentwicklung von QiFoods.
+      new: Neues Buch anlegen
+    edit:
+      linked_authors_selected: Selektierte Autoren (Benutzer)  
+    new:
+      title: "Neues Buch"
+  user:
+    users: Benutzer
+    email: Email
+    password: Passwort
+    name: Nachname
+    first_name: Vorname
+    password_confirmation: Passwort bitte ein zweites Mal angeben
+    favorite_aliments: Meine favorisierten Lebensmittel
+    friends: Meine Freunde
+    login: Login
+    logout: Logout
+    sign_up: Anmelden    
+    logged_in_as: "Hallo {{user_name}} (Profil)"
+    missing_rights: "Sie haben nicht gen&uuml;gend Rechte, um diese Aktion auszuf&uuml;hren"
+    login_required: "Sie m&uuml;ssen eingelogged sein, um diese Aktion auszuf&uuml;hren"
+    remember: Login auf diesem Rechner merken
+    new:
+      title: Anmelden
+      required_information: "Notwendige Informationen:"
+      optional_information: "Optionale Informationen:"
+      sign_up: Anmelden
+    edit:
+      title: Profil editieren
+    show: 
+      title: "{{user_name}}'s Profil"
+      blog: Mein Blog
+      blog_link: "Alle meine Blog-Eintr&auml;ge"
+    profile:
+      title: "Author:"
+    controller:
+      signup:
+        success: "Vielen Dank f&uuml;r die Anmeldung. Wir senden Ihnen einen Aktivierungscode per Email."
+        failure: "Wir konnten Sie nicht anmelden. Bitte versuchen Sie es noch einmal, oder kontaktieren Sie einen Administrator (link unter Kontakt am Ende dieser Seite)"
+      activate:
+        success: "Die Anmeldung war erfolgreich. Bitte loggen Sie sich &uuml;ber den Link &quot;Login&quot; am Anfang dieser Seite ein."
+        code_missing: "Der Aktivierungscode fehlt. Bitte benutzen Sie den Link aus Ihrer Email"
+        error: "Wir konnten keinen Benutzer mit diesem Aktivierungscode finden -- &uuml;berpr&uuml;fen Sie bitten noch einmal Ihre Email. Oder ist Ihr Benutzer bereits aktiviert? Versuchen sie &quot;Login&Quot;."
+      edit:
+        not_logged_in: "Bitte loggen Sie sich ein."
+      update:
+        success: Ihr Profil wurde erfolgreich gespeichert.
+        failure: Ihr Profile konnte nicht gespeichert werden.
+  profile: 
+    birthday: Geburtstag
+    about: "&Uuml;ber mich"
+    photo: Photo
+    quote: Zitat
+  favorite:
+    create:
+      success: "{{aliment_name}} wurde in die Liste Ihrer Favoriten &uuml;bernommen."
+      failure: "{{aliment_name}} konnte nicht in die Liste Ihrer Favoriten &uuml;bernommen werden. Sind Sie eingelogged?"
+    destroy:
+      success: "{{aliment_name}} wurde aus der Liste Ihrer Favoriten gel&ouml;scht."
+      failure: "{{aliment_name}} konnte nicht aus der Liste Ihrer Favoriten gel&ouml;scht werden. Sind Sie eingelogged?"
+    add: "Zu Ihren Favoriten hinzuf&uuml;gen"
+    find: "Favoriten hinzuf&uuml;gen"
+  friendship:
+    add_friends: "Freunde hinzuf&uuml;gen"
+    add_as_friend: Als Freund merken
+    controller: 
+      create:
+        success: "{{name}} wurde zur Liste Ihrer Freunde hinzugef&uuml;gt"
+        failure: "{{name}} konnte nicht zur Liste Ihrer Freunde hinzugef&uuml;gt werden"
+      destroy:
+        success: "{{name}} wurde aus der Liste Ihrer Freunde gel&ouml;scht"
+        wrong_user: "Sie sind nicht befugt, Freunde von anderen Benutzern zu l&ouml;schen"
+  post:
+    title: Titel
+    body: Inhalt
+    created_at: Datum
+    author: Author
+    preview: Vorschau
+    controller:
+      create:
+        success: Ihr Blog-Eintrag wurde publiziert
+        failure: Ihr Blog-Eintrag konnte nicht publiziert werden
+      update:
+        success: Ihr Blog-Eintrag wurde gespeichert
+        failure: Ihr Blog-Eintrag konnte nicht gespeichert werden
+      show:
+        deleted: Dieser Blog-Eintrag existiert nicht mehr
+    index:
+      title_user: "{{user_name}}'s Blog"
+      title: "Blog"
+      new: Neuen Blog-Eintrag schreiben
+    new: 
+      title: Blog-Eintrag schreiben
+    edit: 
+      preview_message: (Die Vorschau wird alle 10 Sekunden aktualisiert.)
+    atom:
+      title_user: "QiFood: {{user_name}}'s Blog"
+      title: "QiFood: Blog" 
+  comment:
+    add: "Kommentar schreiben"
+    not_logged_in: "Sie m&uuml;ssen eingelogged sein, um einen Kommentar zu schreiben"
+    flag: "Sollte dieser Kommentar gel&ouml;scht werden?"
+  flag:
+    controller:
+      already_flagged: "Sie haben diesen Kommentar bereits markiert"
+      success: "Der Kommentar wurde markiert"
+    create:
+      do_flag: Diesen Kommentar markieren
+      not_logged_in: "Sie m&uuml;ssen eingelogged sein, um diesen Kommentar zu markieren"
+    reasons:
+      inapproriate: Unangemessen
+      off_topic: Bezieht sich nicht auf das Thema
+      foul_language: Ausdruck
+  pages:
+    index: 
+      title: Statische Seiten
+    edit:
+      textile: Formatierungs-Hilfe
+      title: "Seite bearbeiten: {{title}}"
+    new:
+      title: Neue statische Seite anlegen
+  navigation:
+    aliments: Lebensmittel
+    about: Impressum
+    contact: Kontakt
+    effects: Wirkung
+    categories: Kategorien
+    more: Weiteres
+    books: "B&uuml;cher"
+    practitioners: "Ern&auml;hrungsberatung"
+    posts: Blog
+    users: Benutzer
+    profile: Mein Profil
+    support: "Unterst&uuml;tzen"
+    home: Home  
+  common:
+    show: Anzeigen
+    back: Zur&uuml;ck
+    create: Anlegen
+    destroy: L&ouml;schen
+    update: "&Uuml;bernehmen"
+    edit: Editieren
+    find: Finden
+    day: Tag
+    month: Monat
+    year: Jahr
+    are_you_sure: Sind Sie sicher?

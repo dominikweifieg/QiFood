@@ -1,0 +1,51 @@
+<%title t('books.index.title') %>
+
+<div class="column wide">
+	<%= simple_format(t('books.index.text'))%>
+</div>
+
+<div class="column wide">
+<table cellspacing="0" cellpadding="0">
+	<thead>
+  <tr>
+    <th><%= t('books.title') %></th>
+    <th><%= t('books.author') %></th>
+    <th><%= t('books.description') %></th>
+    <th><%= t('books.buy') %></th>
+		<% if current_user_in_role? User::EDITOR %>
+		<th></th>
+		<% end %>
+		<% if current_user_in_role? User::ADMIN %>
+		<th></th>
+		<% end %>
+  </tr>
+	</thead>
+	<tbody>
+<% @books.each do |book| %>
+  <tr>
+    <td><%= link_to h(book.title), book %></td>
+    <td><%= authors(book) %></td>
+    <td><%=h(truncate(book.description)) %></td>
+		<td><%=h(book.isbn)%></td>
+    <% if current_user_in_role? User::EDITOR %>
+		<td><%= link_to t('common.edit'), edit_book_path(book) %></td>
+		<% end %>
+		<% if current_user_in_role? User::ADMIN %>
+    <td><%= link_to t('common.destroy'), book, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% end %>
+  </tr>
+<% end %>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="4">
+				<%= will_paginate @books %>
+			</td>
+		</tr>
+	</tfoot>
+</table>
+
+
+<%= link_to t('books.index.new'), new_book_path %>
+
+</div>

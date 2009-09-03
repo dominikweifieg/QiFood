@@ -1,0 +1,66 @@
+<div class="column wide"><%= f.error_messages %></div>
+<div class="column">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+</div>
+<div class="column right">
+    <%= f.label :latin_name %>
+    <%= f.text_field :latin_name %>
+</div>
+<div class="column">
+    <%= f.label :chinese %>
+    <%= f.text_field :chinese %>
+</div>
+<div class="column right">
+	<%= f.label :pinyin %>
+    <%= f.text_field :pinyin %>
+</div>
+<% if @aliment.aliment_photo.new_record? %>
+<div class="column wide">
+<% else %>
+<div class="column">
+<% end %>	
+		<% f.fields_for :aliment_photo do |photo_form| %>
+			<%= photo_form.label :uploaded_data, t('aliment.photo') %>
+			<%= photo_form.file_field :uploaded_data %>
+		<% end %>&nbsp;
+</div>
+<% unless @aliment.aliment_photo.new_record? %>
+<div class="column right">
+			<%= image_tag @aliment.aliment_photo.public_filename(:thumb)%>
+</div>
+<% end %>
+<div class="column">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+</div>
+<div class="column right">
+    <%= label_tag t('aliment.effects') %>
+		<%= text_area_tag :effects, @aliment.effects.map(&:description).join("\n") + "\n", :cols => 40, :rows => 10 %>
+		<div id="suggestions"></div>
+		<%= observe_field :effects, :url => effects_path, :method => :get, :frequency => 0.3, :with => 'q' %>
+</div>
+<div class="column">
+    <%= f.label :savor %>
+    <%= savor_select(true) %>
+</div>
+<div class="column right">
+    <%= f.label :temperature %>
+    <%= temperature_select(true) %>
+</div>
+<div class="column">
+    <%= f.label :savor_tendence %>
+    <%= savor_select(true, true) %>
+</div>
+<div class="column right">
+    <%= f.label :temperature_tendence %>
+    <%= temperature_select(true, true) %>
+</div>
+<div class="column wide">
+		<%= label_tag t('aliment.organs') %>
+		<%= render :partial => 'organ_editor', :locals => {:aliment => @aliment} %>
+</div>
+<div class="column wide">
+		<%= f.label t('aliment.category') %>
+		<%= f.collection_select :category_id, Category.find(:all), :id, :name %>
+</div>

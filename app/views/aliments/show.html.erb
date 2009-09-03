@@ -1,0 +1,70 @@
+<% title h(@aliment.name) %>
+	
+		<div class="column">
+			<h3><%= Aliment.human_attribute_name 'chinese' %></h3>
+			<%=h @aliment.chinese %>
+		</div>
+		<div class="column right">
+			<h3><%= Aliment.human_attribute_name 'pinyin' %></h3>
+			<%=h @aliment.pinyin %>
+		</div>
+	
+  
+		<div class="column">
+			<h3><%= Aliment.human_attribute_name 'savour' %></h3>
+			<%=savor_for @aliment %>
+		</div>
+		<div class="column right">
+			<h3><%= Aliment.human_attribute_name 'temperature' %></h3>
+			<%=temperature_for @aliment %>
+		</div>
+	
+	
+		<div class="column">
+			<h3><%= t('aliment.organs') %></h3>
+			<%= @aliment.organs.map(&:name).join(", ") %>
+		</div>
+		<div class="column right">
+			<h3><%= t('aliment.effects') %></h3>
+			<%= @aliment.effects.map(&:description).join(", ") %>
+		</div>
+	
+		<div class="column wide">
+			<h3><%= Aliment.human_attribute_name 'description' %></h3>
+			<% if @aliment.aliment_photo %>
+				<% div_for @aliment.aliment_photo do %>
+					<%= link_to image_tag(@aliment.aliment_photo.public_filename(:thumb)), @aliment.aliment_photo.public_filename, :rel => 'lightbox', :class => 'plain', :title => @aliment.name%>
+				<% end %>
+			<% end %>
+			<%=simple_format(word_wrap(sanitize(@aliment.description))) if @aliment.description%>
+			</div>
+ 	
+	
+		<div class="column">
+			        <h3><%= t('aliment.category') %></h3>
+							        <%= @aliment.category.name %>
+											    </div>
+
+		<div class="column right">
+			<h3><%= t('aliment.links') %></h3>
+			<%= wikipedia_link_for @aliment %>
+		</div>
+	
+  
+		<div class="column wide">
+			<% if  current_user && (not current_user.aliments.exists?(@aliment.id)) %>
+			<%= link_to t('favorite.add'), favorite_aliments_path(:aliment_id => @aliment.id), :method => :post %> |
+			<% end %>
+			<% if current_user_in_role? User::EDITOR %><%= link_to t('common.edit'), edit_aliment_path(@aliment) %> | <% end %>
+			<%= link_to t('common.back'), aliments_path %>
+		</div>
+	<div	class="comments column wide">
+		<div id="add_comment" class="comment edit">
+			<% if logged_in? %>
+				<%= link_to_remote(t('comment.add'), :url => new_aliment_comment_path(@aliment), :method => :get) %>
+			<%else%>
+				<%= t('comment.not_logged_in')%>
+			<%end%>
+		</div>
+		<%= render :partial => 'comments/index', :locals => {:commentable => @aliment} %>
+	</div>

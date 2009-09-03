@@ -1,0 +1,45 @@
+<div>
+	<% form_tag(aliments_path, :method => "get", :id => "effect_finder") do %>
+		<%= hidden_field_tag :sort_by, params[:sort_by] || 'name' %>
+		<%= hidden_field_tag :sort_dir, params[:sort_dir] || 'ASC' %>
+		<div class="column wide">
+			<%= render :partial => 'effect', :collection => @effects %>
+		</div>
+		<div class="column wide">
+			<fieldset id="match_mode" name="Effect match mode">
+				<hr />
+				<label for="effects_filter"><%= t('aliment.index.effect_filter')%></label>
+				<input type="text" id="effects_filter" name="effects_filter" />  <a href="javascript:$('effects_filter').clear();" class="plain"><%= t('aliment.index.effect_filter_clear') %></a><br />
+				<script type="text/javascript">
+				//<![CDATA[
+				new Form.Element.Observer('effects_filter', 0.3, function(element, value) { 
+					$$('div.effect_selector input').each( function(effect){
+						if($F('effects_filter') == '')
+						{
+							effect.parentNode.show();
+						}
+						else
+						{
+							if( ! effect.id.toLowerCase().match($F('effects_filter').toLowerCase()))
+							{
+								effect.parentNode.hide();
+							}
+							else
+							{
+								effect.parentNode.show();
+							}
+						}
+					}); });
+				//]]>
+				</script>
+				<%= check_box_tag 'match_all', 'all', true, :class => 'xxs' %> <%= t('aliment.index.match_all') %><br />
+				<%= check_box_tag 'match_any', 'any', false, :class => 'xxs' %> <%= t('aliment.index.match_any') %>
+			</fieldset>
+		</div>
+		<div class="column wide">
+			<fieldset class="buttons">
+				<%= submit_tag("Find") %>
+			</fieldset>
+		</div>
+	<% end -%>
+</div><br />

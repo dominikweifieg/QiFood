@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  latin_name: MyString
+  pinyin: MyString
+  chinese: MyString
+  description: MyString
+  savor: 1
+  savor_tendence: 1
+  temperature: 1
+  temperature_tendence: 1
+
+two:
+  name: MyString
+  latin_name: MyString
+  pinyin: MyString
+  chinese: MyString
+  description: MyString
+  savor: 1
+  savor_tendence: 1
+  temperature: 1
+  temperature_tendence: 1

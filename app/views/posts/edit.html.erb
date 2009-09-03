@@ -1,0 +1,12 @@
+<% title t('post.edit.title') %>
+<% form_for([@user, @post]) do |f| %>
+<%= render :partial => 'editor' , :locals => {:f => f}%>
+
+<div class="column wide">
+	<fieldset class="buttons">
+		<%= f.submit t('common.update') %>
+	</fieldset>
+	<%= link_to t('common.back'), user_posts_path(@user) %> |
+	<%= link_to t('common.show'), user_posts_path(@user) %>
+</div>
+<% end 	%>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>sIFR Helper - <%= Inflector.humanize(controller.action_name) %></title>
+<style type="text/css" media="screen">
+body {
+	margin: 0px;
+	padding: 20px;
+	background-color: #ffffff;
+	font-family: verdana, sans-serif;
+	font-size: 80%;
+}
+
+.font_name {
+	font-family: courier, fixed;
+}
+
+table {
+	border: 1px solid #cccccc;
+}
+
+th {
+	padding: 5px;
+	background-color: #bbbbbb;
+	color: #ffffff;
+	border: 1px solid #cccccc;
+}
+
+td {
+	padding: 10px;
+	border: 1px solid #f0f0f0;
+}
+
+.header {
+	font-size: 120%;
+	padding: 10px;
+	background-color: #001155;
+	color: #ffffff;
+}
+.section {
+	padding-left: 30px;
+	margin-bottom: 40px;
+}
+
+</style>
+<%= sifr_head_generator %>
+</head>
+<body>
+<%= @content_for_layout %>
+<%= sifr_body_generator %>
+</body>
+</html>

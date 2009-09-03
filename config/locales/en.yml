@@ -1,0 +1,18 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+ activerecord:
+    models:
+      aliment: Lebensmittel
+    attributes:
+      aliment:
+        name: Name
+        latin_name: bot.
+        pinyin: Pinyin
+        chinese: Chinesisch
+        description: Beschreibung
+        savor: Geschmack
+        savor_tendence: Geschmackstendenz
+        temperature: Temperatur
+        temperature_tendence: Temperaturetendenz

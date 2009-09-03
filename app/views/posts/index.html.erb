@@ -1,0 +1,31 @@
+<% if @user 
+	title t('post.index.title_user', :user_name => @user.login) 
+else
+	title t('post.index.title')
+end
+%>
+<div class="column wide">
+	<table cellspacing="0">
+		<thead>
+			<th><%=t('post.title')%></th>
+			<th><%=t('post.body')%></th>
+			<th><%=t('post.created_at')%></th>
+			<% colspan = 3 %>
+			<% unless @user %><% colspan = 4 %><th><%=t('post.author')%><% end %>
+		</thead>
+		<tbody>
+			<%= render :partial => 'post', :collection => @posts %>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="<%= colspan %>">
+					<%= will_paginate @posts %>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+	
+	<% if logged_in? %>
+	<%= link_to t('post.index.new'), new_user_post_path(current_user) %>
+	<% end %>
+</div>

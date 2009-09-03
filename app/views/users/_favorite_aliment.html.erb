@@ -1,0 +1,6 @@
+<% div_for favorite_aliment do %>
+  <%= link_to favorite_aliment.aliment.name, aliment_path(favorite_aliment.aliment) %> 
+  <% if favorite_aliment.user == current_user %>
+  <%= link_to "(" + t('common.destroy') + ")", favorite_aliment, :confirm => t('common.are_you_sure'), :method => :delete %>
+  <% end %>
+<% end %>

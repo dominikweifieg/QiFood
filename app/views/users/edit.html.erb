@@ -1,0 +1,10 @@
+<%title t('user.edit.title')%>
+<% form_for( @user, :html => { :multipart => true }) do |f| -%>
+<%= render :partial => '_editor', :locals => {:f => f}%>
+
+<div class="column wide">
+	<fieldset class="buttons">
+		<%= submit_tag t('common.update') %>
+	</fieldset>
+</div>
+<% end -%>

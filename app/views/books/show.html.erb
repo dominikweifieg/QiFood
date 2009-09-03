@@ -1,0 +1,25 @@
+<%title @book.title %>
+
+<%= render :partial => 'amazon' %>
+<div class="column">
+  <h3><%= t('books.description')%>:</h3>
+  <%=h @book.description %>
+</div>
+
+<div class="column">
+	<h3><%= t('books.author')%></h3>
+	<%= authors(@book) %>
+</div>	
+
+<div class="column">
+	<h3><%= t('books.isbn')%></h3>
+  <%=h @book.isbn %>
+</div>
+
+
+<div class="column wide">
+<% if current_user_in_role? User::EDITOR %>
+<%= link_to t('common.edit'), edit_book_path(@book) %> |
+<% end %>
+<%= link_to t('common.back'), books_path %>
+</div>

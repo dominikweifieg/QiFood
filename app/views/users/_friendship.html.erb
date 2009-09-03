@@ -1,0 +1,4 @@
+<%= div_for friendship do %>
+	<%= link_to h(friendship.friend.first_name) + " " + h(friendship.friend.name), friend %>
+	<%= link_to "(" + t('common.destroy') + ")", friendship, :confirm => t('common.are_you_sure'), :method => :delete %>
+<% end %>

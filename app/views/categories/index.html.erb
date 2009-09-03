@@ -1,0 +1,14 @@
+<%title t('categories.index.title') %>
+<div class="column wide"><%= t('categories.index.description')%></div>
+<div class="column wide">
+	<table cellspacing="0">
+		<tr>
+			<th><%= t('categories.name')%></th>
+			<th><%= t('categories.description')%></th>
+			<% if current_user_in_role? User::EDITOR %>
+			<th></th>
+			<% end %>
+			<%= render @categories %>
+		</tr>
+	</table>
+</div>

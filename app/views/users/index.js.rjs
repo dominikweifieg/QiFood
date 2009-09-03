@@ -1,0 +1,9 @@
+if @users.empty?
+	page.replace_html 'suggestions', ''
+else
+	page.replace_html 'suggestions', @users.map(){ |user|
+		link_to_function(user.first_name + " " + user.name, nil) do | p | 
+			p.call('add_author', user.first_name + " " + user.name, user.id)
+		end
+	}.join(', ')
+end

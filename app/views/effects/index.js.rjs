@@ -1,0 +1,9 @@
+if @effects.empty?
+	page.replace_html 'suggestions', ''
+else
+	page.replace_html 'suggestions', @effects.map(){ |effect|
+		link_to_function(effect.description, nil) do | p | 
+			p.call('add_effect', effect.description, effect.id)
+		end
+	}.join(', ')
+end
