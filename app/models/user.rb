@@ -1,7 +1,9 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
-  acts_as_authentic
+  acts_as_authentic do |c|
+    c.openid_required_fields = [:nickname, :email]
+  end
 
   has_one :profile
   has_one :user_photo
@@ -62,6 +64,13 @@ class User < ActiveRecord::Base
 
   def to_param
     "#{id}_#{login.parameterize}"
+  end
+  
+  private
+
+  def map_openid_registration(registration)
+    self.email = registration["email"] if email.blank?
+    self.login = registration["nickname"] if login.blank?
   end
 
 end

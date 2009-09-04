@@ -27,15 +27,17 @@ class UsersController < ApplicationController
   end
  
   def create
-    logout_keeping_session!
     @user = User.new(params[:user])
-    success = @user && @user.save
-    if success && @user.errors.empty?
-      redirect_back_or_default('/')
-      flash[:notice] = t('user.controller.create.success')
-    else
-      flash[:error]  = t('user.controller.create.failure')
-      render :action => 'new'
+    @user.save do |result|
+      if result
+        flash[:notice] = t('user.controller.create.success')
+        redirect_to root_url
+      else
+        @user.user_photo ||= UserPhoto.new
+        @user.profile ||= Profile.new
+        flash[:error]  = t('user.controller.create.failure')
+        render :action => 'new'
+      end
     end
   end
   
@@ -59,12 +61,15 @@ class UsersController < ApplicationController
       flash[:error] = t('user.controller.edit.not_logged_in')
       redirect_to(login_path)
     end
-    if @user.update_attributes(params[:user])
-      flash[:notice] = t('user.controller.update.success')
-      render :action => 'show'
-    else
-      flash[:error] = t('user..controller.update.failure')
-      render :action => 'edit'
+    @user.attributes = params[:user]
+    @user.save do |result|
+      if result
+        flash[:notice] = t('user.controller.update.success')
+        render :action => 'show'
+      else
+        flash[:error] = t('user..controller.update.failure')
+        render :action => 'edit'
+      end
     end
   end
   

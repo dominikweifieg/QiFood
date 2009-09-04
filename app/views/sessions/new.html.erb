@@ -9,6 +9,12 @@
 <%= f.label :password, t('user.password') %>
 <%= f.password_field :password %>
 
+<h2><%=t('session.new.use_openid')%></h2>
+
+<%= f.label :openid_identifier, t('user.openid_identifier')%>
+<%= f.text_field :openid_identifier %>
+<%= link_to t('user.open_id_help'), t('user.open_id_help_url') %>
+
 <div class="column wide">
 	<fieldset class="buttons">
 		<%= submit_tag t('user.login') %>

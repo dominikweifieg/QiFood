@@ -8,12 +8,14 @@ class SessionsController < ApplicationController
 
   def create
     @user_session = UserSession.new(params[:user_session])
-    if @user_session.save
-      flash[:notice] = t('session.login.success')
-      redirect_to root_url
-    else
-      flash[:error] = t('session.login.failure')
-      render :action => 'new'
+    @user_session.save do |result|
+      if result
+        flash[:notice] = t('session.login.success')
+        redirect_to root_url
+      else
+        flash[:error] = t('session.login.failure')
+        render :action => 'new'
+      end
     end
   end
 

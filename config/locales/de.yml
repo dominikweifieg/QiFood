@@ -37,12 +37,21 @@ de:
           attributes:
             email: 
               taken: Die angegebene Email-Adresse wird schon von einem anderen Benutzer verwendet. 
+              too_short: Die angegebene Email-Adresse ist zu kurz.
             password:
               blank: Es wurde kein Passwort angegeben
               too_short: Das angegebene Passwort ist zu kurz
               confirmation: "Die zweite Angabe des Passwortes stimmt nicht mit der ersten überein"
             password_confirmation: 
               blank: Das Password wurde nicht zweimal angegeben
+            login:
+              too_short: "Das von Ihnen gew&auml;hlte Login ist zu kurz"
+          openid:
+            missing: "Es tut uns leid, aber der OpenID Server konnte nicht gefunden werden"#"Sorry, the OpenID server couldn't be found"
+            invalid: "Es tun uns leid, aber die angegebene OpenID scheint nicht valid zu sein"#"Sorry, but this does not appear to be a valid OpenID"
+            canceled: "Die OpenID-Verifizierung wurde abgebrochen"#"OpenID verification was canceled"
+            failed: "Die OpenID-Verifizierung schlug fehl"#"OpenID verification failed"
+            setup_needed: "Die OpenID-Verifizierung muss aufgesetzt werden"#"OpenID verification needs setup"
         post:
           attributes:
             title:
@@ -148,6 +157,8 @@ de:
       success: Sie sind nun eingelogged
     logout:
       success: Sie sind nun ausgelogged
+    new:
+      use_openid: Oder verwenden Sie OpenID
   user:
     users: Benutzer
     email: Email
@@ -155,6 +166,9 @@ de:
     name: Nachname
     first_name: Vorname
     password_confirmation: Passwort bitte ein zweites Mal angeben
+    openid_identifier: OpenID URL
+    open_id_help: "(?)"
+    open_id_help_url: todo
     favorite_aliments: Meine favorisierten Lebensmittel
     friends: Meine Freunde
     login: Login
@@ -168,6 +182,7 @@ de:
       title: Anmelden
       required_information: "Notwendige Informationen:"
       optional_information: "Optionale Informationen:"
+      open_id: "Open ID:"
       sign_up: Anmelden
     edit:
       title: Profil editieren
@@ -189,7 +204,10 @@ de:
         not_logged_in: "Bitte loggen Sie sich ein."
       update:
         success: Ihr Profil wurde erfolgreich gespeichert.
-        failure: Ihr Profile konnte nicht gespeichert werden.
+        failure: Ihr Profil konnte nicht gespeichert werden.
+      create: 
+        failure: Es gab Probleme beim Anlegen Ihres Profils
+        success: Sie sind nun erfolgreich angemeldet.
   profile: 
     birthday: Geburtstag
     about: "&Uuml;ber mich"
