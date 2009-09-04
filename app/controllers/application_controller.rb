@@ -47,10 +47,8 @@ class ApplicationController < ActionController::Base
   end
   
   def current_user_session
-    logger.info { "current user session #{@current_user_session}" }
     return @current_user_session if defined?(@current_user_session)
     @current_user_session = UserSession.find
-    logger.info { "current user session #{@current_user_session}" }
   end
   
   def current_user

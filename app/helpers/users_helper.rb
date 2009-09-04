@@ -90,8 +90,5 @@ module UsersHelper
     end
   end
 
-	def current_user_in_role?(role)
-		current_user.role & role == role if current_user
-	end	
 
 end

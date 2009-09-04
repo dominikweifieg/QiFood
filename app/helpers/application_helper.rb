@@ -29,5 +29,11 @@ module ApplicationHelper
     end
   end
   
+	def current_user_in_role?(role)
+	  return false unless current_user
+		current_user.role & role == role
+	end	
+
+  
 end
   

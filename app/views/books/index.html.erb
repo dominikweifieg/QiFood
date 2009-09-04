@@ -45,7 +45,7 @@
 	</tfoot>
 </table>
 
-
+<% if current_user_in_role? User::EDITOR %>
 <%= link_to t('books.index.new'), new_book_path %>
-
+<% end %>
 </div>

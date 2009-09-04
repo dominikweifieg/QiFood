@@ -33,5 +33,6 @@
 </div>
 
 <br />
-
+<% if current_user_in_role? User::EDITOR %>
 <%= link_to t('effects.index.new'), new_effect_path %>
+<% end %>
