@@ -19,7 +19,7 @@
 					<div id="logo_alt"><h1>QiFood</h1></div>
 					<h2 id="mantra" class="font">Die Mitte n&auml;hren</h2>
 					<div class="navigation">
-						<% if logged_in? %>
+						<% if current_user %>
 							<%= link_to t('user.logged_in_as', :user_name => current_user.login), user_path(current_user) %>
 							<%= link_to t('user.logout'), logout_path %>
 						<% else %>
@@ -44,7 +44,7 @@
 				<li><a href="bar"><div><%= t('navigation.practitioners') %></div></a></li>
 			</ul>
 		<li><% navigation_link_to(users_path) do %><div><%= t('navigation.users') %></div><% end %></li>
-			<% if logged_in? %><ul>
+			<% if current_user %><ul>
 				<li><% navigation_link_to(user_path(current_user)) do %><div><%= t('navigation.profile') %></div><% end %></li>
 			</ul><% end %>
 		

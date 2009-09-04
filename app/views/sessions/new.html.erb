@@ -1,15 +1,13 @@
 <%title t('user.login')%>
 
-<% form_tag session_path do -%>
+<% form_for @user_session, :url => {:controller => 'sessions', :action => 'create'} do |f| -%>
 <div class"column">
-<%= label_tag 'login' , t('user.login')%>
-<%= text_field_tag 'login', @login %>
+<%= f.error_messages %>	
+<%= f.label :login , t('user.login')%>
+<%= f.text_field :login %>
 
-<%= label_tag 'password', t('user.password') %>
-<%= password_field_tag 'password', nil %>
-
-<%= label_tag 'remember_me', t('user.remember') %>
-<%= check_box_tag 'remember_me', '1', @remember_me %>
+<%= f.label :password, t('user.password') %>
+<%= f.password_field :password %>
 
 <div class="column wide">
 	<fieldset class="buttons">

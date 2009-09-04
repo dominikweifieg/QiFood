@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  include AuthenticatedSystem
   
   before_filter :fix_birthday, :only => [:create, :update]
   
@@ -24,6 +23,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
 		@user.profile = Profile.new
+		@user.user_photo = UserPhoto.new
   end
  
   def create
@@ -36,23 +36,6 @@ class UsersController < ApplicationController
     else
       flash[:error]  = t('user.controller.create.failure')
       render :action => 'new'
-    end
-  end
-
-  def activate
-    logout_keeping_session!
-    user = User.find_by_activation_code(params[:activation_code]) unless params[:activation_code].blank?
-    case
-    when (!params[:activation_code].blank?) && user && !user.active?
-      user.activate!
-      flash[:notice] = t('user.controller.activate.success')
-      redirect_to '/login'
-    when params[:activation_code].blank?
-      flash[:error] = t('user.controller.activate.code_missing')
-      redirect_back_or_default('/')
-    else 
-      flash[:error]  = t('user.controller.activate.error')
-      redirect_back_or_default('/')
     end
   end
   
@@ -88,7 +71,6 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @user.profile ||= Profile.new
-    logger.info { @user.profile }
     respond_to do |wants|
       wants.html {  }
     end 

@@ -2,8 +2,8 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-  include AuthenticatedSystem	
 	helper :all # include all helpers, all the time
+	helper_method :current_user, :logged_in?
 
   # See ActionController::RequestForgeryProtection for details
   # Uncomment the :secret if you're not using the cookie session store
@@ -42,7 +42,29 @@ class ApplicationController < ActionController::Base
     text
   end
   
-  private 
+  def logged_in?
+    current_user
+  end
+  
+  def current_user_session
+    logger.info { "current user session #{@current_user_session}" }
+    return @current_user_session if defined?(@current_user_session)
+    @current_user_session = UserSession.find
+    logger.info { "current user session #{@current_user_session}" }
+  end
+  
+  def current_user
+    return @current_user if defined?(@current_user)
+    @current_user = current_user_session && current_user_session.record
+  end
+  
+  def login_required
+    unless current_user
+      flash[:error] = t('user.login_required')
+      redirect_to login_path
+    end
+  end
+
 	def check_editor_access
 		unless current_user.role & User::EDITOR == User::EDITOR
 			flash[:error] = t('user.missing_rights')

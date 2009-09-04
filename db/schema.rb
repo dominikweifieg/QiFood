@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090831100156) do
+ActiveRecord::Schema.define(:version => 20090903143423) do
 
   create_table "aliment_photos", :force => true do |t|
     t.integer  "parent_id"
@@ -178,8 +178,8 @@ ActiveRecord::Schema.define(:version => 20090831100156) do
     t.string   "name",                      :limit => 100, :default => ""
     t.string   "first_name",                :limit => 100, :default => ""
     t.string   "email",                     :limit => 100
-    t.string   "crypted_password",          :limit => 40
-    t.string   "salt",                      :limit => 40
+    t.string   "crypted_password",          :limit => 120
+    t.string   "password_salt",             :limit => 120
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_token",            :limit => 40
@@ -187,6 +187,14 @@ ActiveRecord::Schema.define(:version => 20090831100156) do
     t.string   "activation_code",           :limit => 40
     t.datetime "activated_at"
     t.integer  "role",                                     :default => 0
+    t.string   "persistence_token"
+    t.integer  "login_count",                              :default => 0,  :null => false
+    t.integer  "failed_login_count",                       :default => 0,  :null => false
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string   "current_login_ip"
+    t.string   "last_login_ip"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true

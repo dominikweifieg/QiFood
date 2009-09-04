@@ -22,7 +22,7 @@ module ApplicationHelper
 	end
 	
 	def blog_auto_discovery_link_tag
-	  if @user
+	  if @user && !@user.new_record?
 	    auto_discovery_link_tag(:atom, user_posts_path(@user))
     else
       auto_discovery_link_tag(:atom, posts_path)
