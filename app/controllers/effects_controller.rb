@@ -1,7 +1,6 @@
 class EffectsController < ApplicationController
   
   before_filter :login_required, :check_editor_access, :except => [:index, :show]
-  
   # GET /effects
   # GET /effects.xml
   def index

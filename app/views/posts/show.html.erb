@@ -5,7 +5,7 @@
 </div>
 <div class="column wide">
 	<% if @user %><%= link_to t('common.back'), user_posts_path(@user) %><% else %><%= link_to t('common.back'), posts_path%><% end %>
-	<% if ( (@user == current_user) || (current_user_in_role? User::ADMIN) ) %> | <%= link_to t('common.edit'), edit_user_post_path(@user, @post) %><% end %>
+	<% if @user == current_user %> | <%= link_to t('common.edit'), edit_user_post_path(@user, @post) %><% end %>
 </div>
 <div	class="comments column wide">
 	<div id="add_comment" class="comment edit">

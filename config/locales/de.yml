@@ -60,7 +60,7 @@ de:
               blank: Es wurde kein Inhalt eingetragen
             permalink:
               taken: "Es konnte kein Link f&uuml;r Ihren Blog-Eintrag erzeugt werden, bitte &auml;ndern Sie den Titel"
-  main_title: QiFood.de
+  main_title: QiFood
   aliment:
     title: Lebensmittel
     savor: Sapor
