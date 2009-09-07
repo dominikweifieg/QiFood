@@ -42,7 +42,11 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = current_user
+    unless current_user.admin?
+      @user = current_user
+    else
+      @user = User.find(params[:id])
+    end
     if @user
       @user.profile ||= Profile.new
       @user.user_photo ||= UserPhoto.new
@@ -56,7 +60,11 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = current_user
+    unless current_user.admin?
+      @user = current_user
+    else
+      @user = User.find(params[:id])
+    end
     unless @user
       flash[:error] = t('user.controller.edit.not_logged_in')
       redirect_to(login_path)
@@ -67,7 +75,9 @@ class UsersController < ApplicationController
         flash[:notice] = t('user.controller.update.success')
         render :action => 'show'
       else
-        flash[:error] = t('user..controller.update.failure')
+        flash[:error] = t('user.controller.update.failure')
+        @user.profile ||= Profile.new
+        @user.user_photo ||= UserPhoto.new
         render :action => 'edit'
       end
     end
@@ -83,8 +93,10 @@ class UsersController < ApplicationController
   
   private 
   def fix_birthday
-    params[:user][:profile_attributes]["birthday(3i)"] = params[:profile]["birthday(3i)"] if params[:profile]["birthday(3i)"]
-    params[:user][:profile_attributes]["birthday(2i)"] = params[:profile]["birthday(2i)"] if params[:profile]["birthday(2i)"]
-    params[:user][:profile_attributes]["birthday(1i)"] = params[:profile]["birthday(1i)"] if params[:profile]["birthday(1i)"]
+    if params[:profile]
+      params[:user][:profile_attributes]["birthday(3i)"] = params[:profile]["birthday(3i)"] if params[:profile]["birthday(3i)"]
+      params[:user][:profile_attributes]["birthday(2i)"] = params[:profile]["birthday(2i)"] if params[:profile]["birthday(2i)"]
+      params[:user][:profile_attributes]["birthday(1i)"] = params[:profile]["birthday(1i)"] if params[:profile]["birthday(1i)"]
+    end
   end
 end

@@ -1,5 +1,4 @@
 <% title t('post.new.title')%>
-<h2><%=t('post.new.title')%></h2>
 <% form_for([@user, @post]) do |f| %>
 <%= render :partial => 'editor' , :locals => {:f => f}%>
 

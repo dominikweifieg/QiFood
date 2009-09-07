@@ -168,7 +168,7 @@ de:
     password_confirmation: Passwort bitte ein zweites Mal angeben
     openid_identifier: OpenID URL
     open_id_help: "(?)"
-    open_id_help_url: todo
+    open_id_help_url: http://de.wikipedia.org/wiki/OpenID
     favorite_aliments: Meine favorisierten Lebensmittel
     friends: Meine Freunde
     login: Login
