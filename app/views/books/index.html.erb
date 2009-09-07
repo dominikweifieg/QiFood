@@ -26,7 +26,7 @@
     <td><%= link_to h(book.title), book %></td>
     <td><%= authors(book) %></td>
     <td><%=h(truncate(book.description)) %></td>
-		<td><%=h(book.isbn)%></td>
+		<td><%= render :partial => 'amazon_text', :locals => {:isbn => book.isbn }%></td>
     <% if current_user_in_role? User::EDITOR %>
 		<td><%= link_to t('common.edit'), edit_book_path(book) %></td>
 		<% end %>
