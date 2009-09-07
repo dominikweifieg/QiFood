@@ -1,0 +1,63 @@
+<div class="column wide"><%= f.error_messages %></div>
+<div class="column">
+	<fieldset id="required_sign_up_information">
+		<legend><%= t('user.new.required_information')%></legend>
+		<%= label_tag 'login', t('user.login') %>
+		<%= f.text_field :login, :disabled => (not @user.new_record?) %>
+
+		<%= label_tag 'email', t('user.email') %>
+		<%= f.text_field :email %>
+		<% if @user.openid_identifier.blank? %>
+		<% if @user.new_record? %>
+		<%= label_tag 'password', t('user.password') %>
+		<%= f.password_field :password %>
+
+		<%= label_tag 'password_confirmation', t('user.password_confirmation') %>
+		<%= f.password_field :password_confirmation %>
+		<% end 	%>
+	</fieldset>
+		<legend><%= t('user.new.open_id')%> , <%= link_to t('user.open_id_help'), t('user.open_id_help_url'), :popup => true%></legend>
+	<fieldset id="openid_signup">
+		<% end %>
+		<%= f.label :openid_identifier, t('user.openid_identifier') %>
+		<%= f.text_field :openid_identifier %>
+	</fieldset>
+	<br/>
+	<% unless @user.user_photo.new_record? %>
+	<%= image_tag @user.user_photo.public_filename(:thumb)%>
+	<% end %>
+</div>
+<div class="column right">
+	<fieldset id="optional_signup_information" class="column">
+		<legend><%= t('user.new.optional_information')%></legend>
+		<%= f.label :name, t('user.name') %>
+		<%= f.text_field :name %>
+		
+		<%= f.label :first_name, t('user.first_name') %>
+		<%= f.text_field :first_name %>
+		
+		<% f.fields_for :user_photo do |photo_form| %>
+			<%= photo_form.label :uploaded_data, t('profile.photo') %>
+			<%= photo_form.file_field :uploaded_data %>&nbsp;
+	  <% end %>
+		
+		<% f.fields_for :profile do |profile_form| %>
+			<%= profile_form.label :quote, t('profile.quote')%>
+			<%= profile_form.text_field :quote %>
+			<%= profile_form.label :birthday, t('profile.birthday') %>
+			<% @profile = @user.profile %>
+			<%= date_select :profile, :birthday, {:order => [:day, :month, :year], :use_month_numbers => true, :start_year => (Time.now.year - 100),
+				:prompt => {:day => t('common.day'), :month => t('common.month'), :year => t('common.year') } } , {:class => 'date'} %>
+			<%= profile_form.label :about, t('profile.about')%>
+			<%= profile_form.text_area :about %>
+		<% end %>
+	</fieldset>
+</div>
+<% if current_user_in_role? User::ADMIN %>
+<div class="column wide">
+	<%= f.radio_button :role, User::GUEST %>Guest
+	<%= f.radio_button :role, User::USER %>User
+	<%= f.radio_button :role, User::EDITOR %>Editor
+	<%= f.radio_button :role, User::ADMIN %>Admin
+</div>	
+<% end %>
