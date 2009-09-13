@@ -63,3 +63,14 @@ input#user_openid_identifier, input#user_session_openid_identifier {
   padding-left: 18px;
   width: 342px;
 }
+
+div#attribution
+{
+	z-index: 50;
+	position: absolute;
+	top: 300px;
+	left: 30%;
+	border: 2px solid #569730;
+	padding: 24px;
+	background-color: #DFD65F;
+}

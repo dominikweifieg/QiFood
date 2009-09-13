@@ -23,11 +23,15 @@
 		<% f.fields_for :aliment_photo do |photo_form| %>
 			<%= photo_form.label :uploaded_data, t('aliment.photo') %>
 			<%= photo_form.file_field :uploaded_data %>
-		<% end %>&nbsp;
+		<% end %>
+		<%= f.label :photo_attribution %>
+		<%= f.text_field :photo_attribution %>
 </div>
 <% unless @aliment.aliment_photo.new_record? %>
 <div class="column right">
+			<%= f.label :current_photo %>
 			<%= image_tag @aliment.aliment_photo.public_filename(:thumb)%>
+			&nbsp;
 </div>
 <% end %>
 <div class="column">

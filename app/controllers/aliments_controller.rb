@@ -64,6 +64,10 @@ class AlimentsController < ApplicationController
   def create
     @aliment = Aliment.new(params[:aliment])
 		
+		unless params[:organs].blank?
+			@aliment.organs = Organ.find(params[:organs])
+		end
+		
 		update_effects
 
     respond_to do |format|
@@ -85,7 +89,7 @@ class AlimentsController < ApplicationController
 
 		update_effects
 
-		unless params[:organs].empty?
+		unless params[:organs].blank?
 			@aliment.organs = Organ.find(params[:organs])
 		end
 

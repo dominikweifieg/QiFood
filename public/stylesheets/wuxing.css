@@ -75,6 +75,8 @@ h2
 h3 
 {
   font-size: 118%;
+	color: #666666;
+	border-bottom: 1px dotted #CCCCCC;
 }
 
 div#main

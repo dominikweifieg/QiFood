@@ -34,6 +34,16 @@
 			<% if @aliment.aliment_photo %>
 				<% div_for @aliment.aliment_photo do %>
 					<%= link_to image_tag(@aliment.aliment_photo.public_filename(:thumb)), @aliment.aliment_photo.public_filename, :rel => 'lightbox', :class => 'plain', :title => @aliment.name%>
+					<% unless @aliment.photo_attribution.blank? %>
+					  <br/>
+						<%= link_to_function image_tag('cc.png', :style=>"border:none;"), :class => 'plain' do |page| 
+							page[:attribution].toggle()
+						end %>
+						<div id="attribution" style="display:none" onclick="javascript:$('attribution').toggle()">
+							<h3><%= t('aliment.photo_attribution')%></h3>
+							<%= sanitize @aliment.photo_attribution %>
+						</div>
+					<% end %>
 				<% end %>
 			<% end %>
 			<%=simple_format(word_wrap(sanitize(@aliment.description))) if @aliment.description%>

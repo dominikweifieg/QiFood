@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090904094519) do
+ActiveRecord::Schema.define(:version => 20090911121005) do
 
   create_table "aliment_photos", :force => true do |t|
     t.integer  "parent_id"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20090904094519) do
     t.datetime "updated_at"
     t.integer  "category_id",                         :default => 14, :null => false
     t.string   "plural_name"
+    t.string   "photo_attribution",    :limit => 512
   end
 
   create_table "authorships", :force => true do |t|

@@ -1,0 +1,12 @@
+<tr class="<% if book_counter % 2 == 0 %>even<% else %>odd<% end %>">
+    <td><%= link_to h(book.title), book %></td>
+    <td><%= authors(book) %></td>
+    <td><%=h(truncate(book.description)) %></td>
+		<td><%= render :partial => 'amazon_text', :locals => {:isbn => book.isbn }%></td>
+    <% if current_user_in_role? User::EDITOR %>
+		<td><%= link_to t('common.edit'), edit_book_path(book) %></td>
+		<% end %>
+		<% if current_user_in_role? User::ADMIN %>
+    <td><%= link_to t('common.destroy'), book, :confirm => 'Are you sure?', :method => :delete %></td>
+		<% end %>
+  </tr>

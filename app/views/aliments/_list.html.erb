@@ -3,7 +3,6 @@
 	<thead>
 	<tr>
 		<th><%=  Aliment.human_attribute_name 'name' %><%= render :partial => 'sorter', :locals => {:value => 'name'}%></th> 
-		<th><%= Aliment.human_attribute_name 'latin_name'%><%= render :partial => 'sorter', :locals => {:value => 'latin_name'}%></th>
 		<th><%= Aliment.human_attribute_name 'pinyin'%><%= render :partial => 'sorter', :locals => {:value => 'pinyin'}%></th>
 		<th><%= Aliment.human_attribute_name 'chinese'%><%= render :partial => 'sorter', :locals => {:value => 'chinese'}%></th>
 		<th><%= t('aliment.savor') %><%= render :partial => 'sorter', :locals => {:value => 'savor'}%></th>
