@@ -15,6 +15,9 @@ class User < ActiveRecord::Base
   has_many :friends, :through => :friendships
   
   has_many :posts
+  
+  has_one :location, :as => :locatable
+  acts_as_mappable :through => :location
 
 	can_flag
 
@@ -31,7 +34,7 @@ class User < ActiveRecord::Base
   #validates_uniqueness_of   :email
   #validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
 
-  accepts_nested_attributes_for :profile, :user_photo, :allow_destroy => true
+  accepts_nested_attributes_for :profile, :user_photo, :location, :allow_destroy => true
 
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation

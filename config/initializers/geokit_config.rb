@@ -1,8 +1,8 @@
 if defined? Geokit
 
 	# These defaults are used in Geokit::Mappable.distance_to and in acts_as_mappable
-	Geokit::default_units = :miles
-	Geokit::default_formula = :sphere
+	Geokit::default_units = :kms
+	Geokit::default_formula = :flat #:sphere
 
 	# This is the timeout value in seconds to be used for calls to the geocoder web
 	# services.  For no timeout at all, comment out the setting.  The timeout unit
@@ -21,12 +21,12 @@ if defined? Geokit
 	# This is your yahoo application key for the Yahoo Geocoder.
 	# See http://developer.yahoo.com/faq/index.html#appid
 	# and http://developer.yahoo.com/maps/rest/V1/geocode.html
-	Geokit::Geocoders::yahoo = 'REPLACE_WITH_YOUR_YAHOO_KEY'
+	Geokit::Geocoders::yahoo = '.7Z5RAbV34E_BP59uD7gY5waolF2YVplAoBNN97BlEJRP_6MuARfJEU2j7N2J9X71g8aaYk-'
     
 	# This is your Google Maps geocoder key. 
 	# See http://www.google.com/apis/maps/signup.html
 	# and http://www.google.com/apis/maps/documentation/#Geocoding_Examples
-	Geokit::Geocoders::google = 'REPLACE_WITH_YOUR_GOOGLE_KEY'
+	Geokit::Geocoders::google = 'ABQIAAAAfAWI3PkWqXLr0Kb-u0SkjhR38ltqxKo7EspKaAsk8Dbmki6ohRTyTKAFZG5XGpMBkvYWogTdobHJPA'
     
 	# This is your username and password for geocoder.us.
 	# To use the free service, the value can be set to nil or false.  For 
@@ -52,7 +52,7 @@ if defined? Geokit
 	# Be aware that there are Terms of Use restrictions on how you can use the 
 	# various geocoders.  Make sure you read up on relevant Terms of Use for each
 	# geocoder you are going to use.
-	Geokit::Geocoders::provider_order = [:google, :us]
+	Geokit::Geocoders::provider_order = [:google, :yahoo, :us, :ca]
 
 	# The IP provider order. Valid symbols are :ip,:geo_plugin.
 	# As before, make sure you read up on relevant Terms of Use for each
