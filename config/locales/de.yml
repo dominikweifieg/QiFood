@@ -87,6 +87,8 @@ de:
     effects: Wirkung
     organs: Zielorgane
     photo: Photo
+    photo_attribution: "Bestimmte Rechte an dem Photo von {{aliment}} sind vorbehalten"
+    photo_attribution_help: "Dieses Photo ist durch eine Creative Commons Lizenz verf&uuml;gbar gemacht. Klicken Sie auf das (CC) Logo, um die Links zu der Lizenz und dem Urheber darzustellen."
     new:
       title: Neues Lebensmittel
       create: Anlegen

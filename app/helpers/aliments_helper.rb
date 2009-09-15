@@ -55,4 +55,8 @@ module AlimentsHelper
 		)
 	end
 
+  def fix_cc_links(attribution)
+    attribution.gsub(/href/im, "target='_cc' href").gsub!(/">CC/im, "deed.#{I18n.locale}\">CC")
+  end
+  
 end

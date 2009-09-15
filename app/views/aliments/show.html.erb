@@ -36,12 +36,12 @@
 					<%= link_to image_tag(@aliment.aliment_photo.public_filename(:thumb)), @aliment.aliment_photo.public_filename, :rel => 'lightbox', :class => 'plain', :title => @aliment.name%>
 					<% unless @aliment.photo_attribution.blank? %>
 					  <br/>
-						<%= link_to_function image_tag('cc.png', :style=>"border:none;"), :class => 'plain' do |page| 
+						<%= link_to_function image_tag('cc.png', :alt => "(CC)", :title => t('aliment.photo_attribution_help'), :style=>"border:none;"), :class => 'plain' do |page| 
 							page[:attribution].toggle()
 						end %>
 						<div id="attribution" style="display:none" onclick="javascript:$('attribution').toggle()">
-							<h3><%= t('aliment.photo_attribution')%></h3>
-							<%= sanitize @aliment.photo_attribution %>
+							<h3><%= t('aliment.photo_attribution', :aliment => @aliment.name)%></h3>
+							<%= fix_cc_links(@aliment.photo_attribution) %>
 						</div>
 					<% end %>
 				<% end %>
