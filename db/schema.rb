@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090911121005) do
+ActiveRecord::Schema.define(:version => 20090915080419) do
 
   create_table "aliment_photos", :force => true do |t|
     t.integer  "parent_id"
@@ -110,6 +110,23 @@ ActiveRecord::Schema.define(:version => 20090911121005) do
   create_table "friendships", :force => true do |t|
     t.integer  "user_id"
     t.integer  "friend_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "locations", :force => true do |t|
+    t.string   "street"
+    t.string   "number"
+    t.string   "additional1"
+    t.string   "additional2"
+    t.string   "zip"
+    t.string   "city"
+    t.string   "state"
+    t.string   "country",        :default => "de"
+    t.integer  "locatable_id"
+    t.string   "locatable_type"
+    t.float    "lat"
+    t.float    "lang"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
