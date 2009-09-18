@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/views/users/_editor.html.erb</string>
+	<string>app/views/pages/show.html.erb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -331,6 +331,20 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>app/views/pages/show.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>28</integer>
+				<key>line</key>
+				<integer>1</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>app/views/posts/index.atom.builder</key>
 		<dict>
 			<key>caret</key>
@@ -614,6 +628,7 @@
 		<string>app/views/users/_profile.html.erb</string>
 		<string>app/views/users/show.html.erb</string>
 		<string>app/views/users/_editor.html.erb</string>
+		<string>app/views/pages/show.html.erb</string>
 		<string>app/models/user.rb</string>
 		<string>app/controllers/application_controller.rb</string>
 		<string>app/views/books/index.html.erb</string>
@@ -630,6 +645,6 @@
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{377, 75}, {1533, 1103}}</string>
+	<string>{{384, 67}, {1536, 1111}}</string>
 </dict>
 </plist>

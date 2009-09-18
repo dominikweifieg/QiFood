@@ -1,36 +1,36 @@
 <% title h(@aliment.name) %>
 	
 		<div class="column">
-			<h3><%= Aliment.human_attribute_name 'chinese' %></h3>
+			<h4><%= Aliment.human_attribute_name 'chinese' %></h4>
 			<%=h @aliment.chinese %>
 		</div>
 		<div class="column right">
-			<h3><%= Aliment.human_attribute_name 'pinyin' %></h3>
+			<h4><%= Aliment.human_attribute_name 'pinyin' %></h4>
 			<%=h @aliment.pinyin %>
 		</div>
 	
   
 		<div class="column">
-			<h3><%= Aliment.human_attribute_name 'savour' %></h3>
+			<h4><%= Aliment.human_attribute_name 'savour' %></h4>
 			<%=savor_for @aliment %>
 		</div>
 		<div class="column right">
-			<h3><%= Aliment.human_attribute_name 'temperature' %></h3>
+			<h4><%= Aliment.human_attribute_name 'temperature' %></h4>
 			<%=temperature_for @aliment %>
 		</div>
 	
 	
 		<div class="column">
-			<h3><%= t('aliment.organs') %></h3>
+			<h4><%= t('aliment.organs') %></h4>
 			<%= @aliment.organs.map(&:name).join(", ") %>
 		</div>
 		<div class="column right">
-			<h3><%= t('aliment.effects') %></h3>
+			<h4><%= t('aliment.effects') %></h4>
 			<%= @aliment.effects.map(&:description).join(", ") %>
 		</div>
 	
 		<div class="column wide">
-			<h3><%= Aliment.human_attribute_name 'description' %></h3>
+			<h4><%= Aliment.human_attribute_name 'description' %></h4>
 			<% if @aliment.aliment_photo %>
 				<% div_for @aliment.aliment_photo do %>
 					<%= link_to image_tag(@aliment.aliment_photo.public_filename(:thumb)), @aliment.aliment_photo.public_filename, :rel => 'lightbox', :class => 'plain', :title => @aliment.name%>
@@ -40,7 +40,7 @@
 							page[:attribution].toggle()
 						end %>
 						<div id="attribution" style="display:none" onclick="javascript:$('attribution').toggle()">
-							<h3><%= t('aliment.photo_attribution', :aliment => @aliment.name)%></h3>
+							<h4><%= t('aliment.photo_attribution', :aliment => @aliment.name)%></h4>
 							<%= fix_cc_links(@aliment.photo_attribution) %>
 						</div>
 					<% end %>
@@ -51,12 +51,12 @@
  	
 	
 		<div class="column">
-			        <h3><%= t('aliment.category') %></h3>
+			        <h4><%= t('aliment.category') %></h4>
 							        <%= @aliment.category.name %>
 											    </div>
 
 		<div class="column right">
-			<h3><%= t('aliment.links') %></h3>
+			<h4><%= t('aliment.links') %></h4>
 			<%= wikipedia_link_for @aliment %>
 		</div>
 	
