@@ -371,7 +371,6 @@ a img
 	text-decoration: none;
 	background: inherit;
 	color: #FFFFFF;
-	padding: 2px 6px;
 }
 
 .pagination a:visited
@@ -379,7 +378,6 @@ a img
 	text-decoration: none;
 	background: inherit;
 	color: #FFFFFF;
-	padding: 2px 6px;
 }
 
 .pagination a:hover
