@@ -171,8 +171,10 @@ de:
     openid_identifier: OpenID URL
     open_id_help: "(?)"
     open_id_help_url: http://de.wikipedia.org/wiki/OpenID
-    favorite_aliments: Meine favorisierten Lebensmittel
-    friends: Meine Freunde
+    favorite_aliments: "{{name}}'s favorisierte Lebensmittel"
+    favorite_aliments_my: Meine favorisierten Lebensmittel
+    friends: "{{name}}'s Freunde"
+    friends_my: Meine Freunde
     login: Login
     logout: Logout
     sign_up: Anmelden    
@@ -190,8 +192,11 @@ de:
       title: Profil editieren
     show: 
       title: "{{user_name}}'s Profil"
-      blog: Mein Blog
-      blog_link: "Alle meine Blog-Eintr&auml;ge"
+      title_my: Mein Profil
+      blog: "{{name}}'s Blog"
+      blog_link: "Alle Blog-Eintr&auml;ge von {{name}}"
+      blog_my: Mein Blog
+      blog_link_my: "Alle meine Blog-Eintr&auml;ge"
     profile:
       title: "Author:"
     controller:

@@ -1,4 +1,9 @@
-<%title t('user.show.title', :user_name => @user.login) %>
+<% if current_user == @user 
+		title t('user.show.title_my') 
+	else
+		title t('user.show.title', :user_name => @user.login) 
+	end
+%>
 <div class="column">
 	<h3><%= t('user.login') %></h3>
 	<%= h(@user.login)%>
@@ -19,15 +24,25 @@
 	<% if @user.user_photo %>
 	<%= image_tag @user.user_photo.public_filename %>
 	<% end 	%>
-	<h3><%= t('user.favorite_aliments') %></h3>
+	<% if @user == current_user %>
+	<h3><%= t('user.favorite_aliments_my') %></h3>
 	<%= render :partial => 'favorite_aliment', :collection => @user.favorite_aliments %>
 	<%= link_to t('favorite.find'), aliments_path %>
-	<h3><%= t('user.friends') %></h3>
+	<h3><%= t('user.friends_my') %></h3>
 	<%= render :partial => 'friendship', :collection => @user.friendships %>
 	<%= link_to t('friendship.add_friends'), users_path %>
-	<h3><%= t('user.show.blog')%></h3>
+	<h3><%= t('user.show.blog_my')%></h3>
 	<%= render :partial => 'posts/post_preview', :collection => @user.posts.find(:all, :limit => 5)%>
-	<%= link_to t('user.show.blog_link'), user_posts_path(@user)%>
+	<%= link_to t('user.show.blog_link_my'), user_posts_path(@user)%>
+	<% else %>
+	<h3><%= t('user.favorite_aliments', :name => @user.login) %></h3>
+	<%= render :partial => 'favorite_aliment', :collection => @user.favorite_aliments %>
+	<h3><%= t('user.friends', :name => @user.login) %></h3>
+	<%= render :partial => 'friendship', :collection => @user.friendships %>
+	<h3><%= t('user.show.blog', :name => @user.login)%></h3>
+	<%= render :partial => 'posts/post_preview', :collection => @user.posts.find(:all, :limit => 5)%>
+	<%= link_to t('user.show.blog_link', :name => @user.login), user_posts_path(@user)%>
+	<% end %>
 </div>
 <div class="column wide">
 	<% unless @user.profile.about.blank? %>

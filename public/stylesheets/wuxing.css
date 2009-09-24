@@ -81,7 +81,6 @@ h3
 
 h4 
 {
-	font-weight: bold;
 	color: #666666;
 	border-bottom: 1px dotted #CCCCCC;
 }
@@ -280,7 +279,7 @@ a:hover
 
 a:visited
 {
-	color: #999999;
+	color: #777777;
 	background: url(../images/icon-link.gif) 0 4px no-repeat;
 	padding: 0 0 0 11px;
 }
@@ -367,7 +366,7 @@ a img
 	font-size: 145%;
 }
 
-a.paging:link
+#pagination a:link
 {
 	text-decoration: none;
 	background: inherit;
@@ -375,12 +374,12 @@ a.paging:link
 	padding: 2px 6px;
 }
 
-a.paging:hover
+#pagination a:hover
 {
 	background-color: #26BE75;
 }
 
-a.paging:active
+#pagination a:active
 {
 	background-color: #26BE75;
 }
