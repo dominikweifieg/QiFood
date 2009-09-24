@@ -366,7 +366,7 @@ a img
 	font-size: 145%;
 }
 
-#pagination a:link
+.pagination a:link
 {
 	text-decoration: none;
 	background: inherit;
@@ -374,12 +374,12 @@ a img
 	padding: 2px 6px;
 }
 
-#pagination a:hover
+.pagination a:hover
 {
 	background-color: #26BE75;
 }
 
-#pagination a:active
+.pagination a:active
 {
 	background-color: #26BE75;
 }
