@@ -1,6 +1,9 @@
 <%title t('categories.show.title', :category => @category.name)%>
 
 <div class="column wide">
+	<%= textilize(@category.description) %>
+</div>
+<div class="column wide">
 <table cellspacing="0">
 	<thead>
 	<tr>

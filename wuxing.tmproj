@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>config/locales/de.yml</string>
+	<string>app/views/posts/show.html.erb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -69,6 +69,48 @@
 			<dict>
 				<key>column</key>
 				<integer>8</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/aliments/_list.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>2</integer>
+				<key>line</key>
+				<integer>5</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/aliments/_sorter.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>52</integer>
+				<key>line</key>
+				<integer>4</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/aliments/_table.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>3</integer>
 				<key>line</key>
 				<integer>0</integer>
 			</dict>
@@ -147,6 +189,20 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>app/views/posts/show.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>7</integer>
+				<key>line</key>
+				<integer>7</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>app/views/users/index.html.erb</key>
 		<dict>
 			<key>caret</key>
@@ -210,12 +266,12 @@
 				<key>column</key>
 				<integer>1</integer>
 				<key>line</key>
-				<integer>83</integer>
+				<integer>361</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>46</integer>
+			<integer>354</integer>
 		</dict>
 		<key>test/factories.rb</key>
 		<dict>
@@ -273,6 +329,20 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>vendor/gems/mislav-will_paginate-2.3.8/README.rdoc</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>47</integer>
+		</dict>
 		<key>vendor/rails/railties/helpers/application_controller.rb</key>
 		<dict>
 			<key>caret</key>
@@ -293,6 +363,11 @@
 		<string>config/routes.rb</string>
 		<string>app/views/aliments/show.html.erb</string>
 		<string>public/stylesheets/wuxing.css</string>
+		<string>app/views/posts/show.html.erb</string>
+		<string>app/views/aliments/_table.html.erb</string>
+		<string>app/views/aliments/_list.html.erb</string>
+		<string>app/views/aliments/_sorter.html.erb</string>
+		<string>vendor/gems/mislav-will_paginate-2.3.8/README.rdoc</string>
 		<string>app/views/users/show.html.erb</string>
 		<string>config/locales/de.yml</string>
 	</array>
