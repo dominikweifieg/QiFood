@@ -1,6 +1,6 @@
 <tr class="<% if category_counter % 2 == 0 %>even<% else %>odd<% end %>">
 	<td><%= link_to h(category.name), category %></td>
-	<td><%= textilize(truncate(category.description)) %></td>
+	<td><%= textilize(truncate(category.description, :length => 120)) %></td>
 	<% if current_user_in_role? User::EDITOR %>
 	<td><%= link_to t('common.edit'), edit_category_path(category) %></td>
 	<% end %>
