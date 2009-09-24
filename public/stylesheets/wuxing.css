@@ -374,12 +374,38 @@ a img
 	padding: 2px 6px;
 }
 
+.pagination a:visited
+{
+	text-decoration: none;
+	background: inherit;
+	color: #FFFFFF;
+	padding: 2px 6px;
+}
+
 .pagination a:hover
 {
 	background-color: #26BE75;
 }
 
 .pagination a:active
+{
+	background-color: #26BE75;
+}
+
+a.pagination:link
+{
+	text-decoration: none;
+	background: inherit;
+	color: #FFFFFF;
+	padding: 2px 6px;
+}
+
+a.pagination:hover
+{
+	background-color: #26BE75;
+}
+
+a.pagination:active
 {
 	background-color: #26BE75;
 }
