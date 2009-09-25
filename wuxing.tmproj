@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/views/posts/show.html.erb</string>
+	<string>app/views/categories/_category.html.erb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -133,6 +133,20 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>app/views/categories/_category.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>64</integer>
+				<key>line</key>
+				<integer>2</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>app/views/categories/index.html.erb</key>
 		<dict>
 			<key>caret</key>
@@ -152,9 +166,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>38</integer>
 				<key>line</key>
-				<integer>7</integer>
+				<integer>3</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -175,6 +189,20 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>app/views/posts/_post.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>74</integer>
+				<key>line</key>
+				<integer>1</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>app/views/posts/index.atom.builder</key>
 		<dict>
 			<key>caret</key>
@@ -183,6 +211,20 @@
 				<integer>42</integer>
 				<key>line</key>
 				<integer>4</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/posts/index.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>60</integer>
+				<key>line</key>
+				<integer>1</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -364,6 +406,11 @@
 		<string>app/views/aliments/show.html.erb</string>
 		<string>public/stylesheets/wuxing.css</string>
 		<string>app/views/posts/show.html.erb</string>
+		<string>app/views/categories/show.html.erb</string>
+		<string>app/views/categories/index.html.erb</string>
+		<string>app/views/categories/_category.html.erb</string>
+		<string>app/views/posts/index.html.erb</string>
+		<string>app/views/posts/_post.html.erb</string>
 		<string>app/views/aliments/_table.html.erb</string>
 		<string>app/views/aliments/_list.html.erb</string>
 		<string>app/views/aliments/_sorter.html.erb</string>

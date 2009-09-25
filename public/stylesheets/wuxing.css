@@ -390,6 +390,11 @@ a img
 	background-color: #26BE75;
 }
 
+.pagination span.current
+{
+	padding-right: 11px;
+}
+
 a.pagination:link
 {
 	text-decoration: none;

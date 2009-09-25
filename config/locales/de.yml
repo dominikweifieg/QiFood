@@ -150,6 +150,7 @@ de:
         Weiterentwicklung von QiFoods.
       new: Neues Buch anlegen
     edit:
+      title: Buch editieren
       linked_authors_selected: Selektierte Autoren (Benutzer)  
     new:
       title: "Neues Buch"
