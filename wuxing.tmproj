@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/views/categories/_category.html.erb</string>
+	<string>public/stylesheets/wuxing.css</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -13,6 +13,8 @@
 			<string>wuxing</string>
 			<key>regexFolderFilter</key>
 			<string>!.*/(\.[^/]*|CVS|_darcs|_MTN|\{arch\}|blib|.*~\.nib|.*\.(framework|app|pbproj|pbxproj|xcode(proj)?|bundle))$</string>
+			<key>selected</key>
+			<true/>
 			<key>sourceDirectory</key>
 			<string></string>
 		</dict>
@@ -21,20 +23,6 @@
 	<integer>374</integer>
 	<key>metaData</key>
 	<dict>
-		<key>app/controllers/aliments_controller.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>5</integer>
-				<key>line</key>
-				<integer>68</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>52</integer>
-		</dict>
 		<key>app/controllers/friendships_controller.rb</key>
 		<dict>
 			<key>caret</key>
@@ -49,14 +37,28 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>app/models/aliment.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>29</integer>
+				<key>line</key>
+				<integer>65</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>25</integer>
+		</dict>
 		<key>app/models/book.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>5</integer>
 				<key>line</key>
-				<integer>4</integer>
+				<integer>6</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -127,20 +129,6 @@
 				<integer>22</integer>
 				<key>line</key>
 				<integer>12</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>app/views/categories/_category.html.erb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>64</integer>
-				<key>line</key>
-				<integer>2</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -273,20 +261,6 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>config/locales/de.yml</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>27</integer>
-				<key>line</key>
-				<integer>194</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>164</integer>
-		</dict>
 		<key>config/routes.rb</key>
 		<dict>
 			<key>caret</key>
@@ -306,14 +280,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>1</integer>
+				<integer>20</integer>
 				<key>line</key>
-				<integer>361</integer>
+				<integer>394</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>354</integer>
+			<integer>369</integer>
 		</dict>
 		<key>test/factories.rb</key>
 		<dict>
@@ -402,21 +376,9 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>config/routes.rb</string>
-		<string>app/views/aliments/show.html.erb</string>
+		<string>app/models/aliment.rb</string>
+		<string>app/models/book.rb</string>
 		<string>public/stylesheets/wuxing.css</string>
-		<string>app/views/posts/show.html.erb</string>
-		<string>app/views/categories/show.html.erb</string>
-		<string>app/views/categories/index.html.erb</string>
-		<string>app/views/categories/_category.html.erb</string>
-		<string>app/views/posts/index.html.erb</string>
-		<string>app/views/posts/_post.html.erb</string>
-		<string>app/views/aliments/_table.html.erb</string>
-		<string>app/views/aliments/_list.html.erb</string>
-		<string>app/views/aliments/_sorter.html.erb</string>
-		<string>vendor/gems/mislav-will_paginate-2.3.8/README.rdoc</string>
-		<string>app/views/users/show.html.erb</string>
-		<string>config/locales/de.yml</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>

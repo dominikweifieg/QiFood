@@ -392,7 +392,7 @@ a img
 
 .pagination span.current
 {
-	padding-right: 11px;
+	padding-left: 11px;
 }
 
 a.pagination:link

@@ -3,7 +3,7 @@
 <%= render :partial => 'amazon' %>
 <div class="column">
   <h3><%= t('books.description')%>:</h3>
-  <%=h(simple_format(@book.description)) %>
+  <%=simple_format(h(@book.description)) %>
 </div>
 
 <div class="column">
