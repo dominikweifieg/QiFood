@@ -397,7 +397,7 @@ a img
 
 .pagination span.disabled.next_page
 {
-	padding-right: 11px;
+	padding-left: 11px;
 }
 
 a.pagination:link
