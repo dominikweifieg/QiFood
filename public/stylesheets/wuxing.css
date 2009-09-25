@@ -395,6 +395,11 @@ a img
 	padding-left: 11px;
 }
 
+.pagination span.disabled.next_page
+{
+	padding-right: 11px;
+}
+
 a.pagination:link
 {
 	text-decoration: none;
