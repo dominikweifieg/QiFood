@@ -59,7 +59,7 @@ class Aliment < ActiveRecord::Base
   end
 
 	def self.per_page
-		10	
+		15	
 	end
 	
 	def to_param
