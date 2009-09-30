@@ -4,6 +4,8 @@
 		title t('user.show.title', :user_name => @user.login) 
 	end
 %>
+<% meta_keywords @user.login %>
+<% meta_description t('user.meta_description_for', :user_name => @user.login) %>
 <div class="column">
 	<h3><%= t('user.login') %></h3>
 	<%= h(@user.login)%>

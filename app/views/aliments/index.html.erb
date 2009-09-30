@@ -1,4 +1,6 @@
 <% title t('aliment.title')%>
+<% meta_description(t('aliment.meta_description')) %>
+<% meta_keywords(t('aliment.meta_keywords'))%>
 <div class="column wide">
 <% ('A'..'Z').each do |c| %> 
 	<%= link_to_function(c, nil, :class => 'plain') do |page|

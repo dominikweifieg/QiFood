@@ -1,5 +1,6 @@
 <%title t('categories.show.title', :category => @category.name)%>
-
+<%meta_description t('categories.meta_description_for', :category => @category.name)%>
+<%meta_keywords @category.name%>
 <div class="column wide">
 	<%= textilize(@category.description) %>
 </div>

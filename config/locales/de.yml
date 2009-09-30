@@ -61,6 +61,8 @@ de:
             permalink:
               taken: "Es konnte kein Link f&uuml;r Ihren Blog-Eintrag erzeugt werden, bitte &auml;ndern Sie den Titel"
   main_title: QiFood
+  meta_description: "Informationen und Nahrungsmitteltabellen zur 5 Elemente Ernährung (Chinesische Ernährungslehre)"
+  meta_keywords: ", 5 Elemente Ernährung, Chinesische Ernährungslehre, Ernährung, Gesundheit"
   aliment:
     title: Lebensmittel
     savor: Sapor
@@ -89,6 +91,9 @@ de:
     photo: Photo
     photo_attribution: "Bestimmte Rechte an dem Photo von {{aliment}} sind vorbehalten"
     photo_attribution_help: "Dieses Photo ist durch eine Creative Commons Lizenz verf&uuml;gbar gemacht. Klicken Sie auf das (CC) Logo, um die Links zu der Lizenz und dem Urheber darzustellen."
+    meta_description: "Lebensmittel und ihre Wirkung laut der 5 Elemente Ernährung"
+    meta_keywords: "Lebensmittel, Lebensmitteltabelle"
+    meta_description_for: "Eigenschaften und Wirkung von {{name}} nach der 5 Elemente Ernährung"
     new:
       title: Neues Lebensmittel
       create: Anlegen
@@ -108,6 +113,9 @@ de:
   categories:
     name: Name
     description: Beschreibung
+    meta_description: Lebensmittelkategorien in der 5 Elemente Ernährung
+    meta_description_for: "Lebensmittel der Kategorie {{category}}"
+    meta_keywords: "Lebensmittelkategorien, Kategorien, Lebensmittel"
     index:
       title: Lebensmittelkategorien
       description: Lebensmittel sind verschiedenen Kategorien wie Getreide, Obst, etc. zugeordnet, einerseits um das Finden von Lebensmitteln einfacher zu machen, andererseits weil sich alle Lebensmittel 
@@ -121,6 +129,9 @@ de:
       title: "Lebensmittel der Kategorie {{category}}"
       back: "Zur&uuml;ck zur &Uuml;bersicht"
   effects:
+    meta_description: Die Wirkungen von Lebensmitteln nach der 5 Elemente Ernährung
+    meta_description_for: Lebensmittel mit der Wirkung {{effect}}
+    meta_keywords: "Wirkung, Effekt, Heilung" 
     index:
       title: Wirkungen der Lebensmittel
       text: Im folgenden sind die Wirkungen von Lebensmitteln aufgelistet. Mit einem Klick auf eine der Wirkungen kommen sie zu den Lebensmitteln, die diese Wirkung haben.
@@ -141,6 +152,8 @@ de:
     language: Sprache
     linked_authors: Autoren (Benutzer)
     authors: Autoren (keine Benutzer)
+    meta_description: Bücher über die 5 Elemente Ernährung
+    meta_keywords: "Buch, Bücher"
     index:
       title: "Bücher über die Chinesische Ernährungslehre"
       text: Diese Website kann nicht umfassende Auskunft &uuml;ber alle Aspekte der chinesischen Ern&auml;hrungslehre geben sonder m&ouml;chte eine Hilfestellung zum
@@ -183,6 +196,9 @@ de:
     missing_rights: "Sie haben nicht gen&uuml;gend Rechte, um diese Aktion auszuf&uuml;hren"
     login_required: "Sie m&uuml;ssen eingelogged sein, um diese Aktion auszuf&uuml;hren"
     remember: Login auf diesem Rechner merken
+    meta_keywords: "Benutzer, Freunde"
+    meta_description: Alle Benutzer von QiFood
+    meta_description_for: QiFood Profile von {{user_name}}
     new:
       title: Anmelden
       required_information: "Notwendige Informationen:"
@@ -246,6 +262,10 @@ de:
     created_at: Datum
     author: Author
     preview: Vorschau
+    meta_description: Das Blog zur 5 Elemente Ernährung
+    meta_description_for: Das Blog zur 5 Elemente Ernährung von {{user_name}}
+    meta_keywords: "Blog, Weblog"
+    meta_keywords_for: "Blog, Weblog, {{user_name}}"
     controller:
       create:
         success: Ihr Blog-Eintrag wurde publiziert

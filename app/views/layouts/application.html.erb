@@ -5,6 +5,8 @@
 
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<% if show_meta_description? %><meta name="description" content="<%= h(yield(:meta_description)) %>"><% end %>
+	<% if show_meta_keywords? %><meta name="keywords" content="<%= h(yield(:meta_keywords)) %>"><% end %>
 	<title><%= h(yield(:title) || t('main_title')) %></title> 
 	<%= stylesheet_link_tag 'wuxing', 'wuxing_styles', 'lightbox' %>
   <%= javascript_include_tag :defaults %>
@@ -41,7 +43,7 @@
 		<li><% navigation_link_to(static_path('more')) do %><div><%= t('navigation.more') %></div><% end %></li>
 			<ul>
 				<li><% navigation_link_to(books_path) do %><div><%= t('navigation.books') %></div><% end %></li>
-				<li><a href="bar"><div><%= t('navigation.practitioners') %></div></a></li>
+				<li><% navigation_link_to(static_path('bar')) do %><div><%= t('navigation.practitioners') %></div><% end %></li>
 			</ul>
 		<li><% navigation_link_to(users_path) do %><div><%= t('navigation.users') %></div><% end %></li>
 			<% if current_user %><ul>

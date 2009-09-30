@@ -1,4 +1,6 @@
 <%title @book.title %>
+<%meta_description truncate(@book.description, :length => 160)%>
+<%meta_keywords t('books.meta_keywords')%>
 
 <%= render :partial => 'amazon' %>
 <div class="column">

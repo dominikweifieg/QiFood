@@ -1,4 +1,6 @@
 <% title @post.title %>
+<% meta_description @post.title %>
+<% meta_keywords t('post.meta_keywords')%>
 <div class="column wide">
 	<%= render :partial => 'users/profile', :locals => {:user => @post.user}%>
 	<%= textilize @post.body %>

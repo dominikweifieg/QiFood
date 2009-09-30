@@ -1,9 +1,14 @@
 <% if @user 
 	title t('post.index.title_user', :user_name => @user.login) 
+	meta_keywords t('post.meta_keywords_for', :user_name => @user.login)
+	meta_description t('post.meta_description_for', :user_name => @user.login)
 else
 	title t('post.index.title')
+	meta_keywords t('post.meta_keywords')
+	meta_description t('post.meta_description')
 end
 %>
+
 <div class="column wide">
 	<table cellspacing="0">
 		<thead>

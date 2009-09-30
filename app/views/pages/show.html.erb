@@ -1,6 +1,7 @@
   <% title @page.title %>
+	<% meta_keywords @page.title %>
+	<% meta_description %>
 	<%= textilize @page.body %>
-
 	<% if current_user_in_role? User::EDITOR %>
 	<div class="column wide">
 	<%= link_to t('common.edit'), edit_page_path(@page) %> |

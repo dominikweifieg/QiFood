@@ -1,4 +1,6 @@
 <% title h(@aliment.name) %>
+<% meta_description t('aliment.meta_description_for', :name => @aliment.name)%>
+<% meta_keywords @aliment.name%>
 	
 		<div class="column">
 			<h4><%= Aliment.human_attribute_name 'chinese' %></h4>

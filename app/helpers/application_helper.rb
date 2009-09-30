@@ -10,6 +10,25 @@ module ApplicationHelper
   def show_title?
     @show_title
 	end	
+	
+	def meta_description(description = "")
+	  description = t('meta_description') if description.empty?
+    @content_for_meta_description = description
+    @show_meta_description = true
+  end
+  
+  def show_meta_description?
+    @show_meta_description
+  end
+  
+  def meta_keywords(keywords = "QiFood")
+    @content_for_meta_keywords = keywords + t('meta_keywords')
+    @show_meta_keywords = true
+  end
+  
+  def show_meta_keywords?
+    @show_meta_keywords
+  end
 
 	def navigation_link_to(url, &block)
 	  request = @controller.request
