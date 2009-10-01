@@ -7,7 +7,9 @@ atom_feed(:language => I18n.locale, :schema_date => 2009) do |feed|
   else
     feed.title = t('post.atom.title')
   end
-  feed.updated = @posts.first.created_at
+  if @posts.first
+    feed.updated = @posts.first.created_at
+  end
   
   for post in @posts
     feed.entry(post) do |entry|
