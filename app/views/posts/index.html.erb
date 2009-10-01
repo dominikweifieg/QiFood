@@ -34,8 +34,8 @@ end
 	<%= link_to image_tag('feed-icon-14x14.png', :alt => t('post.feed'), :class => 'feed'), user_posts_path(@user, :format => :atom), :class => 'plain' %>
 	<%= link_to t('post.feed'), user_posts_path(@user, :format => :atom), :class => 'plain' %>	
 	<% else %>
-	<%= link_to image_tag('feed-icon-14x14.png', :alt => t('post.feed'), :class => 'feed'), posts_path(:format => :atom), :class => 'plain' %>
-	<%= link_to t('post.feed'), posts_path(:format => :atom), :class => 'plain' %>
+	<%= link_to image_tag('feed-icon-14x14.png', :alt => t('post.feed'), :class => 'feed'), 'http://feeds.feedburner.com/QiFoodBlog', :class => 'plain' %>
+	<%= link_to t('post.feed'), 'http://feeds.feedburner.com/QiFoodBlog', :class => 'plain' %>
 	<% end %>
 	<% if logged_in? %>
 	<%= link_to t('post.index.new'), new_user_post_path(current_user) %>
