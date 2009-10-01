@@ -9,6 +9,8 @@ atom_feed(:language => I18n.locale, :schema_date => 2009) do |feed|
   end
   if @posts.first
     feed.updated  @posts.first.created_at
+  else
+    feed.updated Time.now - 1.year
   end
   
   for post in @posts
