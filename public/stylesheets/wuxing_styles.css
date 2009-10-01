@@ -74,3 +74,8 @@ div#attribution
 	padding: 24px;
 	background-color: #DFD65F;
 }
+
+img.feed
+{
+	border: 0px;
+}

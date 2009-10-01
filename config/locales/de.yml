@@ -266,6 +266,7 @@ de:
     meta_description_for: Das Blog zur 5 Elemente Ernährung von {{user_name}}
     meta_keywords: "Blog, Weblog"
     meta_keywords_for: "Blog, Weblog, {{user_name}}"
+    feed: "ATOM Feed f&uuml;r dieses Blog"
     controller:
       create:
         success: Ihr Blog-Eintrag wurde publiziert
