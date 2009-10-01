@@ -1,14 +1,14 @@
 atom_feed(:language => I18n.locale, :schema_date => 2009) do |feed|
   if @user
-    feed.title = t('post.atom.title_user', :user_name => @user.login)
+    feed.title t('post.atom.title_user', :user_name => @user.login)
     feed.author do |author|
       author.name("#{@user.first_name} #{@user.name}")
     end
   else
-    feed.title = t('post.atom.title')
+    feed.title t('post.atom.title')
   end
   if @posts.first
-    feed.updated = @posts.first.created_at
+    feed.updated  @posts.first.created_at
   end
   
   for post in @posts
