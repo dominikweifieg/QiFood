@@ -5,12 +5,6 @@
 <form id="name_finder">
 <%= text_field_tag :find_name, t('aliment.index.find_by_name_ajax'), :autocomplete => 'off' %>
 </form>
-<% ('A'..'Z').each do |c| %> 
-	<%= link_to_function(c, nil, :class => 'plain') do |page|
-		page[:name].value = c
-		page[:finder].submit	
-	end %>
-<% end %>
 <%= link_to(t('all', :scope => 'aliment'), aliments_path, :class => 'plain') %>
 <script type="text/javascript">
 //<![CDATA[
