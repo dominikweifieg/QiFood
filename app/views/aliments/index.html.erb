@@ -2,6 +2,9 @@
 <% meta_description(t('aliment.meta_description')) %>
 <% meta_keywords(t('aliment.meta_keywords'))%>
 <div class="column wide">
+<form id="name_finder">
+<%= text_field_tag :find_name, t('aliment.index.find_by_name_ajax'), :autocomplete => 'off' %>
+</form>
 <% ('A'..'Z').each do |c| %> 
 	<%= link_to_function(c, nil, :class => 'plain') do |page|
 		page[:name].value = c
@@ -9,9 +12,32 @@
 	end %>
 <% end %>
 <%= link_to(t('all', :scope => 'aliment'), aliments_path, :class => 'plain') %>
+<script type="text/javascript">
+//<![CDATA[
+document.observe("dom:loaded", function() {
+	$('find_name').select();
+	$('find_name').focus();
+});
+$('find_name').observe('focus', function(event) {
+	$('aliment_search').hide();
+	$('effects_search').hide();
+	$('find_name').select();
+});
+$('find_name').observe('click', function(event) {
+	$('aliment_search').hide();
+	$('effects_search').hide();
+	$('find_name').select();
+});	
+new Form.Element.Observer('find_name', 1, function(element, value) { 
+  $('name').value = value;
+	$('finder').request();
+});
+//]]>
+</script>
 </div>
 <div><h3><%= link_to_function t('aliment.index.search_options'), nil, :id => 'options_link', :class => 'plain' do |page|
 	page.visual_effect(:toggle_blind, 'aliment_search')
+	page.visual_effect(:blind_up, 'effects_search')
 end %></h3></div>
 <div id="aliment_search" style="display: none;">
 	<div class="search">
@@ -64,12 +90,13 @@ end %></h3></div>
 	</div><br /> 
 </div>
 <div><h3><%= link_to_remote t('aliment.index.search_effects'), {:update => "effects_search", :url => effects_path(), :method => :get, 
- 	:complete => "Effect.toggle('effects_search', 'blind', {})"}, {:class => 'plain'} %></h3></div> 
+ 	:complete => "Effect.BlindUp('aliment_search'); Effect.toggle('effects_search', 'blind', {});"}, {:class => 'plain'} %></h3></div> 
 <div id="effects_search" style="display: none;"> 
 </div>
 <br />
+<div id="aliments" class="column wide">
 <%= render :partial => 'list' %>
-
+</div>
 
 <% if current_user_in_role? User::EDITOR %>
 <div class="column wide">

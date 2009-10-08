@@ -79,3 +79,15 @@ img.feed
 {
 	border: 0px;
 }
+
+input#find_name
+{
+	border: 2px solid #569730;
+	font-size: 145%;
+	color: #82166B;
+	background-color: #CFC326;/*inherit;*/
+	font-family: Verdana,Geneva,Helvetica,Arial,sans-serif;
+	font-weight: bold;
+	padding: 4px;
+	margin-bottom: 0.5em;
+}

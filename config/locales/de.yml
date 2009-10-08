@@ -108,6 +108,7 @@ de:
       match_any: Oder-Suche (Alle Lebensmittel mit min. einer der gesuchten Wirkungen)
       effect_filter: "Wirkungen nach Namen filtern"
       effect_filter_clear: "Filter l&ouml;schen"
+      find_by_name_ajax: Welches Lebensmittel suchen Sie?
     edit:
       title: "{{aliment_name}} editieren"
   categories:
