@@ -41,7 +41,7 @@ class Aliment < ActiveRecord::Base
 	def self.find_all_by_effects(params, page)
 		logger.info("find all by effects")
 		if(params[:match_all] == 'all')
-			Aliment.find_by_sql ["SELECT * FROM aliments WHERE id IN (SELECT aliment_id FROM properties WHERE effect_id IN (?) GROUP BY aliment_id HAVING COUNT(aliment_id) = ?)", params[:effect_ids], params[:effects].size] 
+			Aliment.find_by_sql ["SELECT * FROM aliments WHERE id IN (SELECT aliment_id FROM properties WHERE effect_id IN (?) GROUP BY aliment_id HAVING COUNT(aliment_id) = ?)", params[:effects], params[:effects].size] 
 		else
 			Aliment.find(:all, :group => 'aliments.id', :joins => :effects, :conditions => {:effects => {:id => params[:effects]}})
 		end
