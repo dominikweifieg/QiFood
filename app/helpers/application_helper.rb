@@ -2,7 +2,7 @@
 module ApplicationHelper
 
 	def title(page_title, show_title = true)
-		@content_for_title = "#{t('main_title')} | #{page_title}"
+		@content_for_title = "#{page_title} | #{t('main_title')}"
 		@content_for_h2 = page_title
     @show_title = show_title
 	end
