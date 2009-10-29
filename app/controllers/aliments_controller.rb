@@ -1,6 +1,7 @@
 class AlimentsController < ApplicationController
 
   before_filter :login_required, :check_editor_access, :except => [:index, :show]
+  protect_from_forgery :except => :show
 	# GET /aliments
   # GET /aliments.xml
   def index
@@ -33,6 +34,7 @@ class AlimentsController < ApplicationController
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @aliment }
+      format.js {render :partial => 'preview'}#show.js.rjs
     end
   end
 

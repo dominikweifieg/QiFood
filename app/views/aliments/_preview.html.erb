@@ -1,0 +1,12 @@
+<% div_for @aliment do %>
+<% if @aliment.aliment_photo %>
+	<% div_for @aliment.aliment_photo do %>
+		<%= link_to image_tag(@aliment.aliment_photo.public_filename(:thumb)), @aliment, :class => 'plain' %>
+	<% end %>
+<% end %>
+<div class="preview">
+<%= link_to h(@aliment.name), @aliment, :class => 'plain' %> (<%= link_to h(@aliment.category.name), @aliment.category, :class => 'plain' %>)<br />
+<%= Aliment.human_attribute_name 'savour' %>: <%=savor_for @aliment %><br />
+<%= Aliment.human_attribute_name 'temperature' %>: <%=temperature_for @aliment %><br />
+</div>
+<% end %>

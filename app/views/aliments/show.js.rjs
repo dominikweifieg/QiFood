@@ -1,0 +1,4 @@
+#page.call 'hide_all_aliment_previews'
+page.call 'alert', @aliment.id
+#page.replace_html "aliment_preview_#{@aliment.id}", :partial => 'preview'
+#page.visual_effect(:appear, "aliment_preview_#{@aliment.id}")

@@ -91,3 +91,23 @@ input#find_name
 	padding: 4px;
 	margin-bottom: 0.5em;
 }
+
+div.aliment_preview
+{
+	z-index: 110;
+	border: 1px solid #BED95C;
+	position: absolute;
+	background-color: #F1F7CC;
+	padding-left: 1em;
+}
+
+div.aliment_preview div.preview
+{
+	float: right;
+	padding: 1em 1em 1em 0;
+}
+
+div.aliment_preview div.preview div.element
+{
+	display: inline;
+}

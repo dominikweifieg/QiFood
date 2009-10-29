@@ -15,7 +15,7 @@
 	<% end %>
 	<br/>
 	<% if @user %><%= link_to t('common.back'), user_posts_path(@user) %><% else %><%= link_to t('common.back'), posts_path%><% end %>
-	<% if @user == current_user %> | <%= link_to t('common.edit'), edit_user_post_path(@user, @post) %><% end %>
+	<% if current_user && @user == current_user %> | <%= link_to t('common.edit'), edit_user_post_path(@user, @post) %><% end %>
 </div>
 <div	class="comments column wide">
 	<div id="add_comment" class="comment edit">
@@ -27,3 +27,40 @@
 	</div>
 	<%= render :partial => 'comments/index', :locals => {:commentable => @post} %>
 </div>
+<script type="text/javascript" charset="utf-8">
+	//<![CDATA[
+	$$("a.aliment_link").each(function(link)
+	{
+		link.observe('mouseover', function(event)
+		{
+			var element = this.next("div.aliment_preview");
+			if(element == null)
+			{
+				element = this.up().next("div.aliment_preview")
+			}
+			if(element != null)
+			{
+				var y = (event.pointerY() - 12) + 'px';
+				var x = (event.pointerX() - 12) + 'px';
+				element.setStyle({'top':y, 'left':x});
+				var id = element.id;
+				hide_other_aliment_previews(id);
+				new Ajax.Updater(id, this, {method:'get', onComplete:function(result)
+				{
+					var arrayPageSize = getPageSize();
+	        $('overlay').setStyle({ width: arrayPageSize[0] + 'px', height: arrayPageSize[1] + 'px' });
+
+	        new Effect.Appear(this.overlay, {to:0.5});
+					
+					$(id).appear();
+					$('overlay').observe('mouseover', function(event)
+					{
+						$(id).fade();
+						this.fade();
+					});
+				}});
+			}
+		});
+	});
+	//]]>
+</script>
