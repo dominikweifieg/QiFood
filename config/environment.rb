@@ -32,8 +32,6 @@ Rails::Initializer.run do |config|
 				    :source => 'http://gems.github.com'
 	#config.gem 'RedCloth', :version => '= 4.2.2'
   config.gem "geokit"
-  module Rails::Plugin::OpenIdAuthentication
-  end
   config.gem "authlogic"
   config.gem "authlogic-oid", :lib => "authlogic_openid"
   config.gem "ruby-openid", :lib => "openid"

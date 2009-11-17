@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>config/database.yml</string>
+	<string>app/controllers/application_controller.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
