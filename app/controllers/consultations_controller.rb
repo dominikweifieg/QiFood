@@ -93,12 +93,14 @@ class ConsultationsController < ApplicationController
   # DELETE /consultations/1
   # DELETE /consultations/1.xml
   def destroy
-    @consultation = @user.consultation
-    @consultation.destroy
+    if current_user.admin?
+      @consultation = Consultation.find(params[:id])
+      @consultation.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(consultations_url) }
-      format.xml  { head :ok }
+      respond_to do |format|
+        format.html { redirect_to(consultations_url) }
+        format.xml  { head :ok }
+      end
     end
   end
   

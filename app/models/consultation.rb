@@ -14,13 +14,13 @@ class Consultation < ActiveRecord::Base
   
   def set_pro_start_date
     if pro && pro_changed?
-      pro_start_day_will_change!
-      pro_start_day = Date.current.day()
+      self.pro_start_day_will_change!
+      self.pro_start_day = Date.current.day()
     end
   end
   
   def create_reference_number
-    pro_identifier_will_change!
-    pro_identifier = "#{user_id}_#{title.hash}"
+    self.pro_identifier_will_change!
+    self.pro_identifier = "#{user_id}_#{title.hash}"
   end
 end
