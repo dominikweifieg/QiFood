@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090915080419) do
+ActiveRecord::Schema.define(:version => 20091128132016) do
 
   create_table "aliment_photos", :force => true do |t|
     t.integer  "parent_id"
@@ -77,6 +77,34 @@ ActiveRecord::Schema.define(:version => 20090915080419) do
     t.datetime "updated_at"
   end
 
+  create_table "consultation_photos", :force => true do |t|
+    t.integer  "parent_id"
+    t.integer  "aliment_id"
+    t.string   "content_type"
+    t.string   "filename"
+    t.string   "thumbnail"
+    t.integer  "size"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "consultations", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.boolean  "pro"
+    t.string   "pro_identifier"
+    t.string   "website"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "fax"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "effects", :force => true do |t|
     t.string   "description"
     t.datetime "created_at"
@@ -126,7 +154,7 @@ ActiveRecord::Schema.define(:version => 20090915080419) do
     t.integer  "locatable_id"
     t.string   "locatable_type"
     t.float    "lat"
-    t.float    "lang"
+    t.float    "lng"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

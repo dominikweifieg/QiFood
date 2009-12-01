@@ -25,6 +25,19 @@ de:
       post:
         title: Titel
         body: Inhalt
+      consultation:
+        title: Title
+        body: Beschreibung
+        pro: Erweiterte Anzeige
+      location:
+        street: Strasse
+        number: Hausnummer
+        additional1: Zusatz 1
+        additional2: Zusatz 2
+        zip: Postleitzahl
+        city: Stadt
+        state: Bundesland
+        country: Land
     errors:
       template:
         header: 
@@ -200,6 +213,8 @@ de:
     meta_keywords: "Benutzer, Freunde"
     meta_description: Alle Benutzer von QiFood
     meta_description_for: QiFood Profile von {{user_name}}
+    location:
+      edit: Adresse bearbeiten
     new:
       title: Anmelden
       required_information: "Notwendige Informationen:"
@@ -311,6 +326,55 @@ de:
       title: "Seite bearbeiten: {{title}}"
     new:
       title: Neue statische Seite anlegen
+  consultation:
+    title: Beratung
+    details: Details
+    create: "Ich biete Ern&auml;hrungsberatung, Seminare und/oder Kochkurse an und m&ouml;chte dar&uuml;ber Informieren."
+    name: Name
+    body: Text
+    pro: Erweitere Anzeige
+    contact: Kontakt
+    website: Website
+    email: Email
+    phone: Telefon
+    fax: Fax
+    photos: Fotos und Grafiken zu Ihrer Praxis
+    photo:
+      title: Beschreibung
+      url: Bild
+    owner: Wer
+    near_me: Beratung in meiner Umgebung
+    near_me_add_location: "F&uuml;gen Sie Ihrem Profile eine Adresse hinzu, um Bertungsangebote in Ihrer N&auml;he zu finden."
+    pro_account: "Ein Eintrag mit Titel und einer Beschreibung mit maximal 800 Zeichen ist kostenlos. \
+                  Wenn Sie mehr als 800 Zeichen verwenden wollen oder zus&auml;tzlich auch Bilder anzeigen m&ouml;chten, \
+                  k&ouml;nnen Sie einen erweiterte Anzeige w&auml;hlen, f&uuml;r die wir allerdings eine monatliche Geb&uuml;hr von 30 &euro; netto \
+                  erheben. Sie erhalten dann monatlich eine Rechnung &uuml;ber diesen Betrag zugeschickt. Die Laufzeit betr&auml;gt einen Monat und \ 
+                  kann jederzeit zum Ende des laufenden Monats schriftlich gek&uuml;ndigt werden. Schreiben Sie in diesem Fall an service@qifood.eu."
+    pro_account_unsubscribe: "Sie haben eine erweiterte Anzeige f&uuml;r eine monatliche Geb&uuml;hr von 30 &euro; netto. Wenn Sie eine kostenlose Anzeige \
+                              wollen, k&ouml;nnen Sie die erweitere Anzeige jeweils zum Ende des laufenden Monats schriftlich k&uuml;ndigen. Schreiben Sie \
+                              daf&uuml;r einfach eine Email an "
+    images:
+      image: Bild
+      main: Logo / Titelbild
+    new: 
+      title: Neue Praxis anlegen
+    edit:
+      title: Praxis bearbeiten
+    index:
+      title: Beratungsangebote
+  locations:
+    location: Adresse
+    street: Strasse
+    number: Hausnummer
+    additional1: Zusatz 1
+    additional2: Zusatz 2
+    zip: Postleitzahl
+    city: Stadt
+    state: Bundesland
+    country: Land
+    near: "In der N&auml;he von:"
+    radius: Umkreis (km)
+    example: "Astrid-Lindgren-Strasse, Freiburg"
   navigation:
     aliments: Lebensmittel
     about: Impressum
@@ -319,7 +383,7 @@ de:
     categories: Kategorien
     more: Weiteres
     books: "B&uuml;cher"
-    practitioners: "Ern&auml;hrungsberatung"
+    practitioners: "Beratung"
     posts: Blog
     users: Benutzer
     profile: Mein Profil

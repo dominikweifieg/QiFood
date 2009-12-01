@@ -1,0 +1,58 @@
+<% title t('consultation.index.title')%>
+<% javascript_tag do %>
+document.observe("dom:loaded", function() {
+	$('origin').select();
+	$('origin').focus();
+});
+<% end %>
+<div class="column wide">
+	<% if current_user %>
+		<% if current_user.location 
+			@loc = current_user.location.address
+			%>
+			<%= link_to t('consultation.near_me'), consultations_path(:user_id => current_user.id) %>
+		<% else 
+			@loc = t('locations.example')
+			%>
+			<%= t('consultation.near_me_add_location') %> <%= link_to t('user.show.title_my'), edit_user_path(current_user) %>
+		<% end %>
+	<% else 
+		@loc = t('locations.example')
+			end %>
+	<% form_for consultations_path, :html => {:method => :get} do |f| -%>
+	  <%= label_tag :origin, t('locations.near'), :class => "no_wrap"%>
+		<%= text_field_tag :origin, @loc, :class => "no_wrap" %>
+		<%= label_tag :radius, t('locations.radius'), :class => "no_wrap" %>&nbsp;&nbsp;
+ 		<%= text_field_tag :radius, 20, :class => "xs"%>
+		<fieldset class="buttons">
+			<%= f.submit t('common.find') %>
+		</fieldset>
+	<% end -%>
+</div>
+
+<div class="column wide">
+<table cellspacing="0">
+  <thead>
+	<tr>
+		<th></th>
+    <th><%= t('consultation.title') %></th>
+    <th><%= t('consultation.body') %></th>
+    <th><%= t('consultation.owner')%></th>
+		<% if current_user_in_role? User::EDITOR %>
+			<th></th>
+		<% end %>
+		<% if current_user_in_role? User::ADMIN %>
+			<th></th>
+		<% end %>
+  </tr>
+	</thead>
+  <%= render @consultations %>
+	<tfoot>
+		<tr>
+			<td colspan="6">
+				<%= will_paginate @aliments , :params => params %>
+			</td>
+		</tr>
+	</tfoot>
+</table>
+</div>

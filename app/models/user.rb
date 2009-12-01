@@ -18,7 +18,9 @@ class User < ActiveRecord::Base
   
   has_one :location, :as => :locatable
   acts_as_mappable :through => :location
-
+  
+  has_one :consultation
+  
 	can_flag
 
   #validates_presence_of     :login

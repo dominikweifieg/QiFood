@@ -1,0 +1,63 @@
+<div class="column">
+    <%= f.label :title, t('consultation.name')%>
+    <%= f.text_field :title %>
+    <%= f.label :body, t('consultation.body') %>
+		<%= link_to_function t('pages.edit.textile'),
+														     "window.open('http://redcloth.org/hobix.com/textile/quick.html', '#{t('pages.edit.textile')}', 'height=700,width=510,status=yes,menubar=no,location=no,toolbar=no,scrollbars=yes')" %>
+    <%= f.text_area :body %>
+		<%= f.label :pro, t('consultation.pro') %>
+		<% unless @consultation.pro %>
+		<%= f.check_box :pro, :class => "xxs" %> <%= auto_link(t('consultation.pro_account')) %>
+		<% javascript_tag do %>
+			$('consultation_pro').observe('click', function(event)
+			{
+				if($('consultation_pro').checked == true)
+				{
+				  Effect.BlindDown('images');
+				}
+				else
+				{
+				  Effect.BlindUp('images');
+				}
+			});
+		<% end %>
+		<% else %>
+		<%= t('consultation.pro_account_unsubscribe') %> <%= link_to "service@qifood.eu", "mailto:support@qifood.eu?subject=Unsubscribe%20#{@consultation.title}%20#{@consultation.id}"%>.
+		<% end %>
+	</div>
+	<div class="column right">
+		<%= f.label :website, t('consultation.website') %>
+		<%= f.text_field :website %>
+		<%= f.label :email, t('consultation.email') %>
+		<%= f.text_field :email %>
+		<%= f.label :phone, t('consultation.phone') %>
+		<%= f.text_field :phone %>
+		<%= f.label :fax, t('consultation.fax') %>
+		<%= f.text_field :fax %>
+		<%= render :partial => "locations/editor", :locals => {:f => f} %>
+	</div>
+	<% if @consultation.pro %>
+	<div id="images" class="column wide">
+	<% else %>
+	<div id="images" class="column wide" style="display:none">
+	<% end %>
+		<div>
+			<fieldset>
+			<legend><%= t('consultation.photos')%></legend>
+			<% f.fields_for :consultation_photos do |f| -%>
+				<div>
+				<%= f.label :uploaded_data, t('consultation.photo.url'), :class => "no_wrap" %>
+				<%= f.file_field :uploaded_data, :class => "m"%>
+				<%= f.label :title, t('consultation.photo.title'), :class => "no_wrap" %>
+				<%if f.object.new_record? %>
+					<%= f.text_field :title %>
+				<%else%>
+					<%= f.text_field :title , :class => "no_warp"%>
+					<%= f.check_box :_delete, :class => "xxs" %> <%= t('common.destroy')%>
+				<%end%>
+				<hr/>
+				</div>
+			<% end -%>
+			</fieldset>
+		</div>
+	</div>

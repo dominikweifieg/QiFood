@@ -53,6 +53,17 @@
 		<% end %>
 	</fieldset>
 </div>
+<div class="column wide">
+	<h3><%= t('locations.location')%></h3>
+	<%= link_to_function t('user.location.edit'), nil, :id => 'address_link', :class => 'plain' do |page|
+		page.visual_effect(:toggle_blind, 'location_editor') 
+		end %>
+	<div id="location_editor" style="display:none">
+		<div>
+		<%= render :partial => "locations/editor", :locals => {:f => f} %>
+		</div>
+	</div>
+</div>
 <% if current_user_in_role? User::ADMIN %>
 <div class="column wide">
 	<%= f.radio_button :role, User::GUEST %>Guest

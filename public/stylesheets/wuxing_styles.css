@@ -111,3 +111,13 @@ div.aliment_preview div.preview div.element
 {
 	display: inline;
 }
+
+div.consultation_images
+{
+	float: right;
+}
+
+div.consultation_photo 
+{
+	padding: 1em;
+}

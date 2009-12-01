@@ -46,10 +46,20 @@
 	<%= link_to t('user.show.blog_link', :name => @user.login), user_posts_path(@user)%>
 	<% end %>
 </div>
+<% unless @user.profile.about.blank? %>
 <div class="column wide">
-	<% unless @user.profile.about.blank? %>
 	<h3><%= t('profile.about') %></h3>
 	<%= simple_format(sanitize(@user.profile.about)) %>
+</div>
+<% end %>
+<div class="column wide">
+	<% if @user.consultation %>
+	<h3><%= h(@user.consultation.title) %></h3>
+	<%= truncate(textilize(@user.consultation.body), 120) %>
+	<%= link_to t('consultation.details'), @user.consultation %>
+	<% elsif @user  == current_user %>
+	<h3><%= t('consultation.title') %></h3>
+	<%= link_to t('consultation.create'), new_user_consultations_path(@user) %>
 	<% end %>
 </div>
 <% if ( @user == current_user || current_user_in_role?(User::ADMIN) ) %>

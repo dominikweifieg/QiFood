@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :consultations
+
 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
   map.login '/login', :controller => 'sessions', :action => 'new'
@@ -10,6 +12,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users do |user|
     user.resources :posts
+    user.resource :consultations
   end
 
   map.resource :session
@@ -41,6 +44,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :posts do |post|
     post.resource :comments, :requirements => {:context_type => 'post'}
   end
+  
+  map.resources :consultations
   
   map.root :controller => 'pages', :action => 'show', :requirements => {:permalink => "home"}
 	

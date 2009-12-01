@@ -12,7 +12,7 @@ class CreateLocations < ActiveRecord::Migration
       t.integer :locatable_id
       t.string :locatable_type
       t.float :lat
-      t.float :lang
+      t.float :lng
 
       t.timestamps
     end

@@ -7,9 +7,9 @@ class Location < ActiveRecord::Base
   
   def address
     if state
-      "#{street} #{number}, #{zip} #{city}, #{state}, #{t(country, :scope => 'countries')}" 
+      "#{street} #{number}, #{zip} #{city}, #{state}, #{I18n.t(country, :scope => 'countries')}" 
     else
-      "#{street} #{number}, #{zip} #{city}, #{t(country, :scope => 'countries')}" 
+      "#{street} #{number}, #{zip} #{city}, #{I18n.t(country, :scope => 'countries')}" 
     end
   end
   

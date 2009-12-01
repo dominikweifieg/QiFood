@@ -43,7 +43,7 @@
 		<li><% navigation_link_to(static_path('more')) do %><div><%= t('navigation.more') %></div><% end %></li>
 			<ul>
 				<li><% navigation_link_to(books_path) do %><div><%= t('navigation.books') %></div><% end %></li>
-				<li><% navigation_link_to(static_path('bar')) do %><div><%= t('navigation.practitioners') %></div><% end %></li>
+				<li><% navigation_link_to(consultations_path) do %><div><%= t('navigation.practitioners') %></div><% end %></li>
 			</ul>
 		<li><% navigation_link_to(users_path) do %><div><%= t('navigation.users') %></div><% end %></li>
 			<% if current_user %><ul>

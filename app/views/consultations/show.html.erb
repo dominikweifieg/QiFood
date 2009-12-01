@@ -1,0 +1,44 @@
+<% title @consultation.title %>
+
+<div class="column wide">
+	<% if @consultation.pro %>
+		<div class="consultation_images">
+			<% @consultation.consultation_photos.each do |photo| %>
+			<% div_for photo do %>
+				<%= link_to image_tag(photo.public_filename(:thumb)), photo.public_filename, :rel => 'lightbox[images]', :class => 'plain', :title => photo.title%>
+			<% end %>
+			<% end %>
+		</div>
+		<%= textilize(@consultation.body)%>
+	<% else %>
+		<%= truncate(sanitize(textilize(@consultation.body)), 800)%>
+	<% end %>
+</div>
+<div class="column">
+	<h3><%= t 'consultation.contact'%></h3>
+	<h4><%= t 'consultation.website'%></h4>
+	<%= auto_link(@consultation.website, :all, :target => '_blank' )%>
+	<h4><%= t 'consultation.email'%></h4>
+	<%= mail_to(@consultation.email, nil, :encode => :javascript)%>
+	<h4><%= t 'consultation.phone'%></h4>
+	<%= h @consultation.phone %>
+	<h4><%= t 'consultation.fax'%></h4>
+	<%= h @consultation.fax %>
+</div>
+<div class="column right">
+	<h3><%= t 'locations.location'%></h3>
+	<%= h(@consultation.title) %><br/>
+	<%= h(@consultation.location.street)%> <%= h(@consultation.location.number)%><br/>
+	<% unless @consultation.location.additional1.blank? %>	<%= h(@consultation.location.additional1)%><br/><% end %>
+	<% unless @consultation.location.additional2.blank? %>	<%= h(@consultation.location.additional2)%><br/><% end %>
+	<%= h(@consultation.location.zip)%> <%= h(@consultation.location.city)%><br/>
+	<% unless @consultation.location.state.blank? %>	<%= h(@consultation.location.state)%><br/><% end %>
+	<%= h(@consultation.location.country)%>
+</div>
+
+<div class="column wide">
+<% if current_user && @consultation.user == current_user %>
+<%= link_to t('common.edit'), edit_user_consultations_path(current_user) %> |
+<% end %>
+<%= link_to t('common.back'), consultations_path %>
+</div>

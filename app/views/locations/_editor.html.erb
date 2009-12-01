@@ -1,0 +1,21 @@
+<% f.fields_for :location do |location_form| -%>
+<fieldset>
+	<legend><%= t('locations.location')%></legend>
+<%= location_form.label :street, t('locations.street'), :class => "no_wrap" %>,
+<%= location_form.label :number, t('locations.number'), :class => "no_wrap" %><br />
+<%= location_form.text_field :street, :class => "no_wrap, s" %>
+<%= location_form.text_field :number, :class => "xs" %>
+<%= location_form.label :additional1, t('locations.additional1') %>
+<%= location_form.text_field :additional1 %>
+<%= location_form.label :additional2, t('locations.additional2') %>
+<%= location_form.text_field :additional2 %><br/>
+<%= location_form.label :zip, t('locations.zip'), :class => "no_wrap" %>,
+<%= location_form.label :city, t('locations.city'), :class => "no_wrap" %><br/>
+<%= location_form.text_field :zip, :class => "xs" %>
+<%= location_form.text_field :city, :class => "s" %>
+<%= location_form.label :state, t('locations.state') %>
+<%= location_form.text_field :state %>
+<%= location_form.label :country, t('locations.country') %>
+<%= location_form.text_field :country %>
+</fieldset>	
+<% end -%>

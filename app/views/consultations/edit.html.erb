@@ -1,0 +1,15 @@
+<%title t('consultation.edit.title')%>
+
+<% error_messages_for :consultation %>
+
+<% form_for([@user,@consultation], :url => user_consultations_path, :method => :put, :html => {:multipart => true}) do |f| %>
+	<%= render :partial => 'editor', :locals => {:f => f} %>
+  <div class="column wide">
+		<fieldset class="buttons">
+			<%= f.submit t('common.update') %>
+		</fieldset>
+		<%= link_to t('common.show'), @consultation %> |
+		<%= link_to t('common.back'), consultations_path %>
+	</div>
+<% end %>
+

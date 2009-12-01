@@ -560,6 +560,21 @@ input, select, textarea
 	width: 360px;
 }
 
+input.m
+{
+	width: 220px;	
+}
+
+input.s
+{
+	width: 270px;
+}
+
+input.xs
+{
+	width: 60px;
+}
+
 input.organ, input.xxs
 {
 	width: 2em;
@@ -606,6 +621,11 @@ input.file
 	width: 360px;
 }
 
+input.#no_wrap
+{
+	width: 120px !important;
+}
+
 textarea
 {
 	height: 180px;
@@ -640,4 +660,9 @@ div.effect_selector
 div.effect_selector input
 {
 	width: 2em;
+}
+
+.no_wrap
+{
+	display: inline !important;
 }

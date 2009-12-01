@@ -35,6 +35,7 @@ class UsersController < ApplicationController
       else
         @user.user_photo ||= UserPhoto.new
         @user.profile ||= Profile.new
+        @user.location ||= Location.new
         flash[:error]  = t('user.controller.create.failure')
         render :action => 'new'
       end
@@ -50,6 +51,7 @@ class UsersController < ApplicationController
     if @user
       @user.profile ||= Profile.new
       @user.user_photo ||= UserPhoto.new
+      @user.location ||= Location.new
       respond_to do |wants|
         wants.html {  }
       end
