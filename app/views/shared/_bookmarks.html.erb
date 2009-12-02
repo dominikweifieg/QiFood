@@ -1,0 +1,59 @@
+	<div id="bookmarks_close"><%= link_to_function t('common.close'), "Effect.toggle('bookmark_services', 'blind');"%></div>
+	<h4><%= t('common.do_bookmark')%></h4>
+	<ul>
+		<li>
+		<%= link_to image_tag('social/twitter.gif', :alt => 'Twitter', :size => '16x16' ), "http://twitter.com/home?status=#{uri}", :popup => true, :class => 'plain', :title => 'Twitter' %>
+		</li>
+		<li>
+		<%= link_to image_tag('social/facebook.gif', :alt => 'Facebook', :size => '16x16' ), "http://de.facebook.com/sharer.php?u=#{uri}&amp;t=#{title}", :popup => true, :class => 'plain', :title => 'Facebook' %>
+		</li>
+		<li>
+		<%= link_to image_tag('social/studiVZ.gif', :alt => 'studiVZ meinVZ schülerVZ', :size => '16x16' ), "http://www.studivz.net/Suggest/Selection/?u=#{uri}&desc=#{title}&prov=QiFood.eu", :popup => true, :class => 'plain', :title => 'studiVZ meinVZ schülerVZ' %>
+		</li>
+		<li>
+		<%= link_to image_tag('social/myspace.gif', :alt => 'MySpace', :size => '16x16' ), "http://www.myspace.com/index.cfm?fuseaction=postto&amp;u=#{uri}&amp;t=#{title}", :popup => true, :class => 'plain', :title => 'MySpace' %>
+		</li>
+		<li>
+		<%= link_to image_tag('social/delicious.gif', :alt => 'deli.cio.us', :size => '16x16' ), "http://del.icio.us/post?url=#{uri}&amp;title=#{title}", :popup => true, :class => 'plain', :title => 'del.icio.us' %>
+		</li>
+		<li>
+		<%= link_to image_tag('social/digg.gif', :alt => 'Digg', :size => '16x16' ), "http://digg.com/submit?phase=2&url=#{uri}&amp;title=#{title}", :popup => true, :class => 'plain', :title => 'Digg' %>
+		</li>
+		<li>
+		<%= link_to image_tag('social/folkd.gif', :alt => 'Folkd', :size => '16x16' ), "http://www.folkd.com/submit/#{uri}", :popup => true, :class => 'plain', :title => 'Folkd' %>
+		</li>
+		<li>
+		<%= link_to image_tag('social/google.gif', :alt => 'Google Bookmarks', :size => '16x16' ), "http://www.google.com/bookmarks/mark?op=add&bkmk=#{uri}&amp;title=#{title}", :popup => true, :class => 'plain', :title => 'Google Bookmarks' %>
+		</li>
+		<li>
+		<%= link_to image_tag('social/linkarena.gif', :alt => 'Linkarena', :size => '16x16' ), "http://linkarena.com/bookmarks/addlink/?url=#{uri}&amp;title=#{title}", :popup => true, :class => 'plain', :title => 'Linkarena' %>
+		</li>
+		<li>
+		<%= link_to image_tag('social/misterwong.gif', :alt => 'Mister Wong', :size => '16x16' ), "http://www.mister-wong.de/index.php?action=addurl&amp;bm_url=#{uri}&amp;bm_description=#{title}", :popup => true, :class => 'plain', :title => 'Mister Wong' %>
+		</li>
+		<li>
+		<%= link_to image_tag('social/newsvine.gif', :alt => 'Newsvine', :size => '16x16' ), "http://www.newsvine.com/_tools/seed&amp;save?u=#{uri}&amp;h=#{title}", :popup => true, :class => 'plain', :title => 'Newsvine' %>
+		</li>
+		<li>
+		<%= link_to image_tag('social/reddit.gif', :alt => 'reddit', :size => '16x16' ), "http://reddit.com/submit?url=#{uri}&amp;title=#{title}", :popup => true, :class => 'plain', :title => 'Reddit' %>
+		</li>
+		<li>
+		<%= link_to image_tag('social/stumbleupon.gif', :alt => 'StumbleUpon', :size => '16x16' ), "http://www.stumbleupon.com/submit?url=#{uri}&amp;title=#{title}", :popup => true, :class => 'plain', :title => 'StumbleUpon' %>
+		</li>
+		<li>
+		<%= link_to image_tag('social/windows.gif', :alt => 'Windows Live', :size => '16x16' ), "https://favorites.live.com/quickadd.aspx?marklet=1&mkt=en-us&url=#{uri}&title=#{title}&top=1", :popup => true, :class => 'plain', :title => 'Windows Live' %>
+		</li>
+		<li>
+		<%= link_to image_tag('social/yahoo.gif', :alt => 'Yahoo! Bookmarks', :size => '16x16' ), "http://myweb2.search.yahoo.com/myresults/bookmarklet?t=#{title}&d=&tag=&u=#{uri}", :popup => true, :class => 'plain', :title => 'Yahoo! Bookmarks' %>
+		</li>
+		<li>
+		<%= link_to image_tag('social/yigg.gif', :alt => 'Yigg', :size => '16x16' ), "http://www.yigg.de/neu?exturl=#{uri}&exttitle=#{title}", :popup => true, :class => 'plain', :title => 'Yigg' %>
+		</li>
+		<li><%= link_to image_tag('social/spurl.gif', :alt => 'spurl', :size => '16x16'), "http://www.spurl.net/spurl.php?title=#{title}&amp;url=#{uri}", :popup => true, :class => 'plain', :title => 'spurl' %></li>
+		<li><%= link_to image_tag('social/simpy.gif', :alt => 'simpy', :size => '16x16'), "http://www.simpy.com/simpy/LinkAdd.do?href=#{uri}&amp;title=#{title}", :popup => true, :class => 'plain', :title => 'simpy' %></li>
+		<li><%= link_to image_tag('social/blinklist.gif', :alt => 'blinklist', :size => '16x16'), "http://www.blinklist.com/index.php?Action=Blink/addblink.php&amp;Description=&amp;Url=#{uri}&amp;Title=#{title}", :popup => true, :class => 'plain', :title => 'blinklist' %></li>
+		<li><%= link_to image_tag('social/furl.gif', :alt => 'furl', :size => '16x16'), "http://www.furl.net/storeIt.jsp?u=#{uri}&amp;t=#{title}", :popup => true, :class => 'plain', :title => 'furl' %></li>
+		<li><%= link_to image_tag('social/blogmarks.gif', :alt => 'blogmarks', :size => '16x16'), "http://blogmarks.net/my/new.php?mini=1&amp;simple=1&amp;url=#{uri}&amp;title=#{title}", :popup => true, :class => 'plain', :title => 'blogmarks' %></li>
+		<li><%= link_to image_tag('social/magnolia.gif', :alt => 'magnolia', :size => '16x16'), "http://ma.gnolia.com/bookmarklet/add?url=#{uri}&amp;title=#{title}", :popup => true, :class => 'plain', :title => 'magnolia' %></li>
+		<li><%= link_to image_tag('social/technorati.png', :alt => 'technorati', :size => '16x16'), "http://www.technorati.com/faves?add=#{uri}", :popup => true, :class => 'plain', :title => 'technorati' %></li>
+	</ul>				

@@ -121,3 +121,38 @@ div.consultation_photo
 {
 	padding: 1em;
 }
+
+div#bookmark_services
+{
+	z-index: 20;
+	position: absolute;
+	top: 300px;
+	left: 30%;
+	border: 2px solid #569730;
+	padding: 0 12px 0 12px;
+	background-color: #F1F7CC;
+}
+
+div#bookmark_services h4
+{
+	padding: 0;
+}
+
+div#bookmark_services ul
+{
+	list-style: none;
+	padding: 0px;
+}
+
+div#bookmark_services li
+{
+	display: inline;
+}
+
+div#bookmarks_close
+{
+	position: absolute;
+	top: -0.5em;
+	right: 0.5em;
+	display: inline;
+}

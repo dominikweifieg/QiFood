@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/views/consultations/index.html.erb</string>
+	<string>app/views/layouts/application.html.erb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -26,14 +26,30 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>130</integer>
+				<integer>50</integer>
 				<key>line</key>
-				<integer>11</integer>
+				<integer>96</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<integer>47</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>48</integer>
+				<key>line</key>
+				<integer>96</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>50</integer>
+				<key>line</key>
+				<integer>96</integer>
+			</dict>
 		</dict>
 		<key>app/controllers/friendships_controller.rb</key>
 		<dict>
@@ -96,9 +112,9 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>36</integer>
+				<integer>9</integer>
 				<key>line</key>
-				<integer>16</integer>
+				<integer>23</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -207,33 +223,35 @@
 				<integer>9</integer>
 			</dict>
 		</dict>
-		<key>app/views/consultations/index.html.erb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>17</integer>
-				<key>line</key>
-				<integer>51</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>app/views/layouts/application.html.erb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>48</integer>
+				<integer>127</integer>
 				<key>line</key>
-				<integer>45</integer>
+				<integer>80</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>15</integer>
+			<integer>55</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>122</integer>
+				<key>line</key>
+				<integer>80</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>127</integer>
+				<key>line</key>
+				<integer>80</integer>
+			</dict>
 		</dict>
 		<key>app/views/posts/_post.html.erb</key>
 		<dict>
@@ -249,19 +267,35 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>config/locales/de.yml</key>
+		<key>app/views/users/_editor.html.erb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>48</integer>
+				<integer>8</integer>
 				<key>line</key>
-				<integer>372</integer>
+				<integer>59</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>339</integer>
+			<integer>13</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>1</integer>
+				<key>line</key>
+				<integer>57</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>8</integer>
+				<key>line</key>
+				<integer>59</integer>
+			</dict>
 		</dict>
 		<key>test/factories.rb</key>
 		<dict>
@@ -337,17 +371,9 @@
 	<key>openDocuments</key>
 	<array>
 		<string>app/controllers/consultations_controller.rb</string>
-		<string>app/controllers/users_controller.rb</string>
-		<string>app/views/layouts/application.html.erb</string>
-		<string>vendor/plugins/geokit-rails/README.markdown</string>
-		<string>app/controllers/posts_controller.rb</string>
-		<string>app/models/aliment.rb</string>
 		<string>app/models/consultation.rb</string>
-		<string>app/views/consultations/index.html.erb</string>
-		<string>app/views/aliments/_list.html.erb</string>
-		<string>app/models/location.rb</string>
-		<string>app/views/consultations/edit.html.erb</string>
-		<string>config/locales/de.yml</string>
+		<string>app/views/layouts/application.html.erb</string>
+		<string>app/views/users/_editor.html.erb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>

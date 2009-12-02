@@ -63,7 +63,14 @@
 		&copy; Copyright 2009 <%= link_to "www.ars-subtilior.com", "http://www.ars-subtilior.com", :popup => true %> Dominik Wei-Fieg<span class="pipe">|</span>
 		<%= link_to_unless_current(t('navigation.about'), static_path('about')) %><span class="pipe">|</span>
 		<%= link_to_unless_current(t('navigation.contact'), static_path('contact')) %><span class="pipe">|</span>
+		<%= link_to_function t('common.bookmark'), nil, :id => 'bookmark_link' do |page|
+			page.visual_effect(:toggle_blind, 'bookmark_services') 
+			end %>
+		   <div id="bookmark_services" style="display:none">
+					<%= render :partial => 'shared/bookmarks', :locals => {:uri => u(request.protocol << request.host_with_port << request.request_uri), :title =>  u(@content_for_title)}%>
+		   </div>
 	</div>
+	<% if RAILS_ENV == 'production' -%>
 	<script type="text/javascript">
 	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -73,5 +80,6 @@
 	var pageTracker = _gat._getTracker("UA-10906333-1");
 	pageTracker._trackPageview();
 	} catch(err) {}</script>
+	<% end %>
 </body>
 </html>
