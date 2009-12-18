@@ -1,0 +1,54 @@
+de:
+  activerecord:
+    errors:
+      # The values :model, :attribute and :value are always available for interpolation
+      # The value :count is available when applicable. Can be used for pluralization.
+      messages:
+        inclusion: "ist nicht in der Liste"
+        exclusion: "ist reserviert"
+        invalid: "nicht gültig"
+        confirmation: "entspricht nicht der Konfirmierung"
+        accepted: "müssen akzeptiert werden"
+        empty: "darf nicht leer sein"
+        blank: "darf nicht leer sein"
+        too_long: "ist zu lang (maximal {{count}} Buchstaben)"
+        too_short: "ist zu kurz (minimum {{count}} Buchstaben)"
+        wrong_length: "hat die flasche Länge (es sollten {{count}} Buchstaben sein)"
+        taken: "ist schon vergeben"
+        not_a_number: "ist keine Nummer"
+        greater_than: "muss größer als {{count}} sein"
+        greater_than_or_equal_to: "muss größer oder gleich {{count}} sein"
+        equal_to: "muss gleich {{count}} sein"
+        less_than: "muss weniger als {{count}} sein"
+        less_than_or_equal_to: "muss weniger oder gleich {{count}} sein"
+        odd: "muss ungerade sein"
+        even: "muss gerade sein"
+        # Append your own errors here or at the model/attributes scope.
+
+      # You can define own errors for models or model attributes.
+      # The values :model, :attribute and :value are always available for interpolation.
+      #
+      # For example,
+      #   models:
+      #     user:
+      #       blank: "This is a custom blank message for {{model}}: {{attribute}}"
+      #       attributes:
+      #         login:
+      #           blank: "This is a custom blank message for User login"
+      # Will define custom blank validation message for User model and 
+      # custom blank validation message for login attribute of User model.
+      #models:
+        
+    # Translate model names. Used in Model.human_name().
+    #models:
+      # For example,
+      #   user: "Dude"
+      # will translate User model name to "Dude"
+    
+    # Translate model attribute names. Used in Model.human_attribute_name(attribute).
+    #attributes:
+      # For example,
+      #   user:
+      #     login: "Handle"
+      # will translate User attribute "login" as "Handle"
+

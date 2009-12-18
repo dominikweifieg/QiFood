@@ -68,7 +68,7 @@
 			<%= link_to t('favorite.add'), favorite_aliments_path(:aliment_id => @aliment.id), :method => :post %> |
 			<% end %>
 			<% if current_user_in_role? User::EDITOR %><%= link_to t('common.edit'), edit_aliment_path(@aliment) %> | <% end %>
-			<%= link_to t('common.back'), aliments_path %>
+			<%= back_link_to t('common.back'), aliments_path %>
 		</div>
 	<div	class="comments column wide">
 		<div id="add_comment" class="comment edit">

@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :events
+
   map.resources :consultations
 
 
@@ -13,6 +15,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users do |user|
     user.resources :posts
     user.resource :consultations
+    user.resources :events
   end
 
   map.resource :session
@@ -45,9 +48,16 @@ ActionController::Routing::Routes.draw do |map|
     post.resource :comments, :requirements => {:context_type => 'post'}
   end
   
-  map.resources :consultations
+  map.resources :consultations do |consultation|
+    consultation.resources :events
+  end
+  
+  map.resources :events
+  
+  map.resources :locations, :only => [:index, :show]
   
   map.root :controller => 'pages', :action => 'show', :requirements => {:permalink => "home"}
+  
 	
   # The priority is based upon order of creation: first created -> highest priority.
 

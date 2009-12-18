@@ -1,0 +1,13 @@
+<tr class="<% if event_counter % 2 == 0 %>even<% else %>odd<% end %>">
+  <td><%=link_to h(event.title), event %></td>
+  <td><%=safe_truncate(textilize(event.body), :length => 30) %></td>
+  <td><%=l(event.start, :format => :short) %></td>
+  <td><%= distance_of_time_in_words event.start, event.end %></td>
+  <td>
+		<% if event.consultation %>
+		<%=link_to h(event.consultation.title), event.consultation %>
+		<% else %>
+		<%=link_to h(event.user.login), event.user %>
+		<% end %>
+		</td>
+</tr>

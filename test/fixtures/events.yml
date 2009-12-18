@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  body: MyText
+  when: 2009-12-03 09:22:45
+  duration: 2009-12-03 09:22:45
+  commercial: false
+  reference_number: MyString
+  user_id: 1
+  consultation_id: 1
+
+two:
+  title: MyString
+  body: MyText
+  when: 2009-12-03 09:22:45
+  duration: 2009-12-03 09:22:45
+  commercial: false
+  reference_number: MyString
+  user_id: 1
+  consultation_id: 1

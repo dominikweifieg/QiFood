@@ -1,0 +1,14 @@
+<% title t('events.new.title') %>
+
+<% form_for([@parent, @event]) do |f| %>
+  <%= f.error_messages %>
+	<%= render :partial => 'editor', :locals => {:f => f} %>
+  <div class="column wide">
+		<fieldset class="buttons">
+    <%= f.submit t('common.create') %>
+		</fieldset>
+		<%= link_to t('common.back'), @parent %>
+  </div>
+<% end %>
+
+<%= observe_form dom_id(@event), :function => 'update_start_end_dates()' %>

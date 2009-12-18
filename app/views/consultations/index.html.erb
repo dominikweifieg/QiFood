@@ -1,4 +1,10 @@
-<% title t('consultation.index.title')%>
+<%
+ if @loc 
+	title t('consultation.index.title_loc', loc => @loc)
+ else
+	title t('consultation.index.title')
+ end
+%>
 <% javascript_tag do %>
 document.observe("dom:loaded", function() {
 	$('origin').select();
@@ -49,10 +55,13 @@ document.observe("dom:loaded", function() {
   <%= render @consultations %>
 	<tfoot>
 		<tr>
-			<td colspan="6">
-				<%= will_paginate @aliments , :params => params %>
+			<td colspan="5">
+				<%= will_paginate @consultations , :params => params %>
 			</td>
 		</tr>
 	</tfoot>
 </table>
+
+<%= link_to t('locations.map'), locations_path(:ids => @consultations.map {|c| c.location.id }, :title => @content_for_h2), :popup => ['QiFood Map', 'height=600,width=620']%>
+
 </div>

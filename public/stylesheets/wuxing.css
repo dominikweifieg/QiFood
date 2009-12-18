@@ -553,11 +553,25 @@ label.organ, label.xxs
 	display: inline;
 }
 
+legend
+{
+	font-size: 118%;
+	padding-bottom: 4px;
+	padding-top: 4px;
+	border-bottom: 1px dotted #CCCCCC;
+	width: 360px;
+}
+
 input, select, textarea 
 {
 	color: #333333;
 	font-family: monospace;
 	width: 360px;
+}
+
+input:focus, select:focus, textarea:focus
+{
+	border: 2px inset #569730;
 }
 
 input.m

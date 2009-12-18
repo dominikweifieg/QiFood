@@ -1,0 +1,7 @@
+<%= h(location.street)%> <%= h(location.number)%><br/>
+<% unless location.additional1.blank? %>	<%= h(location.additional1)%><br/><% end %>
+<% unless location.additional2.blank? %>	<%= h(location.additional2)%><br/><% end %>
+<%= h(location.zip)%> <%= h(location.city)%><br/>
+<% unless location.state.blank? %>	<%= h(location.state)%><br/><% end %>
+<%= h(location.country)%><br/>
+<%= link_to t("locations.map"), location_path(location, :title => title, :info => info), :popup => ['QiFood Map', 'height=600,width=620'] %>

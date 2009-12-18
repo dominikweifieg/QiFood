@@ -82,7 +82,7 @@ img.feed
 
 input#find_name
 {
-	border: 2px solid #569730;
+	border: 2px solid #569730 !important;
 	font-size: 145%;
 	color: #82166B;
 	background-color: #CFC326;/*inherit;*/
@@ -155,4 +155,28 @@ div#bookmarks_close
 	top: -0.5em;
 	right: 0.5em;
 	display: inline;
+}
+
+div#map_header
+{
+		height: 130px;
+		width: 620px;
+		background-color: #A3C624;
+		color: #82166B;/*#CFC326;/*#FFF92B;*/
+		background-image: url('../images/rice.png');
+		background-repeat: no-repeat;
+		background-position: bottom left;
+		padding-left: 5px;
+}
+
+h1.map
+{
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+div#map_div
+{
+	margin: 10px;
+	position: absolute;
 }

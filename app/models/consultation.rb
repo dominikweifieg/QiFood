@@ -3,6 +3,7 @@ class Consultation < ActiveRecord::Base
   has_one :location, :as => :locatable
   acts_as_mappable :through => :location
   has_many :consultation_photos
+  has_many :events
   
   after_validation :set_pro_start_date
   before_create :create_reference_number

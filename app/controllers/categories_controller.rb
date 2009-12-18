@@ -34,7 +34,7 @@ class CategoriesController < ApplicationController
     
     respond_to do |wants|
       if @category.update_attributes(params[:category])
-        flash[:notice] = t('categories.update.succes')
+        flash[:notice] = t('categories.update.success')
         wants.html { redirect_to :action => "index"  }
         wants.xml {redirect_to :action => "index"}
       else

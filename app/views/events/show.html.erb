@@ -1,0 +1,36 @@
+<% title t('events.show.title', :event_title => @event.title) %>
+<div class="column wide">
+	<h3><%= t('events.body') %></h3>
+	<%= textilize(@event.body) %>
+</div>
+
+<div class="column">
+	<h3><%= t('events.show.data')%></h3>
+	<h4><%= t('events.start')%></h4>
+	<%= l(@event.start, :format => :long) %>
+	<h4><%= t('events.end')%></h4>
+	<%= l(@event.end, :format => :long) %>
+	<h4><%= t('events.duration')%></h4>
+	<%= distance_of_time_in_words @event.start, @event.end %>
+</div>
+
+<div class="column right">
+	<h3><%= t('events.index.added_by') %></h3>
+	<% if @event.consultation %>
+		<%= link_to @event.consultation.title, @event.consultation %>
+	<% else %>
+		<%= link_to @event.user.login, @event.user %>
+	<% end %>
+	<h3><%= t('events.location')%></h3>
+	<%= render :partial => 'locations/location', :locals => {:location => @event.location, :title => @event.title, :info => @event.title } %>
+
+</div>
+<div class="column wide">
+<% if @event.consultation && current_user && current_user == @event.consultation.user %>
+	<%= link_to t('common.edit'), edit_consultation_event_path(@event.consultation, @event) %> |
+<% elsif current_user && current_user == @event.user %>
+	<%= link_to t('common.edit'), edit_user_event_path(@event.user, @event) %> |
+<% end %>
+<%= back_link_to t('common.back'), events_path %>
+</div>
+	

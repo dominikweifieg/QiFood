@@ -36,6 +36,9 @@
 	<h3><%= t('user.show.blog_my')%></h3>
 	<%= render :partial => 'posts/post_preview', :collection => @user.posts.find(:all, :limit => 5)%>
 	<%= link_to t('user.show.blog_link_my'), user_posts_path(@user)%>
+	<h3><%= t('events.events')%></h3>
+	<%= render :partial => 'events/preview', :collection => @user.events.find(:all, :limit => 5, :order => 'start DESC')%>
+	<%= link_to t('user.show.create_event'), new_user_event_path(@user)%>
 	<% else %>
 	<h3><%= t('user.favorite_aliments', :name => @user.login) %></h3>
 	<%= render :partial => 'favorite_aliment', :collection => @user.favorite_aliments %>
@@ -44,6 +47,8 @@
 	<h3><%= t('user.show.blog', :name => @user.login)%></h3>
 	<%= render :partial => 'posts/post_preview', :collection => @user.posts.find(:all, :limit => 5)%>
 	<%= link_to t('user.show.blog_link', :name => @user.login), user_posts_path(@user)%>
+	<h3><%= t('events.events')%></h3>
+	<%= render :partial => 'events/preview', :collection => @user.events.find(:all, :limit => 5, :order => 'start DESC')%>
 	<% end %>
 </div>
 <% unless @user.profile.about.blank? %>
@@ -55,7 +60,7 @@
 <div class="column wide">
 	<% if @user.consultation %>
 	<h3><%= h(@user.consultation.title) %></h3>
-	<%= truncate(textilize(@user.consultation.body), 120) %>
+	<%= safe_truncate(textilize(@user.consultation.body), :length => 120) %>
 	<%= link_to t('consultation.details'), @user.consultation %>
 	<% elsif @user  == current_user %>
 	<h3><%= t('consultation.title') %></h3>

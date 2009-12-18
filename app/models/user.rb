@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
   
   has_one :consultation
   
+  has_many :events
+  
 	can_flag
 
   #validates_presence_of     :login

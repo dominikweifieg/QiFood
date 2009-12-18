@@ -11,7 +11,7 @@
   <tr>
     <td><%=h page.title %></td>
     <td><%=h page.permalink %></td>
-    <td><%=h(truncate(page.body, 60)) %></td>
+    <td><%=h(safe_truncate(textilize(page.body), 60)) %></td>
     <td><%= link_to 'Show', page %></td>
     <td><%= link_to 'Edit', edit_page_path(page) %></td>
 		<% if current_user_in_role? User::ADMIN %>

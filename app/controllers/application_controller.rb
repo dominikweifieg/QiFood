@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
 	
-	before_filter :set_locale
+	before_filter :set_locale, :fetch_referrer
 
 	private 
 	def set_locale
@@ -69,5 +69,15 @@ class ApplicationController < ActionController::Base
 			redirect_to new_session_path
 		end
 	end
+	
+	def fetch_referrer
+	  if request.headers["Referer"]
+	    ref = request.headers["Referer"].sub(/(http)s?:\/\//, "").sub(/:\d+/, "")
+	    if ref.index(request.host) == 0
+        @back = ref.sub(request.host, "")
+        logger.info { "#{@back}" }
+      end
+    end
+  end
 	
 end

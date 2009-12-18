@@ -28,17 +28,17 @@
 <div class="column right">
 	<h3><%= t 'locations.location'%></h3>
 	<%= h(@consultation.title) %><br/>
-	<%= h(@consultation.location.street)%> <%= h(@consultation.location.number)%><br/>
-	<% unless @consultation.location.additional1.blank? %>	<%= h(@consultation.location.additional1)%><br/><% end %>
-	<% unless @consultation.location.additional2.blank? %>	<%= h(@consultation.location.additional2)%><br/><% end %>
-	<%= h(@consultation.location.zip)%> <%= h(@consultation.location.city)%><br/>
-	<% unless @consultation.location.state.blank? %>	<%= h(@consultation.location.state)%><br/><% end %>
-	<%= h(@consultation.location.country)%>
+	<%= render :partial => 'locations/location', :locals => {:location => @consultation.location, :title => @consultation.title, :info => @consultation.title}%>
+	<h3><%= t('events.events')%></h3>
+	<%= render :partial => 'events/preview', :collection => @consultation.events.find(:all, :limit => 5, :order => 'start DESC')%>
+	<% if current_user && @consultation.user == current_user %>
+	<%= link_to t('user.show.create_event'), new_consultation_event_path(@consultation)%>
+	<% end %>
 </div>
 
 <div class="column wide">
 <% if current_user && @consultation.user == current_user %>
 <%= link_to t('common.edit'), edit_user_consultations_path(current_user) %> |
 <% end %>
-<%= link_to t('common.back'), consultations_path %>
+<%= back_link_to t('common.back'), consultations_path %>
 </div>

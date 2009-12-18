@@ -21,6 +21,26 @@ function add_author(name, id)
 	new Effect.Highlight(span_id)
 }
 
+function update_start_end_dates(element, value)
+{
+	if($('event_start_3i').value > $('event_end_3i').value)
+	{
+		$('event_end_3i').value = $('event_start_3i').value;
+	}
+	if($('event_start_2i').value > $('event_end_2i').value)
+	{
+		$('event_end_2i').value = $('event_start_2i').value;
+	}
+	if($('event_start_1i').value > $('event_end_1i').value)
+	{
+		$('event_end_1i').value = $('event_start_1i').value;
+	}
+	if($('event_start_4i').value > $('event_end_4i').value)
+	{
+		$('event_end_4i').value = parseInt($('event_start_4i').value) + 1;
+	}
+}
+
 function hide_other_aliment_previews(dont_hide)
 {
 	$$("div.aliment_preview").each(function(preview)

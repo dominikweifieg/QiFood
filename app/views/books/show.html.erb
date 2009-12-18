@@ -1,5 +1,5 @@
 <%title @book.title %>
-<%meta_description truncate(@book.description, :length => 160)%>
+<%meta_description safe_truncate(@book.description, :length => 160)%>
 <%meta_keywords t('books.meta_keywords')%>
 
 <%= render :partial => 'amazon' %>

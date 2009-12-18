@@ -5,11 +5,11 @@ class Location < ActiveRecord::Base
                     
   before_validation_on_create :geocode_location
   
-  def address
+  def address(separator=",")
     if state
-      "#{street} #{number}, #{zip} #{city}, #{state}, #{I18n.t(country, :scope => 'countries')}" 
+      "#{street} #{number}#{separator} #{zip} #{city}#{separator} #{state}#{separator} #{I18n.t(country, :scope => 'countries')}" 
     else
-      "#{street} #{number}, #{zip} #{city}, #{I18n.t(country, :scope => 'countries')}" 
+      "#{street} #{number}#{separator} #{zip} #{city}#{separator} #{I18n.t(country, :scope => 'countries')}" 
     end
   end
   

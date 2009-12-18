@@ -8,8 +8,10 @@ class ConsultationsController < ApplicationController
   def index
     if params[:origin].present?
       @consultations = Consultation.paginate(:all, :origin => params[:origin], :within => params[:radius], :page => params[:page], :order => "pro DESC")
+      @loc = params[:origin]
     elsif @user && @user.location#if a user id was given, we search for consultations near that user
       @consultations = Consultation.paginate(:all, :origin => @user.location, :within => params[:radius], :page => params[:page], :order => "pro DESC")
+      @loc = @user.location.address
     else
       @consultations = Consultation.paginate(:page => params[:page], :order => "pro DESC, title")
     end

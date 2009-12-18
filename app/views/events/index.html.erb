@@ -1,0 +1,25 @@
+<% title( t('events.index.title', :month => t('date.month_names')[params[:month].to_i]))%>
+
+<table cellspacing="0">
+	<thead>
+  <tr>
+    <th><%= t('events.title')%></th>
+    <th><%= t('events.body')%></th>
+    <th><%= t('events.start')%></th>
+    <th><%= t('events.duration')%></th>
+    <th><%= t('events.index.added_by')%></th>
+	</tr>
+	</thead>
+	<%= render @events %>
+	<tfoot>
+		<tr>
+			<td colspan="5">
+				<%= will_paginate @events , :params => params %>
+			</td>
+		</tr>
+	</tfoot>
+</table>
+
+<br />
+
+<%= link_to 'New event', new_event_path %>

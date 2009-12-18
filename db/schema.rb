@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091128132016) do
+ActiveRecord::Schema.define(:version => 20091203082245) do
 
   create_table "aliment_photos", :force => true do |t|
     t.integer  "parent_id"
@@ -89,6 +89,7 @@ ActiveRecord::Schema.define(:version => 20091128132016) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "consultation_id", :default => 1
   end
 
   create_table "consultations", :force => true do |t|
@@ -103,6 +104,7 @@ ActiveRecord::Schema.define(:version => 20091128132016) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "pro_start_day"
   end
 
   create_table "effects", :force => true do |t|
@@ -113,6 +115,19 @@ ActiveRecord::Schema.define(:version => 20091128132016) do
 
   create_table "elements", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "start"
+    t.datetime "end"
+    t.boolean  "commercial"
+    t.string   "reference_number"
+    t.integer  "user_id"
+    t.integer  "consultation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,16 @@
+<% title t('events.edit.title') %>
+
+<% form_for([@parent, @event]) do |f| %>
+  <%= f.error_messages %>
+	<%= render :partial => 'editor', :locals => {:f => f} %>
+  <div class="column wide">
+		<fieldset class="buttons">
+    <%= f.submit t('common.update') %>			
+		</fieldset>
+		<%= link_to t('common.show'), @event %> |
+		<%= link_to t('common.back'), @parent %>
+  </div>
+<% end %>
+
+<%= observe_form "edit_#{dom_id(@event)}", :function => 'update_start_end_dates(element, value)' %>
+

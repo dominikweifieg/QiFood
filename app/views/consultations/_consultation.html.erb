@@ -1,7 +1,7 @@
 <tr class="<% if consultation_counter % 2 == 0 %>even<% else %>odd<% end %>">
 		<td><% if consultation.pro %><% unless consultation.consultation_photos.empty?%><%= image_tag(consultation.consultation_photos.first.public_filename(:thumb)) %><% end %><% end %></td>
     <td><%=link_to h( consultation.title), consultation %></td>
-    <td><%=truncate(h(consultation.body), :length => 30) %></td>
+    <td><%=safe_truncate(h(consultation.body), :length => 30) %></td>
     <td><%=link_to h(consultation.user.login), consultation.user %></td>
     <% if current_user && current_user == consultation.user %>
 		<td><%= link_to 'Edit', edit_user_consultations_path(current_user) %></td>

@@ -1,0 +1,15 @@
+<div class="column">
+	<%= f.label :title, t('events.title') %>
+	<%= f.text_field :title %>
+	<%= f.label :body, t('events.body') %>
+	<%= f.text_area :body %>
+	<%= f.label :start, t('events.start') %>
+	<%= f.datetime_select :start, {:minute_step => 5}, :class => 'date' %>
+	<%= f.label :end, t('events.end') %>
+	<%= f.datetime_select :end, {:minute_step => 5}, :class => 'date' %>
+	<%= f.label :commercial, t('events.commercial') %>
+	<%= f.check_box :commercial, :class => "xxs" %> <%= t('events.commercial_explanation')%> 
+</div>
+<div class="column right">
+	<%= render :partial => "locations/editor", :locals => {:f => f} %>
+</div>

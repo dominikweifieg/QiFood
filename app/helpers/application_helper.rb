@@ -53,6 +53,13 @@ module ApplicationHelper
 		current_user.role & role == role
 	end	
 
+  def back_link_to(title, path)
+    if @back 
+      link_to(title, @back)
+    else
+      link_to(title, path)
+    end
+  end
   
 end
   

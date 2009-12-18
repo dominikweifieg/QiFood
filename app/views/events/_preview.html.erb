@@ -1,0 +1,3 @@
+<% div_for preview do %>
+	<%= link_to h(preview.title), preview %>: <%= l(preview.start, :format => :short) %>, <%= t('common.duration') %><%= distance_of_time_in_words preview.start, preview.end %>
+<% end %>

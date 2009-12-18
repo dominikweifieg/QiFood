@@ -4,6 +4,7 @@ de:
       aliment: Lebensmittel
       user: Benutzer
       post: Blog-Eintrag
+      event: Termin
     attributes: 
       aliment:
         name: Name
@@ -38,13 +39,12 @@ de:
         city: Stadt
         state: Bundesland
         country: Land
+      event:
+        title: Titel
+        body: Beschreibung
+        start: Beginn
+        end: Ende
     errors:
-      template:
-        header: 
-          one:    "Ein Fehler verhinderte das Abspeichern dieses {{model}}s"
-          other:  "{{count}} Fehler verhinderten das Abspeichern dieses {{model}}s"
-          # The variable :count is also available
-        body: "Es gab Probleme in folgenden Feldern:"
       models: 
         user:
           attributes:
@@ -73,6 +73,11 @@ de:
               blank: Es wurde kein Inhalt eingetragen
             permalink:
               taken: "Es konnte kein Link f&uuml;r Ihren Blog-Eintrag erzeugt werden, bitte &auml;ndern Sie den Titel"
+        event:
+          attributes:
+            start:
+              after_end: "Der Beginn des Termins muss vor dem Ende des Termins liegen"
+              past: "Der Beginn des Termins muss in der Zukunft liegen"
   main_title: QiFood
   meta_description: "Informationen und Nahrungsmitteltabellen zur 5 Elemente Ernährung (Chinesische Ernährungslehre)"
   meta_keywords: ", 5 Elemente Ernährung, Chinesische Ernährungslehre, Ernährung, Gesundheit"
@@ -230,6 +235,7 @@ de:
       blog_link: "Alle Blog-Eintr&auml;ge von {{name}}"
       blog_my: Mein Blog
       blog_link_my: "Alle meine Blog-Eintr&auml;ge"
+      create_event: Neuen Termin eintragen
     profile:
       title: "Author:"
     controller:
@@ -375,6 +381,29 @@ de:
     near: "In der N&auml;he von:"
     radius: Umkreis (km)
     example: "Astrid-Lindgren-Strasse, Freiburg"
+    map: Karte
+    show: 
+      title: "Karte: {{title}}"
+  events:
+    title: Titel
+    body: Beschreibung
+    start: Beginn
+    end: Ende
+    duration: Dauer
+    commercial: Gewerblicher Termin
+    commercial_explanation: "Ja. Erkl&auml;rung: F&uuml;r das Einstellen kommerzieller Termine erheben wir eine Geb&uuml;hr von 5 Euro je Termin."
+    location: Veranstaltungsort
+    events: Termine
+    index:
+      title: "Termine im {{month}}"
+      added_by: Eingestellt von 
+    new:
+      title: Neuen Termin anlegen
+    edit:
+      title: "Termin ändern"
+    show:
+      title: "Details für den Termin {{event_title}}"
+      data: Daten
   navigation:
     aliments: Lebensmittel
     about: Impressum
@@ -389,6 +418,7 @@ de:
     profile: Mein Profil
     support: "Unterst&uuml;tzen"
     home: Home  
+    events: Termine
   common:
     show: Anzeigen
     back: Zur&uuml;ck
@@ -404,3 +434,4 @@ de:
     bookmark: Social Networks
     do_bookmark: "Diese Seite merken bei:"
     close: Schliessen
+    duration: "Dauer: "
