@@ -61,7 +61,7 @@ document.observe("dom:loaded", function() {
 		</tr>
 	</tfoot>
 </table>
-
+<% unless @consultations.empty? %>
 <%= link_to t('locations.map'), locations_path(:ids => @consultations.map {|c| c.location.id }, :title => @content_for_h2), :popup => ['QiFood Map', 'height=600,width=620']%>
-
+<% end %>
 </div>
