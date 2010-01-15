@@ -3,7 +3,7 @@
 <% meta_keywords t('post.meta_keywords')%>
 <div class="column wide">
 	<%= render :partial => 'users/profile', :locals => {:user => @post.user}%>
-	<%= textilize @post.body %>
+	<%= textilize @body %>
 </div>
 <div class="column wide">
 	<% if @user %>
@@ -27,24 +27,22 @@
 	</div>
 	<%= render :partial => 'comments/index', :locals => {:commentable => @post} %>
 </div>
+<div id="aliment_preview" class="aliment_preview" style="display:none">
+	
+</div>
 <script type="text/javascript" charset="utf-8">
 	//<![CDATA[
 	$$("a.aliment_link").each(function(link)
 	{
 		link.observe('mouseover', function(event)
 		{
-			var element = this.next("div.aliment_preview");
-			if(element == null)
-			{
-				element = this.up().next("div.aliment_preview")
-			}
+			var element = $('aliment_preview')
 			if(element != null)
 			{
 				var y = (event.pointerY() - 12) + 'px';
 				var x = (event.pointerX() - 12) + 'px';
 				element.setStyle({'top':y, 'left':x});
 				var id = element.id;
-				hide_other_aliment_previews(id);
 				new Ajax.Updater(id, this, {method:'get', onComplete:function(result)
 				{
 					var arrayPageSize = getPageSize();

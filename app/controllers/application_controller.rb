@@ -36,8 +36,8 @@ class ApplicationController < ActionController::Base
   def aliment_links(text)
 	  aliments = Aliment.all(:select => "id, name, plural_name", :order => "name DESC")
 	  aliments.each do |aliment|
-	    text = text.gsub(/(^|\s)#{aliment.name}/im, " <a class=\"plain aliment_link\" href=\"#{url_for(aliment)}\">#{aliment.name}</a><div class=\"aliment_preview\" id=\"aliment_preview_#{aliment.id}\" style=\"display:none\"></div>")
-	    text = text.gsub(/(^|\s)#{aliment.plural_name}/im, " <a class=\"plain aliment_link\" href=\"#{url_for(aliment)}\">#{aliment.plural_name}</a><div class=\"aliment_preview\" id=\"aliment_preview_#{aliment.id}\" style=\"display:none\"></div>") unless aliment.plural_name = aliment.name
+	    text = text.gsub(/(^|\s)#{aliment.name}/im, " <a class=\"plain aliment_link\" href=\"#{url_for(aliment)}\">#{aliment.name}</a>")
+	    text = text.gsub(/(^|\s)#{aliment.plural_name}/im, " <a class=\"plain aliment_link\" href=\"#{url_for(aliment)}\">#{aliment.plural_name}</a>") unless aliment.plural_name = aliment.name
 	  end 
     text
   end

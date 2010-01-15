@@ -5,6 +5,8 @@ class Consultation < ActiveRecord::Base
   has_many :consultation_photos
   has_many :events
   
+  validates_acceptance_of :agbs
+  
   after_validation :set_pro_start_date
   before_create :create_reference_number
   

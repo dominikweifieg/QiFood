@@ -1,5 +1,46 @@
 <% title( t('events.index.title', :month => t('date.month_names')[params[:month].to_i]))%>
-
+<% javascript_tag do %>
+document.observe("dom:loaded", function() {
+	$('origin').select();
+	$('origin').focus();
+});
+<% end %>
+<div class="column wide">
+	<% if current_user %>
+		<% if current_user.location 
+			@loc = current_user.location.address
+			%>
+			<%= link_to t('events.near_me'), events_path(:user_id => current_user.id) %>
+		<% else 
+			@loc = t('locations.example')
+			%>
+			<%= t('events.near_me_add_location') %> <%= link_to t('user.show.title_my'), edit_user_path(current_user) %>
+		<% end %>
+	<% else 
+		@loc = t('locations.example')
+			end %>
+	<% form_for events_path, :html => {:method => :get, :id => 'month_chooser'} do |f| -%>
+		<%= label_tag :month, t('events.month'), :class => "no_wrap" %>
+		<% months = Array.new() 
+			 t('date.month_names')[1..12].each_with_index  {|month, i| months << [month, i+1]} 
+		%>
+		<input type="hidden" id="param_origin" name="origin" value="<%= params[:origin]%>"/>
+		<input type="hidden" id="param_radius" name="radius" value="<%= params[:radius]%>"/>
+		<select id="month" name="month">
+		<%= options_for_select months, :selected => params[:month].to_i%>
+		</select>
+		<%= observe_form :month_chooser, :function => "$('month_chooser').submit()"%>
+	<% end %>
+	<% form_for events_path, :html => {:method => :get} do |f| -%>
+		<input type="hidden" id="param_month" name="month" value="<%= params[:month]%>"/>
+	  <%= label_tag :origin, t('locations.near'), :class => "no_wrap"%>
+		<%= text_field_tag :origin, @loc, :class => "no_wrap" %>
+		<%= label_tag :radius, t('locations.radius'), :class => "no_wrap" %>&nbsp;&nbsp;
+ 		<%= text_field_tag :radius, 20, :class => "xs"%>
+		<fieldset class="buttons">
+			<%= f.submit t('common.find') %>
+		</fieldset>
+	<% end -%>
 <table cellspacing="0">
 	<thead>
   <tr>
@@ -19,7 +60,11 @@
 		</tr>
 	</tfoot>
 </table>
-
-<br />
-
-<%= link_to 'New event', new_event_path %>
+</div>
+<div class="column wide">
+	<% unless @events.empty? %>
+	<%= link_to t('locations.map'), locations_path(:ids => @events.map {|c| c.location.id }, :title => @content_for_h2), :popup => ['QiFood Map', 'height=600,width=620']%>
+	<% end %>
+	<% if current_user %>
+		<%= link_to t('events.new.title'), new_event_path %>
+	<% end %>

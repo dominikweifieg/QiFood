@@ -20,11 +20,15 @@ class EventsController < ApplicationController
       search_start = search_start.beginning_of_month
     end
     search_end ||= search_start
-    
-    @events = Event.paginate(:conditions => ["start BETWEEN :month_start AND :month_end", 
-      { :month_start => search_start.to_formatted_s(:db), 
-        :month_end => search_end.end_of_month.to_formatted_s(:db)}], :order => "start", :page => params[:page])
-
+    if params[:origin].present?
+      @events = Event.paginate(:origin => params[:origin], :within => params[:radius], :conditions => ["start BETWEEN :month_start AND :month_end", 
+        { :month_start => search_start.to_formatted_s(:db), 
+          :month_end => search_end.end_of_month.to_formatted_s(:db)}], :order => "start", :page => params[:page])
+    else
+      @events = Event.paginate(:conditions => ["start BETWEEN :month_start AND :month_end", 
+        { :month_start => search_start.to_formatted_s(:db), 
+          :month_end => search_end.end_of_month.to_formatted_s(:db)}], :order => "start", :page => params[:page])
+    end
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @events }

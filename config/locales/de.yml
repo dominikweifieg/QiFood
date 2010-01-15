@@ -353,10 +353,10 @@ de:
     near_me_add_location: "F&uuml;gen Sie Ihrem Profile eine Adresse hinzu, um Bertungsangebote in Ihrer N&auml;he zu finden."
     pro_account: "Ein Eintrag mit Titel und einer Beschreibung mit maximal 800 Zeichen ist kostenlos. \
                   Wenn Sie mehr als 800 Zeichen verwenden wollen oder zus&auml;tzlich auch Bilder anzeigen m&ouml;chten, \
-                  k&ouml;nnen Sie einen erweiterte Anzeige w&auml;hlen, f&uuml;r die wir allerdings eine monatliche Geb&uuml;hr von 30 &euro; netto \
+                  k&ouml;nnen Sie einen erweiterte Anzeige w&auml;hlen, f&uuml;r die wir allerdings eine monatliche Geb&uuml;hr von 30 &euro; zzgl. MwST. \
                   erheben. Sie erhalten dann monatlich eine Rechnung &uuml;ber diesen Betrag zugeschickt. Die Laufzeit betr&auml;gt einen Monat und \ 
                   kann jederzeit zum Ende des laufenden Monats schriftlich gek&uuml;ndigt werden. Schreiben Sie in diesem Fall an service@qifood.eu."
-    pro_account_unsubscribe: "Sie haben eine erweiterte Anzeige f&uuml;r eine monatliche Geb&uuml;hr von 30 &euro; netto. Wenn Sie eine kostenlose Anzeige \
+    pro_account_unsubscribe: "Sie haben eine erweiterte Anzeige f&uuml;r eine monatliche Geb&uuml;hr von 30 &euro; zzgl. MwST. Wenn Sie eine kostenlose Anzeige \
                               wollen, k&ouml;nnen Sie die erweitere Anzeige jeweils zum Ende des laufenden Monats schriftlich k&uuml;ndigen. Schreiben Sie \
                               daf&uuml;r einfach eine Email an "
     images:
@@ -391,9 +391,12 @@ de:
     end: Ende
     duration: Dauer
     commercial: Gewerblicher Termin
-    commercial_explanation: "Ja. Erkl&auml;rung: F&uuml;r das Einstellen kommerzieller Termine erheben wir eine Geb&uuml;hr von 5 Euro je Termin."
+    commercial_explanation: "Ja. Erkl&auml;rung: F&uuml;r das Einstellen kommerzieller Termine erheben wir eine Geb&uuml;hr von 5 Euro zzgl. MwST. je Termin."
     location: Veranstaltungsort
     events: Termine
+    near_me: "Termine in meiner N&auml;he"
+    near_me_add_location: "F&uuml;gen Sie Ihrem Profile eine Adresse hinzu, um Termine in Ihrer N&auml;he zu finden."
+    month: Monat
     index:
       title: "Termine im {{month}}"
       added_by: Eingestellt von 
@@ -435,3 +438,7 @@ de:
     do_bookmark: "Diese Seite merken bei:"
     close: Schliessen
     duration: "Dauer: "
+    accept_agb_start: 'Ich habe die '
+    accept_agb_middle: "AGBs"
+    accept_agb_url: 'http://www.agb.de/agb.php?id=10098&inc=php'  
+    accept_agb_end: ' gelesen und akzeptiere diese.'

@@ -41,20 +41,9 @@ function update_start_end_dates(element, value)
 	}
 }
 
-function hide_other_aliment_previews(dont_hide)
+function hide_aliment_preview()
 {
-	$$("div.aliment_preview").each(function(preview)
-	{
-		if(preview.id != dont_hide)
-		{
-			preview.fade();
-		}
-	});
-}
-
-function hide_all_aliment_previews()
-{
-	$$("div.aliment_preview").each(function(preview)
+	$("aliment_preview").each(function(preview)
 	{
 		preview.fade();
 	});

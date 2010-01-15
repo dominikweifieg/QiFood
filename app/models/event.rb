@@ -13,6 +13,7 @@ class Event < ActiveRecord::Base
   validates_presence_of :body
   validates_presence_of :start
   validates_presence_of :end
+  validates_acceptance_of :agbs
   validate do |event|
     event.errors.add(:start, :past) unless event.start.future?
     event.errors.add(:start, :after_end) unless event.start < event.end

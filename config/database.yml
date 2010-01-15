@@ -5,6 +5,16 @@ development:
   database: db/development.sqlite3
   pool: 5
   timeout: 5000
+  
+development2:
+  adapter: mysql
+  encoding: utf8 
+  database: qifood
+  pool: 5
+  username: qifood
+  password: foodiq
+  socket: /var/run/mysqld/mysqld.sock
+  timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

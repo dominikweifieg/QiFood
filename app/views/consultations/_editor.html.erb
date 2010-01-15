@@ -14,16 +14,20 @@
 				if($('consultation_pro').checked == true)
 				{
 				  Effect.BlindDown('images');
+					$('agb_span').show(); 
+					new Effect.Highlight('agb_span', {startcolor: '#A6CC3A', endcolor: '#F1F7CC'});
 				}
 				else
 				{
 				  Effect.BlindUp('images');
+					$('agb_span').hide();
 				}
 			});
 		<% end %>
 		<% else %>
-		<%= t('consultation.pro_account_unsubscribe') %> <%= link_to "service@qifood.eu", "mailto:support@qifood.eu?subject=Unsubscribe%20#{@consultation.title}%20#{@consultation.id}"%>.
+		<%= t('consultation.pro_account_unsubscribe') %> <%= link_to "service@qifood.eu", "mailto:support@qifood.eu?subject=Unsubscribe%20#{@consultation.title}%20#{@consultation.id}"%>.<br/>
 		<% end %>
+		<span id="agb_span" style="display: <% if @consultation.pro %>inline<% else %>hidden<% end %>"><%= f.check_box :agbs, :class => "xxs" %><%= t('common.accept_agb_start')%><%= link_to t('common.accept_agb_middle'), t('common.accept_agb_url'), :popup => [t('common.accept_agb_middle'), 'height=600,width=600']%><%= t('common.accept_agb_end') %></span>
 	</div>
 	<div class="column right">
 		<%= f.label :website, t('consultation.website') %>

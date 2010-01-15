@@ -6,8 +6,10 @@
   <td>
 		<% if event.consultation %>
 		<%=link_to h(event.consultation.title), event.consultation %>
+		<% if event.consultation.user == current_user %><br/><%= link_to t('common.destroy'), event, :confirm => t('common.are_you_sure'), :method => :delete%><%end%>
 		<% else %>
 		<%=link_to h(event.user.login), event.user %>
+		<% if event.user == current_user %><br/><%= link_to t('common.destroy'), event, :confirm => t('common.are_you_sure'), :method => :delete%><%end%>
 		<% end %>
 		</td>
 </tr>

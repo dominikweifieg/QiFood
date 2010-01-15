@@ -10,6 +10,7 @@ class LocationsController < ApplicationController
     
     @map = GMap.new("map_div")
     @map.control_init(:large_map => true,:map_type => true)
+    @map.set_map_type_init(GMapType::G_HYBRID_MAP)
     min_lat = 0.0
     max_lat = 0.0
     min_lng = 0.0
@@ -21,13 +22,9 @@ class LocationsController < ApplicationController
       min_lng = location.lng if location.lng < min_lng or min_lng == 0.0
       max_lng = location.lng if location.lng > max_lng
     end
-    sw = GeoKit::LatLng.new(min_lat, min_lng)
-    ne = GeoKit::LatLng.new(max_lat, max_lng)
-    distance = sw.distance_to(ne)
-    zoom = (distance / 15).to_i
-    logger.info { "#{distance}" }
-    center = GeoKit::Bounds.new(sw, ne).center
-    @map.center_zoom_init([center.lat,center.lng],zoom)
+    sw = GLatLng.new([min_lat, min_lng])
+    ne = GLatLng.new([max_lat, max_lng])
+    @map.center_zoom_on_bounds_init([sw, ne])
     
     respond_to do |wants|
       wants.html {  }

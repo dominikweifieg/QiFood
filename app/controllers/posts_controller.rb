@@ -2,6 +2,8 @@ class PostsController < ApplicationController
 
   before_filter :login_required, :except => [:index, :show]
   before_filter :fetch_user
+  
+  caches_action :show, :cache_path => :show_cache_path.to_proc
 
   def index
     if @user
@@ -15,6 +17,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     
     if @post
+      @body = aliment_links(@post.body)
       respond_to do |wants|
         wants.html {  }
         wants.atom {  }
@@ -51,7 +54,7 @@ class PostsController < ApplicationController
     end
     params[:post][:permalink] = permalink
     
-    params[:post][:body] = aliment_links(params[:post][:body])
+    #params[:post][:body] = aliment_links(params[:post][:body])
     @post = @user.posts.build(params[:post])
     
     if @post.save
@@ -73,8 +76,9 @@ class PostsController < ApplicationController
 
   def update
     @post = @user.posts.find(params[:id])
-    params[:post][:body] = aliment_links(params[:post][:body])
+    #params[:post][:body] = aliment_links(params[:post][:body])
     if @post.update_attributes(params[:post])
+      expire_action :action => :show
       flash[:notice] = t('post.controller.update.success')
       respond_to do |wants|
         wants.html { redirect_to user_post_path(@user, @post)  }
@@ -101,6 +105,22 @@ class PostsController < ApplicationController
   def fetch_user
     if params[:user_id].present?
       @user = User.find(params[:user_id])
+    end
+  end
+
+  def show_cache_path
+    if @user
+      if @user == current_user
+        "current_user/posts/#{params[:id]}"
+      else
+        "user/posts/#{params[:id]}"
+      end
+    else
+      if current_user
+        "loggedin/posts/#{params[:id]}"
+      else
+        "common/posts/#{params[:id]}"
+      end
     end
   end
 

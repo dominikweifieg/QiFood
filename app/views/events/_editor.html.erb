@@ -9,6 +9,8 @@
 	<%= f.datetime_select :end, {:minute_step => 5}, :class => 'date' %>
 	<%= f.label :commercial, t('events.commercial') %>
 	<%= f.check_box :commercial, :class => "xxs" %> <%= t('events.commercial_explanation')%> 
+	<%= observe_field :event_commercial, :function => "if(value) { $('agb_span').show(); new Effect.Highlight('agb_span', {startcolor: '#A6CC3A', endcolor: '#F1F7CC'});} else { $('agb_span').hide(); }"%>
+	<span id="agb_span" style="display:<% if @event.commercial %>inline<% else %>hidden<% end %>"><%= f.check_box :agbs, :class => "xxs" %><%= t('common.accept_agb_start')%><%= link_to t('common.accept_agb_middle'), t('common.accept_agb_url'), :popup => [t('common.accept_agb_middle'), 'height=600,width=600,scrollbars=yes']%><%= t('common.accept_agb_end') %></span>
 </div>
 <div class="column right">
 	<%= render :partial => "locations/editor", :locals => {:f => f} %>
