@@ -368,6 +368,7 @@ de:
       title: Praxis bearbeiten
     index:
       title: Beratungsangebote
+      title_loc: "Beratungsangebote in der N&auml;he von {{loc}}"
   locations:
     location: Adresse
     street: Strasse
