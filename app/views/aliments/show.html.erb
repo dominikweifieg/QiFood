@@ -54,7 +54,7 @@
 	
 		<div class="column">
 			        <h4><%= t('aliment.category') %></h4>
-							        <%= h @aliment.category.name %>
+							        <%= link_to h(@aliment.category.name), @aliment.category %>
 											    </div>
 
 		<div class="column right">
