@@ -353,10 +353,10 @@ de:
     near_me_add_location: "F&uuml;gen Sie Ihrem Profile eine Adresse hinzu, um Bertungsangebote in Ihrer N&auml;he zu finden."
     pro_account: "Ein Eintrag mit Titel und einer Beschreibung mit maximal 800 Zeichen ist kostenlos. \
                   Wenn Sie mehr als 800 Zeichen verwenden wollen oder zus&auml;tzlich auch Bilder anzeigen m&ouml;chten, \
-                  k&ouml;nnen Sie einen erweiterte Anzeige w&auml;hlen, f&uuml;r die wir allerdings eine monatliche Geb&uuml;hr von 30 &euro; zzgl. MwST. \
+                  k&ouml;nnen Sie einen erweiterte Anzeige w&auml;hlen, f&uuml;r die wir allerdings eine monatliche Geb&uuml;hr von 50 &euro; zzgl. MwST. \
                   erheben. Sie erhalten dann monatlich eine Rechnung &uuml;ber diesen Betrag zugeschickt. Die Laufzeit betr&auml;gt einen Monat und \ 
                   kann jederzeit zum Ende des laufenden Monats schriftlich gek&uuml;ndigt werden. Schreiben Sie in diesem Fall an service@qifood.eu."
-    pro_account_unsubscribe: "Sie haben eine erweiterte Anzeige f&uuml;r eine monatliche Geb&uuml;hr von 30 &euro; zzgl. MwST. Wenn Sie eine kostenlose Anzeige \
+    pro_account_unsubscribe: "Sie haben eine erweiterte Anzeige f&uuml;r eine monatliche Geb&uuml;hr von 50 &euro; zzgl. MwST. Wenn Sie eine kostenlose Anzeige \
                               wollen, k&ouml;nnen Sie die erweitere Anzeige jeweils zum Ende des laufenden Monats schriftlich k&uuml;ndigen. Schreiben Sie \
                               daf&uuml;r einfach eine Email an "
     images:
@@ -392,7 +392,7 @@ de:
     end: Ende
     duration: Dauer
     commercial: Gewerblicher Termin
-    commercial_explanation: "Ja. Erkl&auml;rung: F&uuml;r das Einstellen kommerzieller Termine erheben wir eine Geb&uuml;hr von 5 Euro zzgl. MwST. je Termin."
+    commercial_explanation: "Ja. Erkl&auml;rung: F&uuml;r das Einstellen kommerzieller Termine erheben wir eine Geb&uuml;hr von 10 Euro zzgl. MwST. je Termin."
     location: Veranstaltungsort
     events: Termine
     near_me: "Termine in meiner N&auml;he"
