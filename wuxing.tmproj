@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>app/views/consultations/index.html.erb</string>
+	<string>config/locales/de.yml</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -104,6 +104,34 @@
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
+		</dict>
+		<key>app/views/aliments/_preview.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>99</integer>
+				<key>line</key>
+				<integer>3</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/aliments/show.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>71</integer>
+				<key>line</key>
+				<integer>56</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>22</integer>
 		</dict>
 		<key>app/views/books/_book.html.erb</key>
 		<dict>
@@ -247,6 +275,62 @@
 			<key>firstVisibleLine</key>
 			<integer>9</integer>
 		</dict>
+		<key>app/views/users/_friendship.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>97</integer>
+				<key>line</key>
+				<integer>1</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/users/_profile.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>121</integer>
+				<key>line</key>
+				<integer>3</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/users/_user.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>80</integer>
+				<key>line</key>
+				<integer>4</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>app/views/users/_user_bar.html.erb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
 		<key>config/database.yml</key>
 		<dict>
 			<key>caret</key>
@@ -294,14 +378,14 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>45</integer>
+				<integer>20</integer>
 				<key>line</key>
-				<integer>370</integer>
+				<integer>336</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>324</integer>
+			<integer>320</integer>
 		</dict>
 		<key>config/locales/formats_de.yml</key>
 		<dict>
@@ -405,12 +489,18 @@
 		<string>app/controllers/locations_controller.rb</string>
 		<string>config/locales/formats_de.yml</string>
 		<string>app/views/consultations/index.html.erb</string>
+		<string>app/views/users/_profile.html.erb</string>
+		<string>app/views/users/_user.html.erb</string>
+		<string>app/views/aliments/show.html.erb</string>
+		<string>app/views/users/_user_bar.html.erb</string>
+		<string>app/views/users/_friendship.html.erb</string>
+		<string>app/views/aliments/_preview.html.erb</string>
 		<string>app/views/consultations/show.html.erb</string>
 		<string>db/migrate/20090915080419_create_locations.rb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{384, 67}, {1536, 1111}}</string>
+	<string>{{390, 67}, {1536, 1111}}</string>
 </dict>
 </plist>

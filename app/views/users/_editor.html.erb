@@ -16,12 +16,15 @@
 		<%= f.password_field :password_confirmation %>
 		<% end 	%>
 	</fieldset>
-		<legend><%= t('user.new.open_id')%> , <%= link_to t('user.open_id_help'), t('user.open_id_help_url'), :popup => true%></legend>
+		<legend><%= t('user.new.open_id')%> <%= link_to t('user.open_id_help'), t('user.open_id_help_url'), :class => "plain", :popup => true%> :</legend>
 	<fieldset id="openid_signup">
 		<% end %>
 		<%= f.label :openid_identifier, t('user.openid_identifier') %>
 		<%= f.text_field :openid_identifier %>
 	</fieldset>
+	<% if @user.new_record? %>
+		<%= textilize_without_paragraph(t('user.register_help'))%>
+	<% end %>
 	<br/>
 	<% unless @user.user_photo.new_record? %>
 	<%= image_tag @user.user_photo.public_filename(:thumb)%>

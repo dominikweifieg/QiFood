@@ -8,13 +8,19 @@
 
 <%= f.label :password, t('user.password') %>
 <%= f.password_field :password %>
+</div>
+<div class="column wide">
+	<fieldset class="buttons">
+		<%= submit_tag t('user.login') %>
+	</fieldset>
+</div>
+<div class"column">
+<h3><%=t('session.new.use_openid')%></h3>
 
-<h2><%=t('session.new.use_openid')%></h2>
-
-<%= f.label :openid_identifier, t('user.openid_identifier')%>
+<%= f.label :openid_identifier, t('user.openid_identifier'), :class => 'xxs'%> <%= link_to t('user.open_id_help'), t('user.open_id_help_url'), :class => "plain", :popup => true %><br/>
 <%= f.text_field :openid_identifier %>
-<%= link_to t('user.open_id_help'), t('user.open_id_help_url'), :popup => true %>
 
+</div>
 <div class="column wide">
 	<fieldset class="buttons">
 		<%= submit_tag t('user.login') %>

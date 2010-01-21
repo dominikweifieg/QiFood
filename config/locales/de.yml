@@ -204,6 +204,9 @@ de:
     openid_identifier: OpenID URL
     open_id_help: "(?)"
     open_id_help_url: http://de.wikipedia.org/wiki/OpenID
+    register_help: 'Falls sie eine "OpenID":http://de.wikipedia.org/wiki/OpenID besitzen, reicht es wenn Sie nur das OpenID URL Feld (und eventuell die optionalen Informationen und die Adresse) aufsf&uuml;llen.
+                    Anderenfalls k&ouml;nnen Sie das OpenID URL Feld leer lassen und f&uuml;llen bitte Login, Email und Passwort mit Wiederholung aus (und wenn Sie m&ouml;chten auch die optionalen 
+                    Informationen und die Adresse).'
     favorite_aliments: "{{name}}'s favorisierte Lebensmittel"
     favorite_aliments_my: Meine favorisierten Lebensmittel
     friends: "{{name}}'s Freunde"
@@ -224,7 +227,7 @@ de:
       title: Anmelden
       required_information: "Notwendige Informationen:"
       optional_information: "Optionale Informationen:"
-      open_id: "Open ID:"
+      open_id: "Oder verwenden Sie Open ID"
       sign_up: Anmelden
     edit:
       title: Profil editieren
