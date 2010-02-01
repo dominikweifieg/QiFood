@@ -1,5 +1,0 @@
-SifrHelper Version History
-
-2007-05-01 - r4 - Initial release
-2008-01-29 - r6 - Updated to use sIFR v2.0.5, allow selecting version, link colors, Sifr.init()
-2008-10-22 - r9 - Update to sIFR 2.0.6 js library - no change needed in your code.  Also added wmode param to #sifr_replace, defaulted it to :opaque to handle dropdown menu issues, etc.  Reformatted files to ruby standard 2 space indents.
