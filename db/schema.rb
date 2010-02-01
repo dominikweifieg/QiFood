@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091203082245) do
+ActiveRecord::Schema.define(:version => 20100129112446) do
 
   create_table "aliment_photos", :force => true do |t|
     t.integer  "parent_id"
@@ -272,8 +272,11 @@ ActiveRecord::Schema.define(:version => 20091203082245) do
     t.string   "current_login_ip"
     t.string   "last_login_ip"
     t.string   "openid_identifier"
+    t.string   "perishable_token",                         :default => "", :null => false
   end
 
+  add_index "users", ["email"], :name => "index_users_on_email"
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
+  add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"
 
 end

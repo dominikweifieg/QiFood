@@ -17,8 +17,10 @@ ActionController::Routing::Routes.draw do |map|
     user.resource :consultations
     user.resources :events
   end
-
+  
   map.resource :session
+
+  map.resources :password_resets
 
   map.resources :aliments do |aliments|
 		aliments.resources :comments, :requirements => {:context_type => 'aliment'}

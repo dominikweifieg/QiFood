@@ -1,0 +1,14 @@
+<% title t('user.password_reset.edit.title')%>
+
+<div class="column wide">
+<% form_for @user, :url => password_reset_path, :method => :put do |f| %>
+  <%= f.error_messages %>
+  <%= f.label :password, t('user.password') %>
+  <%= f.password_field :password %>
+  <%= f.label :password_confirmation, t('user.password_confirmation') %>
+  <%= f.password_field :password_confirmation %>
+  <fieldset class="buttons">
+  	<%= f.submit t('user.password_reset.edit.submit') %>
+	</fieldset>
+<% end %>
+</div>

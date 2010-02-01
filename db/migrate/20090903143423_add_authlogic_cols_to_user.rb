@@ -1,9 +1,9 @@
 class AddAuthlogicColsToUser < ActiveRecord::Migration
   def self.up
     add_column :users, :persistence_token, :string
-    change_column :users, :crypted_password, :string, :limit => 120
+    change_column :users, :crypted_password, :string, :limit => 256
     rename_column :users, :salt, :password_salt
-    change_column :users, :password_salt, :string, :limit => 120
+    change_column :users, :password_salt, :string, :limit => 256
     add_column :users, :login_count,  :integer,       :null => false, :default => 0 
     add_column :users, :failed_login_count, :integer, :null => false, :default => 0 
     add_column :users, :last_request_at, :datetime                                    

@@ -1,4 +1,4 @@
-<tr class="<% if table_counter % 2 == 0 %>even<% else %>odd<% end %>">
+<tr class="<% if table_counter % 2 == 0 %>even<% else %>odd<% end %> clickable" onclick="window.location.href='<%= aliment_path(aliment)%>';return true;">
 	<td><%= link_to(h(aliment.name), aliment) %></td>
 	<td><%=h aliment.pinyin %></td>
 	<td><%=h aliment.chinese %></td>

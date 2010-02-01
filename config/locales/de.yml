@@ -201,12 +201,18 @@ de:
     name: Nachname
     first_name: Vorname
     password_confirmation: Passwort bitte ein zweites Mal angeben
+    forgot_password: Haben Sie Ihr Passwort vergessen?
+    password_reset_requested: Eine Beschreibung wie Sie Ihr Passwort &auml;ndern wurde an Ihre Email-Adresse geschickt. Bitte &uuml;berpr&uuml;fen Sie Ihren Posteingang. (Falls Sie die Email dort nicht finden, schauen Sie bitte auch in Ihren Spam-Mails.)
+    password_reset_no_user: Uns ist kein Benutzer mit der angegebenen Email-Adresse bekannt. Kontrollieren Sie bitte die angegebene Email-Adresse.
+    password_reset_instructions_title: QiFood.eu Password zurücksetzen.
+    password_reset_email_start: "Das Zurücksetzen Ihres Passwortes auf www.qifood.eu wurde beantragt. Falls Sie dies nicht beantragt haben, können Sie diese Email ignorieren. Wenn Sie den Antrag gestellt haben, klicken Sie bitte auf folgenden Link:"
+    password_reset_email_end: "Falls der Link oben nicht funktioniert, kopieren Sie ihn bitte und fügen Sie ihn in das URL Feld Ihres Browsers ein. Sollten Sie weiterhin Probleme haben können Sie sich jederzeit an uns wenden. Antworten Sie einfach auf diese Email."
+    password_reset_token_not_found: "Es tut uns Leid, aber wir konnten Ihr Konto nicht finden. Falls Sie Probleme haben, kopieren Sie bitte den Link aus der Email und fügen Sie ihn in das URL Feld Ihres Browsers ein. Sollten Sie weiterhin Probleme haben können Sie sich jederzeit an uns wenden. Schreiben Sie bitte an info@qifood.eu"
+    password_reset_success: "Ihr Passwort wurde erfolgreich ge&auml;ndert."
     openid_identifier: OpenID URL
     open_id_help: "(?)"
     open_id_help_url: http://de.wikipedia.org/wiki/OpenID
-    register_help: 'Falls sie eine "OpenID":http://de.wikipedia.org/wiki/OpenID besitzen, reicht es wenn Sie nur das OpenID URL Feld (und eventuell die optionalen Informationen und die Adresse) aufsf&uuml;llen.
-                    Anderenfalls k&ouml;nnen Sie das OpenID URL Feld leer lassen und f&uuml;llen bitte Login, Email und Passwort mit Wiederholung aus (und wenn Sie m&ouml;chten auch die optionalen 
-                    Informationen und die Adresse).'
+    register_help: 'Falls sie eine "OpenID":http://de.wikipedia.org/wiki/OpenID besitzen, reicht es wenn Sie nur das OpenID URL Feld (und eventuell die optionalen Informationen und die Adresse) aufsf&uuml;llen. Anderenfalls k&ouml;nnen Sie das OpenID URL Feld leer lassen und f&uuml;llen bitte Login, Email und Passwort mit Wiederholung aus (und wenn Sie m&ouml;chten auch die optionalen Informationen und die Adresse).'
     favorite_aliments: "{{name}}'s favorisierte Lebensmittel"
     favorite_aliments_my: Meine favorisierten Lebensmittel
     friends: "{{name}}'s Freunde"
@@ -217,6 +223,7 @@ de:
     logged_in_as: "Hallo {{user_name}} (Profil)"
     missing_rights: "Sie haben nicht gen&uuml;gend Rechte, um diese Aktion auszuf&uuml;hren"
     login_required: "Sie m&uuml;ssen eingelogged sein, um diese Aktion auszuf&uuml;hren"
+    logout_required: "Sie k&ouml;nnen diese Aktion nicht ausf&uuml;hren, wenn Sie eingelogged sind."
     remember: Login auf diesem Rechner merken
     meta_keywords: "Benutzer, Freunde"
     meta_description: Alle Benutzer von QiFood
@@ -257,6 +264,14 @@ de:
       create: 
         failure: Es gab Probleme beim Anlegen Ihres Profils
         success: Sie sind nun erfolgreich angemeldet.
+    password_reset:
+      new:
+        title: Passwort zrücksetzen
+        body: "Bitte f&uuml;llen Sie die folgende Form aus. Wir werden Ihn dann eine Email zuschicken, mit deren Hilfe Sie Ihr Password zur&uuml;cksetzen k&ouml;nnen"
+        submit: "Zur&uuml;cksetzen"
+      edit:
+        title: "Neues Passwort eingeben"
+        submit: "Speichern"
   profile: 
     birthday: Geburtstag
     about: "&Uuml;ber mich"

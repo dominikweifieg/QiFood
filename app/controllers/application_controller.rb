@@ -62,6 +62,24 @@ class ApplicationController < ActionController::Base
       redirect_to login_path
     end
   end
+  
+  def require_no_user
+    if current_user
+      store_location
+      flash[:notice] = t('user.logout_required')
+      redirect_to account_url
+      return false
+    end
+  end
+
+  def store_location
+    session[:return_to] = request.request_uri
+  end
+
+  def redirect_back_or_default(default)
+    redirect_to(session[:return_to] || default)
+    session[:return_to] = nil
+  end
 
 	def check_editor_access
 		unless current_user.role & User::EDITOR == User::EDITOR

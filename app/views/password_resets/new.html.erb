@@ -1,0 +1,13 @@
+<% title t('user.password_reset.new.title')%>
+
+<div class="column wide"> 
+<%= t('user.password_reset.new.body')%>
+
+<% form_tag password_resets_path do %>
+  <%= label_tag :email, t('user.email') %>
+  <%= text_field_tag :email %>
+	<fieldset class="buttons">
+  	<%= submit_tag t('user.password_reset.new.submit') %>
+	</fieldset>
+<% end %>
+</div>

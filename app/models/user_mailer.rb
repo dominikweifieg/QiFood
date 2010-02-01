@@ -1,9 +1,9 @@
 class UserMailer < ActionMailer::Base
   def signup_notification(user)
     setup_email(user)
-    @subject    += 'Please activate your new account'
+    @subject    += 'Bitte aktivieren Sie Ihren QiFood.eu Konto'
   
-    @body[:url]  = "http://www.wuxing.info/activate/#{user.activation_code}"
+    @body[:url]  = "http://www.qifood.eu/activate/#{user.activation_code}"
   
   end
   
