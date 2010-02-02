@@ -80,4 +80,13 @@ Rails::Initializer.run do |config|
   # Activate observers that should always be running
   # Please note that observers generated using script/generate observer need to have an _observer suffix
   # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
+  config.after_initialize do
+    ActionMailer::Base.smtp_settings = {
+          :address => "smtp.1und1.de",
+          :domain => "qifood.eu",
+          :user_name => "info@qifood.eu",
+          :password => "test1234",
+          :authentication => :login
+    }
+  end
 end
