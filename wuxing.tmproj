@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>config/locales/de.yml</string>
+	<string>app/models/notifier.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -21,105 +21,49 @@
 	<integer>374</integer>
 	<key>metaData</key>
 	<dict>
-		<key>app/controllers/application_controller.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>46</integer>
-				<key>line</key>
-				<integer>68</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>39</integer>
-		</dict>
-		<key>app/controllers/password_resets_controller.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>23</integer>
-				<key>line</key>
-				<integer>27</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>app/controllers/users_controller.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>29</integer>
-				<key>line</key>
-				<integer>53</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>23</integer>
-		</dict>
-		<key>app/models/aliment_photo.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>24</integer>
-				<key>line</key>
-				<integer>8</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>app/models/notifier.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>26</integer>
+				<integer>98</integer>
 				<key>line</key>
 				<integer>3</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>59</integer>
-				<key>line</key>
-				<integer>3</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>26</integer>
-				<key>line</key>
-				<integer>3</integer>
-			</dict>
 		</dict>
 		<key>app/models/user.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>19</integer>
+				<integer>42</integer>
 				<key>line</key>
-				<integer>49</integer>
+				<integer>75</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>29</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>6</integer>
+				<key>line</key>
+				<integer>75</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>42</integer>
+				<key>line</key>
+				<integer>75</integer>
+			</dict>
 		</dict>
 		<key>app/views/books/_book.html.erb</key>
 		<dict>
@@ -165,20 +109,6 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>app/views/locations/index.html.erb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>2</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
 		<key>app/views/notifier/password_reset_instructions.erb</key>
 		<dict>
 			<key>caret</key>
@@ -193,100 +123,84 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>app/views/password_resets/edit.html.erb</key>
+		<key>config/amazon_s3.yml</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>50</integer>
+				<integer>17</integer>
 				<key>line</key>
-				<integer>10</integer>
+				<integer>12</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>app/views/password_resets/new.html.erb</key>
+		<key>config/database.yml</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>11</integer>
-				<key>line</key>
 				<integer>10</integer>
+				<key>line</key>
+				<integer>27</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>app/views/sessions/new.html.erb</key>
+		<key>config/environment.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>5</integer>
+				<key>line</key>
+				<integer>90</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>30</integer>
+		</dict>
+		<key>config/environments/development.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>59</integer>
+				<key>line</key>
+				<integer>13</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>config/environments/production.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
 				<integer>0</integer>
 				<key>line</key>
-				<integer>15</integer>
+				<integer>0</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>app/views/users/_editor.html.erb</key>
+		<key>config/environments/test.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>72</integer>
+				<integer>97</integer>
 				<key>line</key>
-				<integer>14</integer>
-			</dict>
-			<key>columnSelection</key>
-			<false/>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>41</integer>
-				<key>line</key>
-				<integer>14</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>72</integer>
-				<key>line</key>
-				<integer>14</integer>
-			</dict>
-		</dict>
-		<key>config/email.yml</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>20</integer>
-				<key>line</key>
-				<integer>11</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>config/initializers/mail.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>3</integer>
-				<key>line</key>
-				<integer>3</integer>
+				<integer>23</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -298,28 +212,30 @@
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>35</integer>
+				<integer>23</integer>
 				<key>line</key>
-				<integer>203</integer>
+				<integer>206</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
-			<integer>186</integer>
-		</dict>
-		<key>config/routes.rb</key>
-		<dict>
-			<key>caret</key>
+			<integer>195</integer>
+			<key>selectFrom</key>
 			<dict>
 				<key>column</key>
-				<integer>32</integer>
+				<integer>4</integer>
 				<key>line</key>
-				<integer>22</integer>
+				<integer>206</integer>
 			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>37</integer>
+				<key>line</key>
+				<integer>206</integer>
+			</dict>
 		</dict>
 		<key>db/migrate/20091128131707_create_consultations.rb</key>
 		<dict>
@@ -329,20 +245,6 @@
 				<integer>30</integer>
 				<key>line</key>
 				<integer>7</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>db/migrate/20100129112446_add_perishable_token_to_users.rb</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>9</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -394,23 +296,16 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>app/controllers/users_controller.rb</string>
-		<string>app/views/locations/index.html.erb</string>
-		<string>app/controllers/password_resets_controller.rb</string>
-		<string>app/views/sessions/new.html.erb</string>
-		<string>app/controllers/application_controller.rb</string>
-		<string>app/views/password_resets/new.html.erb</string>
-		<string>app/views/password_resets/edit.html.erb</string>
-		<string>config/initializers/mail.rb</string>
-		<string>config/email.yml</string>
-		<string>app/views/users/_editor.html.erb</string>
-		<string>app/models/aliment_photo.rb</string>
+		<string>config/environment.rb</string>
+		<string>config/environments/test.rb</string>
+		<string>config/environments/production.rb</string>
+		<string>config/environments/development.rb</string>
 		<string>app/models/user.rb</string>
-		<string>db/migrate/20100129112446_add_perishable_token_to_users.rb</string>
-		<string>app/models/notifier.rb</string>
+		<string>config/database.yml</string>
+		<string>config/amazon_s3.yml</string>
 		<string>config/locales/de.yml</string>
 		<string>app/views/notifier/password_reset_instructions.erb</string>
-		<string>config/routes.rb</string>
+		<string>app/models/notifier.rb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>

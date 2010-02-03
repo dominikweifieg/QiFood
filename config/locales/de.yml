@@ -204,7 +204,7 @@ de:
     forgot_password: Haben Sie Ihr Passwort vergessen?
     password_reset_requested: Eine Beschreibung wie Sie Ihr Passwort &auml;ndern wurde an Ihre Email-Adresse geschickt. Bitte &uuml;berpr&uuml;fen Sie Ihren Posteingang. (Falls Sie die Email dort nicht finden, schauen Sie bitte auch in Ihren Spam-Mails.)
     password_reset_no_user: Uns ist kein Benutzer mit der angegebenen Email-Adresse bekannt. Kontrollieren Sie bitte die angegebene Email-Adresse.
-    password_reset_instructions_title: QiFood.eu Password zurücksetzen.
+    password_reset_instructions_title: "QiFood Password zurücksetzen"
     password_reset_email_start: "Das Zurücksetzen Ihres Passwortes auf www.qifood.eu wurde beantragt. Falls Sie dies nicht beantragt haben, können Sie diese Email ignorieren. Wenn Sie den Antrag gestellt haben, klicken Sie bitte auf folgenden Link:"
     password_reset_email_end: "Falls der Link oben nicht funktioniert, kopieren Sie ihn bitte und fügen Sie ihn in das URL Feld Ihres Browsers ein. Sollten Sie weiterhin Probleme haben können Sie sich jederzeit an uns wenden. Antworten Sie einfach auf diese Email."
     password_reset_token_not_found: "Es tut uns Leid, aber wir konnten Ihr Konto nicht finden. Falls Sie Probleme haben, kopieren Sie bitte den Link aus der Email und fügen Sie ihn in das URL Feld Ihres Browsers ein. Sollten Sie weiterhin Probleme haben können Sie sich jederzeit an uns wenden. Schreiben Sie bitte an info@qifood.eu"
