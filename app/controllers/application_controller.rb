@@ -18,11 +18,7 @@ class ApplicationController < ActionController::Base
 
 	private 
 	def set_locale
-		if session[:locale]
-			I18n.locale = session[:locale]
-		else
-			I18n.locale = "de"
-		end
+		I18n.locale = params[:locale]
 	end
 	
   def authorized_editor?

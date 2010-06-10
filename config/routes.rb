@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+  map.filter 'locale'
   map.resources :events
 
   map.resources :consultations

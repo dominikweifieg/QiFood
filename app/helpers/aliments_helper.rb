@@ -30,7 +30,7 @@ module AlimentsHelper
 	end
 
 	def wikipedia_link_for(aliment)
-		link_to(t('aliment.wikipedia', :aliment => aliment.name), 'http://' + I18n.locale + '.wikipedia.org/wiki/' + aliment.name, :popup => true, :class => 'external')
+		link_to(t('aliment.wikipedia', :aliment => aliment.name), "http://#{I18n.locale}.wikipedia.org/wiki/#{aliment.name}", :popup => true, :class => 'external')
 	end
 
 	def savor_select(with_blank, tendence=false)

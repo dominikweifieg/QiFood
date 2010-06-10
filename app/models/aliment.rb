@@ -1,5 +1,7 @@
 class Aliment < ActiveRecord::Base
 
+  translates :name, :description
+
 	belongs_to :category
 
 	has_many :properties
@@ -63,7 +65,7 @@ class Aliment < ActiveRecord::Base
 	end
 	
 	def to_param
-	  "#{id}_#{name.parameterize}"
+	  "#{id}_#{name.to_s.parameterize}"
 	end
 
 	private 

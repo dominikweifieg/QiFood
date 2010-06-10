@@ -1,4 +1,5 @@
 class Organ < ActiveRecord::Base
+	translates :name
 	
 	has_many :target_organs
 

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100129112446) do
+ActiveRecord::Schema.define(:version => 20100607130335) do
 
   create_table "aliment_photos", :force => true do |t|
     t.integer  "parent_id"
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(:version => 20100129112446) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "aliment_translations", :force => true do |t|
+    t.integer  "aliment_id"
+    t.string   "locale"
+    t.string   "description"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "aliment_translations", ["aliment_id"], :name => "index_aliment_translations_on_aliment_id"
 
   create_table "aliments", :force => true do |t|
     t.string   "name"
@@ -64,6 +75,17 @@ ActiveRecord::Schema.define(:version => 20100129112446) do
     t.datetime "updated_at"
     t.text     "description", :default => ""
   end
+
+  create_table "category_translations", :force => true do |t|
+    t.integer  "category_id"
+    t.string   "locale"
+    t.string   "description"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "category_translations", ["category_id"], :name => "index_category_translations_on_category_id"
 
   create_table "comments", :force => true do |t|
     t.string   "title"
@@ -107,11 +129,31 @@ ActiveRecord::Schema.define(:version => 20100129112446) do
     t.integer  "pro_start_day"
   end
 
+  create_table "effect_translations", :force => true do |t|
+    t.integer  "effect_id"
+    t.string   "locale"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "effect_translations", ["effect_id"], :name => "index_effect_translations_on_effect_id"
+
   create_table "effects", :force => true do |t|
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "element_translations", :force => true do |t|
+    t.integer  "element_id"
+    t.string   "locale"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "element_translations", ["element_id"], :name => "index_element_translations_on_element_id"
 
   create_table "elements", :force => true do |t|
     t.string   "name"
@@ -188,6 +230,16 @@ ActiveRecord::Schema.define(:version => 20100129112446) do
     t.string  "server_url"
     t.string  "salt",       :null => false
   end
+
+  create_table "organ_translations", :force => true do |t|
+    t.integer  "organ_id"
+    t.string   "locale"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "organ_translations", ["organ_id"], :name => "index_organ_translations_on_organ_id"
 
   create_table "organs", :force => true do |t|
     t.string   "name"
