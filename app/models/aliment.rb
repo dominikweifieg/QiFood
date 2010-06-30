@@ -12,7 +12,7 @@ class Aliment < ActiveRecord::Base
 
 	has_many :organs, :through => :target_organs, :uniq => true
 
-	has_many :comments, :as => :commentable, :order => 'created_at DESC'
+	has_many :comments, :as => :commentable, :order => 'created_at DESC', :conditions => {:lang => "#{I18n.locale}"}
 
 	has_one :aliment_photo
 	
@@ -27,7 +27,7 @@ class Aliment < ActiveRecord::Base
 		sort_by = sort_by + ', savor' unless (sort_by =~ /savor/)
 		sort_by = sort_by + ', category_id' unless (sort_by =~ /category_id/)
 		sort_by = sort_by + ', temperature' unless (sort_by =~ /temperature/)
-		{:order => sort_by}
+		{:joins => "LEFT JOIN aliment_translations ON aliment_translations.aliment_id = aliments.id AND aliment_translations.locale = '#{I18n.locale}'", :order => sort_by}
 	}
 
 	def self.find_all_by_parameters(params, page)

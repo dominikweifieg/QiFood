@@ -3,7 +3,7 @@ class Comment < ActiveRecord::Base
 	belongs_to :commentable, :polymorphic => true
 	belongs_to :user
 
-	default_scope :conditions => {:published => true}, :order => 'updated_at DESC'
+	default_scope  :conditions => {:lang => "#{I18n.locale}", :published => true}, :order => 'updated_at DESC'
 
   can_be_flagged
 	

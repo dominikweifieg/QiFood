@@ -16,7 +16,7 @@ de:
         savor: Geschmack
         savor_tendence: Geschmackstendenz
         temperature: Temperatur
-        temperature_tendence: Temperaturetendenz
+        temperature_tendence: Temperaturtendenz
       user:
         name: "Nachname:"
         first_name: "Vorname:"
@@ -78,7 +78,7 @@ de:
             start:
               after_end: "Der Beginn des Termins muss vor dem Ende des Termins liegen"
               past: "Der Beginn des Termins muss in der Zukunft liegen"
-  main_title: QiFood
+  main_title: "QiFood: 5 Elemente Ernährung"
   meta_description: "Informationen und Nahrungsmitteltabellen zur 5 Elemente Ernährung (Chinesische Ernährungslehre)"
   meta_keywords: ", 5 Elemente Ernährung, Chinesische Ernährungslehre, Ernährung, Gesundheit"
   aliment:

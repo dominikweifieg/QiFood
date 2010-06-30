@@ -1,18 +1,452 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
- activerecord:
+  activerecord:
     models:
-      aliment: Lebensmittel
-    attributes:
+      aliment: Aliment
+      user: User
+      post: Blog Entry
+      event: Event
+    attributes: 
       aliment:
         name: Name
         latin_name: bot.
         pinyin: Pinyin
-        chinese: Chinesisch
-        description: Beschreibung
-        savor: Geschmack
-        savor_tendence: Geschmackstendenz
-        temperature: Temperatur
-        temperature_tendence: Temperaturetendenz
+        chinese: Chinese
+        description: Description
+        effect: Effect
+        savor: Savor
+        savor_tendence: Savor tendence
+        temperature: Temperature
+        temperature_tendence: Temperature tendence
+      user:
+        name: "Last name:"
+        first_name: "Given name:"
+        email: "Email:"
+        password: "Password:"
+        password_confirmation: "Password confirmation:"
+      post:
+        title: Title
+        body: Content
+      consultation:
+        title: Title
+        body: Description
+        pro: Pro listing
+      location:
+        street: Street
+        number: Number
+        additional1: Additional 1
+        additional2: Additional 2
+        zip: ZIP
+        city: City
+        state: State
+        country: Country
+      event:
+        title: Title
+        body: Description
+        start: Start
+        end: End
+    errors:
+      models: 
+        user:
+          attributes:
+            email: 
+              taken: Die angegebene Email-Adresse wird schon von einem anderen Benutzer verwendet. 
+              too_short: Die angegebene Email-Adresse ist zu kurz.
+            password:
+              blank: Es wurde kein Passwort angegeben
+              too_short: Das angegebene Passwort ist zu kurz
+              confirmation: "Die zweite Angabe des Passwortes stimmt nicht mit der ersten überein"
+            password_confirmation: 
+              blank: Das Password wurde nicht zweimal angegeben
+            login:
+              too_short: "Das von Ihnen gew&auml;hlte Login ist zu kurz"
+          openid:
+            missing: "Es tut uns leid, aber der OpenID Server konnte nicht gefunden werden"#"Sorry, the OpenID server couldn't be found"
+            invalid: "Es tun uns leid, aber die angegebene OpenID scheint nicht valid zu sein"#"Sorry, but this does not appear to be a valid OpenID"
+            canceled: "Die OpenID-Verifizierung wurde abgebrochen"#"OpenID verification was canceled"
+            failed: "Die OpenID-Verifizierung schlug fehl"#"OpenID verification failed"
+            setup_needed: "Die OpenID-Verifizierung muss aufgesetzt werden"#"OpenID verification needs setup"
+        post:
+          attributes:
+            title:
+              blank: Es wurde kein Titel angegeben
+            body:
+              blank: Es wurde kein Inhalt eingetragen
+            permalink:
+              taken: "Es konnte kein Link f&uuml;r Ihren Blog-Eintrag erzeugt werden, bitte &auml;ndern Sie den Titel"
+        event:
+          attributes:
+            start:
+              after_end: "Der Beginn des Termins muss vor dem Ende des Termins liegen"
+              past: "Der Beginn des Termins muss in der Zukunft liegen"
+  main_title: "QiFood: TCM Nutrition"
+  meta_description: "Information and aliment tables about 5 elements nutrition (chinese nutrition, tcm)"
+  meta_keywords: ", 5 elements nutrition, chiniese nutrition, nutrition, health, tcm"
+  aliment:
+    title: Aliment
+    savor: Savor
+    temperature: Temperature
+    category: Categorie
+    sauer: Sour
+    bitter: Bitter
+    suess: Sweet
+    scharf: Pungent
+    salzig: Salty
+    wood: Wood
+    fire: Fire
+    earth: Earth
+    metal: Metal
+    water: Water
+    hot: Hot
+    warm: Warm
+    neutral: Neutral
+    cool: Refreshing
+    cold: Cold
+    wikipedia: "{{aliment}} on Wikipedia"
+    links: Links
+    all: All
+    effects: Effect
+    organs: Target organs
+    photo: Photo
+    photo_attribution: "Some rights at the photo of {{aliment}} are reserved"
+    photo_attribution_help: "This photo is distributed with a Creative Commons license. Please click on the (CC) logo to view the license and the creator of this photo"
+    meta_description: "Aliments and their effects according to chinese nutrition"
+    meta_keywords: "Aliments, aliment table"
+    meta_description_for: "Properties and effects of {{name}} according to chinese nutrition"
+    new:
+      title: Mew aliment
+      create: Create
+      back: back
+    index:
+      new: "Add new aliment"
+      search_options: Options
+      hide_search_options: Less
+      search_effects: Search for effects
+      effects: Effects
+      match_all: And (All aliments with all selected effects)
+      match_any: Or (All aliments with at least one of the selected effects)
+      effect_filter: "Filter effects by name"
+      effect_filter_clear: "Clear filter"
+      find_by_name_ajax: What are you looking for?
+    edit:
+      title: "Edit {{aliment_name}}"
+  categories:
+    name: Name
+    description: Description
+    meta_description: Aliment categories in chinese nutrition
+    meta_description_for: "Aliments in category {{category}}"
+    meta_keywords: "Alimentcategories, Categories, Aliments"
+    index:
+      title: Categories
+      description: "Alliments are assigned to categories like grains, fruits, etc. This is done to facilitate the look up of aliments and because all aliments of a category share common properties and effects"
+    edit:
+      title: "Edit {{category}}"
+    update:
+      success: Successfully saved category.
+      failure: Could not save category.
+    show:
+      title: "Aliments in category {{category}}"
+      back: "Back to overview"
+  effects:
+    meta_description: Effects of aliments according to the chinese nutrition.
+    meta_description_for: Aliments with effect {{effect}}
+    meta_keywords: "Effect, Property, Healing" 
+    index:
+      title: Effects of Aliments
+      text: Here we list the effects of aliments. Clicking on one of the effects takes you to the aliments with that effect.
+      effect: Effect
+      new: Create new effect
+    show:
+      title: "Aliments with effect '{{effect}}'"
+    edit: 
+      title: "Edit effect: '{{title}}'"
+    new: 
+      title: New effect 
+  books:
+    title: Title
+    author: Author(s)
+    description: Description
+    buy: buy
+    isbn: ISBN
+    language: Language
+    linked_authors: Author(s) (Users)
+    authors: Author(s) (non-Users)
+    meta_description: Books about Chinese Nutrition
+    meta_keywords: "Book, Books, chinese nutrition, tcm"
+    index:
+      title: "Books about Chinese Nutrition"
+      text: "This website cannot provide comprehensive information about all aspects of chinese nutrition but want's to be assist you in finding aliments with specific properties and effects. Therefore we provide this list of books about chinese nutrition which cover the fundamentals as well as specific aspects of chinese nutrition. If there are books which you think should be included in this list, please let us know, we will add them as soon as possible. If you order one of these books via the &quot;buy&quot; links on Amazon, you support the operation and enhancement of QiFood."
+      new: Add new book
+    edit:
+      title: Edit book
+      linked_authors_selected: Selected authors (Users)
+    new:
+      title: "New book"
+  session:
+    login:
+      failure: Login failure
+      success: You are now logged in
+    logout:
+      success: You are now logged out
+    new:
+      use_openid: Or use OpenID
+  user:
+    users: Users
+    email: Email
+    password: Password
+    name: Last name
+    first_name: Given name
+    password_confirmation: Password confirmation
+    forgot_password: Forgot your password?
+    password_reset_requested: "An email containing information on how to change your password was sent to your email address. Please check your inbox. (If you can't find the email in the inbox, please take a look in your spam folder)"
+    password_reset_no_user: No user with the given email address is registerd at QiFood. Please check your email address.
+    password_reset_instructions_title: "Reset QiFood Password"
+    password_reset_email_start: "A password reset on www.qifood.eu has been requested. If you did not request the password reset you can ignore this email. If you want to reset you password, please click on the following link:"
+    password_reset_email_end: "If the link above is not working, please copy it and paste it into the URL field of your browser. If problems persist please tell us. You can simply reply to this email."
+    password_reset_token_not_found: "We are sorry, but we could not find your account. If you have problems, please copy the link from the email and paste it into the URL field of your browser. If problems persist, please email us at info@qifood.eu"
+    password_reset_success: "Your password has been changed"
+    openid_identifier: OpenID URL
+    open_id_help: "(?)"
+    open_id_help_url: http://en.wikipedia.org/wiki/OpenID
+    register_help: 'If you have an "OpenID":http://de.wikipedia.org/wiki/OpenID,  you can simply fill in the OpenID field (and optional informations and your address if you want to). If no, please leave the OpenID field empty and enter a login, email and password (and, if you want to, optional information and address).'
+    favorite_aliments: "{{name}}'s favorite aliments"
+    favorite_aliments_my: My favorite aliments
+    friends: "{{name}}'s friends"
+    friends_my: My friends
+    login: Login
+    logout: Logout
+    sign_up: Sign up    
+    logged_in_as: "Hello {{user_name}} (Profil)"
+    missing_rights: "You do not have sufficent rights to perform this action"
+    login_required: "You have to be logged in to perform this action."
+    logout_required: "You can not perform this action when you are logged in"
+    remember: Remember login on this computer
+    meta_keywords: "Users, Friends"
+    meta_description: All QiFood users
+    meta_description_for: "{{user_name}}'s QiFood profile"
+    location:
+      edit: Edit address
+    new:
+      title: Sign up
+      required_information: "Required information:"
+      optional_information: "Optional information:"
+      open_id: "Or use OpenID:"
+      sign_up: Sign up
+    edit:
+      title: Edit profile
+    show: 
+      title: "{{user_name}}'s Profile"
+      title_my: My Profile
+      blog: "{{name}}'s Blog"
+      blog_link: "All blog entries of {{name}}"
+      blog_my: My Blog
+      blog_link_my: "See all entries"
+      create_event: Add new event
+    profile:
+      title: "Author:"
+    controller:
+      signup:
+        success: "Thank you for signing up. We will send you an activation code via email."
+        failure: "We could not sign you up. Please try again or contact us."
+      activate:
+        success: "You sign up was successful. Please log in via the 'Login' link on top of this page."
+        code_missing: "The activation link is missing. Please use the link from the email."
+        error: "We could not find a user with this activation code -- please check your email. Or has the user already been activated? Try to 'Login'."
+      edit:
+        not_logged_in: "Please log in."
+      update:
+        success: Your profile has been saved.
+        failure: We could not save your profile.
+      create: 
+        failure: There have been problems during the creation of your profile.
+        success: You are now successfully signed up.
+    password_reset:
+      new:
+        title: Reset password
+        body: "Please fill in this form. We will then send you an email containing information on how to reset your password."
+        submit: "Reset"
+      edit:
+        title: "Enter new password"
+        submit: "Save"
+  profile: 
+    birthday: Birthday
+    about: "About me"
+    photo: Photo
+    quote: Quote
+  favorite:
+    create:
+      success: "{{aliment_name}} was added to the list of your favorites."
+      failure: "{{aliment_name}} could not be added to the list of your favorites. Are you logged in?"
+    destroy:
+      success: "{{aliment_name}} removed from the list of your favorites."
+      failure: "{{aliment_name}} could not be removed from the list of your favorites. Are you logged in?"
+    add: "Add to favorites"
+    find: "Add aliments"
+  friendship:
+    add_friends: "Add friends"
+    add_as_friend: Add as friend
+    controller: 
+      create:
+        success: "{{name}} was added to the list of your friends"
+        failure: "{{name}} could not be added to the list of your friends"
+      destroy:
+        success: "{{name}} was removed from the list of your friends"
+        wrong_user: "You are not authorized to remove friends from this list."
+  post:
+    title: Title
+    body: Body
+    created_at: Date
+    author: Author
+    preview: Preview
+    meta_description: The Chinese Nutrition Blog
+    meta_description_for: "{{user_name}}'s Chinese Nutrition Blog"
+    meta_keywords: "Blog, Weblog"
+    meta_keywords_for: "Blog, Weblog, {{user_name}}"
+    feed: "ATOM Feed"
+    controller:
+      create:
+        success: Your blog entry has been published.
+        failure: Your blog entry could not be published.
+      update:
+        success: Your blog entry was updated.
+        failure: Your blog entry could not be saved.
+      show:
+        deleted: This blog entry has been deleted.
+    index:
+      title_user: "{{user_name}}'s Blog"
+      title: "Blog"
+      new: New Blog entry
+    new: 
+      title: Blog entry
+    edit: 
+      preview_message: (The preview will be refreshed every ten seconds.)
+    atom:
+      title_user: "QiFood: {{user_name}}'s Blog"
+      title: "QiFood: Blog" 
+  comment:
+    add: "Write comment"
+    not_logged_in: "You need to be logged in to write a comment."
+    flag: "Should this comment be deleted?"
+  flag:
+    controller:
+      already_flagged: "You already flagged this comment."
+      success: "The comment has been flagged."
+    create:
+      do_flag: Flag this comment
+      not_logged_in: "You have to be logged in to flag this comment"
+    reasons:
+      inapproriate: Inapproproate
+      off_topic: Off topic
+      foul_language: Foul language
+  pages:
+    index: 
+      title: Static pages
+    edit:
+      textile: Format reference
+      title: "Edit page: {{title}}"
+    new:
+      title: New static page
+  consultation:
+    title: Consultation
+    details: Details
+    create: "I offer nutrition consultation, seminars and / or cookery courses and want to inform about these."
+    name: Name
+    body: Text
+    pro: Pro display
+    contact: Contact
+    website: Website
+    email: Email
+    phone: Phone
+    fax: Fax
+    photos: Photos and Logos of your consultation
+    photo:
+      title: Description
+      url: Picture
+    owner: Who
+    near_me: Near me
+    near_me_add_location: "Add a location to your profile to find consultations near you."
+    pro_account: "An entry with a title and a description of max. 800 characters is free of charge. If you want to use more than 800 characters for your description or display pictures you can choose a pro display. A pro display is 50 &euro; a month excluding VAT. You will receive a monthly bill for this amount. A pro display can be canceled any time to the end of the current month. Just write an email to service@qifood.eu to cancel the pro display."
+    pro_account_unsubscribe: "You are using a pro display for 50 &euro; a month excluding VAT. If you want to revert to a free listing, you can do so any time effective to the end of the current month. To do so just write an email to "
+    images:
+      image: Picture
+      main: Logo / Main picture
+    new: 
+      title: Add new consultation
+    edit:
+      title: Edit consultation
+    index:
+      title: Consultations
+      title_loc: "Consultations near {{loc}}"
+  locations:
+    location: Address
+    street: Street
+    number: Number
+    additional1: Additional 1
+    additional2: Additional 2
+    zip: ZIP
+    city: City
+    state: State
+    country: Country
+    near: "Near:"
+    radius: Radius (km)
+    example: "Astrid-Lindgren-Strasse, Freiburg"
+    map: Map
+    show: 
+      title: "Map: {{title}}"
+  events:
+    title: Title
+    body: Description
+    start: Start
+    end: End
+    duration: Duration
+    commercial: Commercial
+    commercial_explanation: "Yes. Explanation: The listing of a commercial event costs 10 &euro; excluding VAT. You will receive a bill with that amount."
+    location: Location
+    events: Events
+    near_me: "Events near me"
+    near_me_add_location: "Add a location to your profile to find events near you."
+    month: Month
+    index:
+      title: "Events in {{month}}"
+      added_by: Added by  
+    new:
+      title: Add new event
+    edit:
+      title: "Change event"
+    show:
+      title: "Details for event {{event_title}}"
+      data: Data
+  navigation:
+    aliments: Aliments
+    about: About
+    contact: Contact
+    effects: Effects
+    categories: Categories
+    more: More
+    books: "Books"
+    practitioners: "Consultation"
+    posts: Blog
+    users: Users
+    profile: My profile
+    support: "Support"
+    home: Home  
+    events: Events
+  common:
+    show: Show
+    back: Back
+    create: Create
+    destroy: Delete
+    update: Update
+    edit: Edit
+    find: Find
+    day: Day
+    month: Month
+    year: Year
+    are_you_sure: Are you sure?
+    bookmark: Social Networks
+    do_bookmark: "Bookmark this page on:"
+    close: Close
+    duration: "Duration: "
+    accept_agb_start: 'I have read the '
+    accept_agb_middle: "general terms and conditions"
+    accept_agb_url: 'http://www.agb.de/agb.php?id=10098&inc=php'  
+    accept_agb_end: ' and accept them.'

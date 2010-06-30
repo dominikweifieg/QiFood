@@ -19,6 +19,8 @@ class Event < ActiveRecord::Base
     event.errors.add(:start, :after_end) unless event.start < event.end
   end
   
+  default_scope :conditions => {:lang => "#{I18n.locale}"}
+  
   private 
     
   def create_reference_number

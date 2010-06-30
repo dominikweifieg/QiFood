@@ -29,6 +29,8 @@
 							<%= link_to t('user.sign_up'), signup_path %>
 						<% end %>
 						<%= link_to t('navigation.support'), static_path('support')%>
+						<%= link_to_unless params[:locale] == "de", "Deutsch", @controller.request.request_uri.sub(/\/\w\w\//, "/de/") %>
+						<%= link_to_unless params[:locale] == "en", "English", @controller.request.request_uri.sub(/\/\w\w\//, "/en/") %>
 					</div>
 	</div>
 	<div id="navigation">

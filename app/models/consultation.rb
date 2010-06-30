@@ -13,6 +13,8 @@ class Consultation < ActiveRecord::Base
   accepts_nested_attributes_for :location, :allow_destroy => true
   accepts_nested_attributes_for :consultation_photos, :allow_destroy => true, :reject_if  => proc {|attributes| attributes['uploaded_data'].blank? }
   
+  default_scope :conditions => {:lang => "#{I18n.locale}"}
+  
   private 
   
   def set_pro_start_date

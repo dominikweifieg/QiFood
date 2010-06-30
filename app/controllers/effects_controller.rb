@@ -7,10 +7,10 @@ class EffectsController < ApplicationController
     if params[:q].present?
 			list = params[:q].split("\n")
 			q = list.last
-			@effects = Effect.find(:all, :conditions => ['description LIKE ?', "#{q}%"], :order => 'description') || Array.new
+			@effects = Effect.find(:all, :conditions => ['description LIKE ?', "#{q}%"], :include => :translations, :order => 'description') || Array.new
 			@effects.delete_if { |effect| list.detect { |entry| entry == effect.description } }
 		else
-			@effects = Effect.find(:all, :order => 'description')
+			@effects = Effect.find(:all, :include => :translations, :order => 'effect_translations.description', :conditions => {'effect_translations.locale' => "#{I18n.locale}"})
 		end
 
     respond_to do |format|

@@ -18,7 +18,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   def show
     @category = Category.find(params[:id])
-    @aliments = Aliment.paginate_by_category_id(params[:id], :page => params[:page], :order => 'name')
+    @aliments = Aliment.paginate_by_category_id(params[:id], :page => params[:page], :include => :translations, :order => 'aliment_translations.name', :conditions => {'aliment_translations.locale' => "#{I18n.locale}"})
   end
   
   # GET /categories/1/edit

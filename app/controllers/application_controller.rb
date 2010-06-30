@@ -18,7 +18,8 @@ class ApplicationController < ActionController::Base
 
 	private 
 	def set_locale
-		I18n.locale = params[:locale]
+	  I18n.locale = params[:locale]
+	  logger.info I18n.locale
 	end
 	
   def authorized_editor?
@@ -89,7 +90,6 @@ class ApplicationController < ActionController::Base
 	    ref = request.headers["Referer"].sub(/(http)s?:\/\//, "").sub(/:\d+/, "")
 	    if ref.index(request.host) == 0
         @back = ref.sub(request.host, "")
-        logger.info { "#{@back}" }
       end
     end
   end

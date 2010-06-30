@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100607130335) do
+ActiveRecord::Schema.define(:version => 20100630101613) do
 
   create_table "aliment_photos", :force => true do |t|
     t.integer  "parent_id"
@@ -36,18 +36,18 @@ ActiveRecord::Schema.define(:version => 20100607130335) do
   add_index "aliment_translations", ["aliment_id"], :name => "index_aliment_translations_on_aliment_id"
 
   create_table "aliments", :force => true do |t|
-    t.string   "name"
+    t.string   "old_name"
     t.string   "latin_name"
     t.string   "pinyin"
     t.string   "chinese"
-    t.text     "description",          :limit => 255
+    t.text     "description",          :limit => 16777215
     t.integer  "savor"
     t.integer  "savor_tendence"
     t.integer  "temperature"
     t.integer  "temperature_tendence"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id",                         :default => 14, :null => false
+    t.integer  "category_id",                              :default => 14, :null => false
     t.string   "plural_name"
     t.string   "photo_attribution",    :limit => 512
   end
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(:version => 20100607130335) do
 
   create_table "books", :force => true do |t|
     t.string   "title"
-    t.text     "description"
+    t.text     "description", :limit => 16777215
     t.string   "isbn"
     t.string   "language"
     t.datetime "created_at"
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(:version => 20100607130335) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.text     "description", :default => ""
+    t.text     "description", :limit => 16777215
   end
 
   create_table "category_translations", :force => true do |t|
@@ -89,12 +89,12 @@ ActiveRecord::Schema.define(:version => 20100607130335) do
 
   create_table "comments", :force => true do |t|
     t.string   "title"
-    t.text     "content"
+    t.text     "content",          :limit => 16777215
     t.integer  "user_id"
     t.string   "commentable_type"
     t.integer  "commentable_id"
     t.string   "lang"
-    t.boolean  "published",        :default => true
+    t.boolean  "published",                            :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -109,9 +109,9 @@ ActiveRecord::Schema.define(:version => 20100607130335) do
     t.integer  "width"
     t.integer  "height"
     t.string   "title"
+    t.integer  "consultation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "consultation_id", :default => 1
   end
 
   create_table "consultations", :force => true do |t|
@@ -119,6 +119,7 @@ ActiveRecord::Schema.define(:version => 20100607130335) do
     t.text     "body"
     t.boolean  "pro"
     t.string   "pro_identifier"
+    t.integer  "pro_start_day"
     t.string   "website"
     t.string   "email"
     t.string   "phone"
@@ -126,7 +127,7 @@ ActiveRecord::Schema.define(:version => 20100607130335) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "pro_start_day"
+    t.string   "lang",           :default => "de"
   end
 
   create_table "effect_translations", :force => true do |t|
@@ -172,6 +173,7 @@ ActiveRecord::Schema.define(:version => 20100607130335) do
     t.integer  "consultation_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "lang",             :default => "de"
   end
 
   create_table "favorite_aliments", :force => true do |t|
@@ -250,10 +252,21 @@ ActiveRecord::Schema.define(:version => 20100607130335) do
     t.datetime "updated_at"
   end
 
+  create_table "page_translations", :force => true do |t|
+    t.integer  "page_id"
+    t.string   "locale"
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "page_translations", ["page_id"], :name => "index_page_translations_on_page_id"
+
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.string   "permalink"
-    t.text     "body"
+    t.text     "body",       :limit => 16777215
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -261,14 +274,15 @@ ActiveRecord::Schema.define(:version => 20100607130335) do
   create_table "posts", :force => true do |t|
     t.integer  "user_id"
     t.string   "title"
-    t.text     "body"
-    t.text     "permalink"
+    t.text     "body",       :limit => 16777215
+    t.text     "permalink",  :limit => 16777215
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "lang",                           :default => "de"
   end
 
   create_table "profiles", :force => true do |t|
-    t.text     "about"
+    t.text     "about",      :limit => 16777215
     t.date     "birthday"
     t.string   "quote"
     t.integer  "user_id"
@@ -306,15 +320,15 @@ ActiveRecord::Schema.define(:version => 20100607130335) do
     t.string   "name",                      :limit => 100, :default => ""
     t.string   "first_name",                :limit => 100, :default => ""
     t.string   "email",                     :limit => 100
-    t.string   "crypted_password",          :limit => 120
-    t.string   "password_salt",             :limit => 120
+    t.string   "crypted_password",          :limit => 256
+    t.string   "password_salt",             :limit => 256
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "remember_token",            :limit => 40
     t.datetime "remember_token_expires_at"
     t.string   "activation_code",           :limit => 40
     t.datetime "activated_at"
-    t.integer  "role",                                     :default => 0
+    t.integer  "role",                                     :default => 2
     t.string   "persistence_token"
     t.integer  "login_count",                              :default => 0,  :null => false
     t.integer  "failed_login_count",                       :default => 0,  :null => false

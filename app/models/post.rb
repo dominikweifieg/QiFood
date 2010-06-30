@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
   validates_presence_of :body
   validates_uniqueness_of :permalink, :on => :create
   
-  default_scope :order => 'created_at DESC'
+  default_scope :conditions => {:lang => "#{I18n.locale}"}, :order => 'created_at DESC'
   
   def to_param
     "#{id}_#{permalink}"

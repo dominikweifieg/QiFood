@@ -5,7 +5,7 @@ class AlimentsController < ApplicationController
 	# GET /aliments
   # GET /aliments.xml
   def index
-		sort = params[:sort_by] || 'name'
+		sort = params[:sort_by] || 'aliment_translations.name'
 		sort_by = sort + ' ' + (params[:sort_dir] || '')
 		if not params[:effects].blank?
 			@aliments = Aliment.sorted(sort_by).paginate_all_by_effects(params, :page => params[:page], 
@@ -14,7 +14,7 @@ class AlimentsController < ApplicationController
 			@aliments = Aliment.sorted(sort_by).paginate_all_by_parameters(params, :page => params[:page],
 																																	 :total_entries => Aliment.count_all_by_parameters(params))
 		else
-	    @aliments = Aliment.sorted(sort_by).paginate(:page => params[:page])
+	    @aliments = Aliment.sorted(sort_by).paginate(:page => params[:page], :include => :translations)
 		end
     
     logger.error(@aliments.size)
