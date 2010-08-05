@@ -35,6 +35,8 @@ ssh_options[:forward_agent] = true
 set :branch, "master"
 set :deploy_via, :remote_cache
 
+set :rake, "/opt/ruby/bin/rake"
+
 role :web, domain
 role :app, domain
 role :db, domain, :primary => true
