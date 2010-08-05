@@ -1,5 +1,5 @@
 set :application, "qifood" 
-set :repository,  "git://github.com/dominikweifieg/QiFood.git"
+set :repository,  "git@github.com:dominikweifieg/QiFood.git"
 set :domain, "qifood.eu"
 set :use_sudo, false
 # If you have previously been relying upon the code to start, stop 
