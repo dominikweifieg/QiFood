@@ -75,8 +75,8 @@ class Aliment < ActiveRecord::Base
 		scope = scope.conditions "latin_name LIKE ?", "#{params[:latin_name]}%" unless params[:latin_name].blank?
 		scope = scope.conditions "pinyin LIKE ?", "#{params[:pinyin]}%" unless params[:pinyin].blank?
 		scope = scope.conditions "chinese = ?", params[:chinese] unless params[:chinese].blank?
-		scope = scope.conditions "savor = ?", params[:aliment][:savor] unless params[:aliment][:savor].blank?
-		scope = scope.conditions "temperature = ?", params[:aliment][:temperature] unless params[:aliment][:temperature].blank?
+		scope = scope.conditions "(savor = ? OR savor_tendence = ?)", params[:aliment][:savor], params[:aliment][:savor] unless params[:aliment][:savor].blank?
+		scope = scope.conditions "(temperature = ? OR temperature_tendence = ?)", params[:aliment][:temperature], params[:aliment][:temperature] unless params[:aliment][:temperature].blank?
 		scope = scope.conditions "description LIKE ?", "%#{params[:description]}%" unless params[:description].blank?
 		scope = scope.conditions "category_id IN (?)", params['category_id'] unless params['category_id'].blank?
     scope

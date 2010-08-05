@@ -37,21 +37,13 @@ end %></h3></div>
 		<% form_tag(aliments_path, :method => "get", :id => "finder") do %>
 		<%= hidden_field_tag :sort_by, params[:sort_by] || 'name' %>
 		<%= hidden_field_tag :sort_dir, params[:sort_dir] || 'ASC' %>
-		<div class="column">
-			<%= label_tag :name, Aliment.human_attribute_name('name') %>
-			<%= text_field_tag(:name, params[:name]) %>
+		<div class="column ">
+			<%= label_tag :temperature, Aliment.human_attribute_name('temperature') %>
+			<%= temperature_select(true) %>&nbsp;
 		</div>
 		<div class="column right">
 			<%= label_tag :savor, Aliment.human_attribute_name('savor') %>
 			<%= savor_select(true) %>&nbsp;
-		</div>
-		<div class="column">
-			<%= label_tag :description, Aliment.human_attribute_name('description') %>
-			<%= text_field_tag(:description, params[:description]) %>
-		</div>
-		<div class="column right">
-			<%= label_tag :temperature, Aliment.human_attribute_name('temperature') %>
-			<%= temperature_select(true) %>&nbsp;
 		</div>
 		<div class="column">
 			<%= label_tag :effect, Aliment.human_attribute_name('effect') %>
@@ -61,6 +53,14 @@ end %></h3></div>
 			<%= label_tag :category_id, t('aliment.category') %>
 			<%= select_tag('category_id[]', options_for_select(Category.find(:all).collect {|c|
 						[c.name, c.id] }), {:multiple => true, :size => 5}) %>&nbsp;
+		</div>
+		<div class="column">
+			<%= label_tag :name, Aliment.human_attribute_name('name') %>
+			<%= text_field_tag(:name, params[:name]) %>
+		</div>
+		<div class="column right">
+			<%= label_tag :description, Aliment.human_attribute_name('description') %>
+			<%= text_field_tag(:description, params[:description]) %>
 		</div>
 		<div class="column">
 			<%= label_tag :chinese, Aliment.human_attribute_name('chinese') %>
