@@ -31,12 +31,12 @@ class Aliment < ActiveRecord::Base
 	}
 
 	def self.find_all_by_parameters(params, page)
-		scope = Aliment.scoped(:include => [:category])
+		scope = Aliment.scoped(:include => [:category], :joins => "LEFT JOIN aliment_translations ON aliment_translations.aliment_id = aliments.id AND aliment_translations.locale = '#{I18n.locale}'")
 		parameter_scope(scope, params)
 	end
 
 	def self.count_all_by_parameters(params)
-		scope = Aliment.scoped()
+		scope = Aliment.scoped(:joins => "LEFT JOIN aliment_translations ON aliment_translations.aliment_id = aliments.id AND aliment_translations.locale = '#{I18n.locale}'")
 		parameter_scope(scope, params).count()
 	end
 
@@ -71,7 +71,7 @@ class Aliment < ActiveRecord::Base
 	private 
 
 	def self.parameter_scope(scope, params)
-		scope = scope.conditions "name LIKE ?", "#{params[:name]}%" unless params[:name].blank?
+		scope = scope.conditions "aliment_translations.name LIKE ?", "#{params[:name]}%" unless params[:name].blank?
 		scope = scope.conditions "latin_name LIKE ?", "#{params[:latin_name]}%" unless params[:latin_name].blank?
 		scope = scope.conditions "pinyin LIKE ?", "#{params[:pinyin]}%" unless params[:pinyin].blank?
 		scope = scope.conditions "chinese = ?", params[:chinese] unless params[:chinese].blank?
